@@ -1,0 +1,25 @@
+{
+  "name": "plant-tracker",
+  "version": "1.0.0",
+  "description": "A full-stack project utilizing React, MySQL, and JavaScript to effectively track a user's indoor and outdoor plants.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casmith205/Plant-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/casmith205/Plant-Tracker/issues"
+  },
+  "homepage": "https://github.com/casmith205/Plant-Tracker#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "sequelize": "^4.37.7"
+  }
+}
