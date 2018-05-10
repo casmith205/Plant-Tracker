@@ -1,7 +1,10 @@
 import React from "react";
 
-const NavBar = props => {
+const NavBar = () => {
+    <div>
+    <i class="material-icons">home</i>
+    </div>
 
 }
 
-export default NavBar;
+export default House;
