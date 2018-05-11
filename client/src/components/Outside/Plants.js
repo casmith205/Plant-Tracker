@@ -1,7 +1,13 @@
 import React from "react";
+import PlantInfo from "../PlantInfo"
 
 const NavBar = props => {
-    <h4> plants </h4>
+    // <h4> plants </h4>
+    <div>
+    {/* <!-- Dropdown Trigger --> */}
+    <a class='dropdown-trigger btn' href='#' data-target="plantDropdown">Plant</a>
+    <PlantInfo />
+    </div>
 
 }
 
