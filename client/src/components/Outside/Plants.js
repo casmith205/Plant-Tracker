@@ -1,7 +1,7 @@
 import React from "react";
 import PlantInfo from "../PlantInfo"
 
-const NavBar = props => {
+const Plants = props => {
     // <h4> plants </h4>
     <div>
     {/* <!-- Dropdown Trigger --> */}
