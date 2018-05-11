@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
-// import Navbar from '../../components/NavBar'
+import Navbar from '../../components/NavBar'
 import styles from './LoginPage.css';
 
 class LoginPage extends Component {
@@ -65,7 +65,7 @@ class LoginPage extends Component {
         return (
             <div className="container" id="loginpage">
                 <div className="row">
-                {/* <Navbar /> */}
+                <Navbar />
                 </div>
                 <div className="row">
                     <form className="col s12">
