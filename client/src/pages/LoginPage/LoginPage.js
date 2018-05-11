@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import Navbar from '../../components/NavBar'
+import Footer from '../../components/Footer'
 import styles from './LoginPage.css';
 
 class LoginPage extends Component {
@@ -114,9 +115,9 @@ class LoginPage extends Component {
                         </div> */}
                     </form>
                 </div>
-                {/* <div className="row" id="footer">
+                <div className="row" id="footer">
                 <Footer />
-                </div> */}
+                </div>
             </div>
             )
         }
