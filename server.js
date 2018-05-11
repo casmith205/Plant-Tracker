@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const sequelize = require("sequelize");
-const passport   = require('./config/passport');
+const passport   = require("./config/passport");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 8080;
