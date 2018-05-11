@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import Navbar from '../../components/NavBar'
-import styles from '/LoginPage.css';
+import styles from './LoginPage.css';
 
 class LoginPage extends Component {
     state = {
