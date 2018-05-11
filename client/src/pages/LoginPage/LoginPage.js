@@ -17,6 +17,7 @@ class LoginPage extends Component {
     };
 
     render() {
+        
         <div className="container" id="loginpage">
             <div class="row">
                 <form class="col s12">
