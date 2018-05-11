@@ -1,2 +1,2 @@
-export { default } from "./House.js";
-export { default } from "./OutsidePlants.js";
+// import House from "./House.js";
+// import OutsidePlants from "./OutsidePlants.js";
