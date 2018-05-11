@@ -4,7 +4,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 // import RegistrationPage from './pages/RegistrationPage';
 // import ProfilePage from './pages/ProfilePage';
 // import IndoorPage from './pages/IndoorPage';
-// import OutdoorPage from './pages/OutdoorPage';
+ import OutdoorPage from './pages/OutdoorPage/OutdoorPage';
 // import GraveyardPage from'./pages/GraveyardPage';
 
 import './App.css';
@@ -18,8 +18,8 @@ class App extends Component {
           <Route exact path="/" component={LoginPage} />
           {/* <Route exact path="/registration" component={RegistrationPage} /> */}
           {/* <Route exact path="/profile" component={ProfilePage} /> */}
-          {/* <Route exact path="/outdoorplants" component={GraveyardPage} />
-          <Route exact path="/indoorplants" component={IndoorPage} /> */}
+           <Route exact path="/outdoorplants" component={OutdoorPage} />
+         {/*Route exact path="/indoorplants" component={IndoorPage} /> */}
           {/* <Route exact path="/profile" component={ProfilePage} /> */}
           {/* <Route exact path="/registration" component={RegistrationPage} /> */}
           {/* determines what component is routed to.
