@@ -39,8 +39,8 @@ export default {
 
     // Badge axios functions
     // Awards the user a badge
-    getBadge: function(id) {
-        return axios.get("/api/badge" + id)
+    getBadge: function(user) {
+        return axios.get("/api/badge" + user)
     },
     awardBadge: function (badge) {
         return axios.post("/api/badge", badge)
