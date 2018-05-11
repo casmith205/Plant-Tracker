@@ -38,14 +38,6 @@ class OutdoorPage extends Component {
             </div>
         )
     }
-
-const OutdoorPage = props => {
-<div>
-    // Share buttons
-    <div className="sharethis-inline-share-buttons"></div>
-    {/* <NavBar /> */}
-    <Plants />
-</div>
 }
 
 export default OutdoorPage;
