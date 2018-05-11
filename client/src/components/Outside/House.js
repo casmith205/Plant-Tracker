@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavBar = () => {
+const House = () => {
     <div>
     <i class="material-icons">home</i>
     </div>
