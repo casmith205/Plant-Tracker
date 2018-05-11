@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
-import styles from "./LoginPage.css";
+import styles from '/LoginPage.css';
 
 class LoginPage extends Component {
     state = {
