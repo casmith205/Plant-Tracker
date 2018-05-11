@@ -6,11 +6,15 @@ render () {
 
     <div>
         <nav brand='logo' right>
-            <li href='Outdoor pg'><i>local_florist</i></li>
-            <li href='Indoor pg'><i>home</i></li>
-            <li href='Graveyard pg'><i>broken_image</i></li>
-            <li href='Profile pg'><i>person</i></li>
-         </nav>
+            <div class="nav-wrapper">
+                <ul id="nav-mobile" class="right hide-on-med-and-down"> 
+                    <li><a href='Outdoor pg'><i class="small material-icons">local_florist</i></a></li>
+                    <li><a href='Indoor pg'><i class="small material-icons">home</i></a></li>
+                    <li><a href='Graveyard pg'><i class="small material-icons">broken_image</i></a></li>
+                    <li><a href='Profile pg'><i class="small material-icons">person</i></a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
 
     )};
