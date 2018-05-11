@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import Navbar from '../../components/NavBar'
+import Footer from '../../components/Footer'
 import styles from './LoginPage.css';
 
 class LoginPage extends Component {
@@ -63,11 +64,11 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div className="container" id="loginpage">
-                <div className="row">
+            <div className="container">
+                <div className="row" id="topnav">
                 <Navbar />
                 </div>
-                <div className="row">
+                <div id="loginpage" className="row">
                     <form className="col s12">
                         <div className="row">
                             <Input
@@ -113,6 +114,9 @@ class LoginPage extends Component {
                             </a>
                         </div> */}
                     </form>
+                </div>
+                <div className="row" id="footer">
+                <Footer />
                 </div>
             </div>
             )
