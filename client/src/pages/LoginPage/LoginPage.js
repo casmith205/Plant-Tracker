@@ -63,11 +63,11 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div className="container" id="loginpage">
-                <div className="row">
+            <div className="container">
+                <div className="row" id="topnav">
                 <Navbar />
                 </div>
-                <div className="row">
+                <div id="loginpage" className="row">
                     <form className="col s12">
                         <div className="row">
                             <Input
@@ -114,6 +114,9 @@ class LoginPage extends Component {
                         </div> */}
                     </form>
                 </div>
+                {/* <div className="row" id="footer">
+                <Footer />
+                </div> */}
             </div>
             )
         }
