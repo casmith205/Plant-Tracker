@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
-import "./LoginPage.css";
+import Input from '../../components/Login/Input'
+import styles from '/LoginPage.css';
 
 class LoginPage extends Component {
     state = {
@@ -9,36 +10,109 @@ class LoginPage extends Component {
         password: ""
     };
 
-    handleLogin = event => {
-        const {name, value } = event.target;
+    handleInputChange = event => {
+        const { name, value } = event.target;
         this.setState({
             [name]: value
         })
+    }
+
+    handleLoginSubmit = event => {
+        event.preventDefault();
+        if (this.state.username && this.state.userpassword) {
+            API.loginUser({
+                username: this.state.username,
+                password: this.state.password
+            })
+                .then(res => this.handleUserLogin())
+                .catch(err => console.log(err));
+        }
     };
 
-    render() {
-        
-        <div className="container" id="loginpage">
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="userlogin" type="text" class="validate" placeholder="Username"></input>
-                            <label for="userlogin">Username</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="userpassword" type="password" class="validate" placeholder="Password"></input>
-                            <label for="userpassword">Password</label>
-                        </div>
-                    </div>
-                    <a class="waves-effect waves-light btn">Login</a>
-                    <a class="waves-effect waves-light btn">Help Logging In</a>
-                </form>
+    handleLoginSubmit = event => {
+        event.preventDefault();
+        if (this.state.username && this.state.userpassword) {
+            API.registerUser({
+                username: this.state.username,
+                password: this.state.password,
+                firstname: this.state.firstname,
+                lastname: this.state.lastname
+            })
+                .then(res => this.handleUserLogin())
+                .catch(err => console.log(err));
+        }
+    };
+
+    // handleUserLogin = event => {
+
+    // }
+
+        // Will need to add some helper on this but I don't know how to do this.
+        // handleHelpSubmit = event => {
+        //     event.preventDefault();
+        //     if (this.state.username && this.state.userpassword) {
+        //         API.loginUser({
+        //             username: this.state.username,
+        //             password: this.state.password
+        //         })
+        //             .then(res => this.handleUserLogin())
+        //             .catch(err => console.log(err));
+        //     }
+        // };
+
+        render() {
+            return (
+                <div className="container" id="loginpage">
+                    <div className="row">
+                        <form className="col s12">
+                            <div className="row">
+                                <Input
+                                    name="userlogin"
+                                    value={this.state.username}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Username"
+                                />
+                            </div>
+                            <div class="row">
+                                <Input
+                                    name="userlogin"
+                                    value={this.state.password}
+                                    onChange={this.handleInputChange}
+                                placeholder="Password"
+                                />
+                            </div>
+                            <div className="col s6">
+                                <a
+                                    onClick={this.handleFormSubmit}
+                                    type="success"
+                                    className="input-lg waves-effect waves-light btn"
+                                >
+                                    Login
+                                </a>
+                            </div>
+                            <div className="col s6">
+                                <a
+                                    onClick={this.handleFormSubmit}
+                                    type="success"
+                                    className="input-lg waves-effect waves-light btn"
+                                >
+                                    Signup
+                                </a>
+                            </div>
+                            {/* <div className="col s6">
+                                <a
+                                    onClick={this.handleHelpSubmit}
+                                    type="success"
+                                    className="input-lg waves-effect waves-light btn"
+                                >
+                                    Help Logging In
+                                </a>
+                            </div> */}
+                    </form>
+                </div>
             </div>
-        </div>
+            )
+        }
     }
-}
 
 export default LoginPage;
