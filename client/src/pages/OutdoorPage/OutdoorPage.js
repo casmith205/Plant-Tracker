@@ -1,3 +1,5 @@
+// import NavBar from "../components/NavBar"
+import Plants from "../../components/Outside/Plants"
 import React, { Component } from "react";
 import NavBar from "../components/NavBar";
 import API from "../../utils/API";
@@ -35,6 +37,13 @@ class OutdoorPage extends Component {
         )
     }
 
+const OutdoorPage = props => {
+<div>
+    // Share buttons
+    <div className="sharethis-inline-share-buttons"></div>
+    {/* <NavBar /> */}
+    <Plants />
+</div>
 }
 
 export default OutdoorPage;
