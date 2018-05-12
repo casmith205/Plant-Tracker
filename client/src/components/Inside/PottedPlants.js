@@ -1,7 +1,7 @@
 import React from "react";
 import PlantInfo from "../PlantInfo"
 
-const PottedPlants = props => {
+const PottedPlants = props => (
 
     <div>
         {/* <!-- Dropdown Trigger --> */}
@@ -9,6 +9,6 @@ const PottedPlants = props => {
         <PlantInfo />
     </div>
 
-}
+)
 
 export default PottedPlants;
