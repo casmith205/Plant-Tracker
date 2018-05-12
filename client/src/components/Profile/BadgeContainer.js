@@ -1,7 +1,10 @@
 import React from "react";
 
-const NavBar = props => {
+const BadgeContainer = props => (
+ <div>
+ </div>   
+)
 
-}
 
-export default NavBar;
+
+export default BadegeContainer;
