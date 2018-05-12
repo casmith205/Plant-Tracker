@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LoginPage from './pages/LoginPage/LoginPage';
 // import RegistrationPage from './pages/RegistrationPage';
 // import ProfilePage from './pages/ProfilePage';
-// import IndoorPage from './pages/IndoorPage';
- import OutdoorPage from './pages/OutdoorPage/OutdoorPage';
+import IndoorPage from './pages/IndoorPage/IndoorPage';
+import OutdoorPage from './pages/OutdoorPage/OutdoorPage';
 // import GraveyardPage from'./pages/GraveyardPage';
 
 import './App.css';
@@ -19,7 +19,7 @@ class App extends Component {
           {/* <Route exact path="/registration" component={RegistrationPage} /> */}
           {/* <Route exact path="/profile" component={ProfilePage} /> */}
           <Route exact path="/outdoorplants" component={OutdoorPage} />
-          {/*Route exact path="/indoorplants" component={IndoorPage} /> */}
+          <Route exact path="/indoorplants" component={IndoorPage} />
           {/* <Route exact path="/profile" component={ProfilePage} /> */}
           {/* <Route exact path="/graveyard component={GraveyardPage} /> */}
           {/* <Route exact path="/registration" component={RegistrationPage} /> */}
