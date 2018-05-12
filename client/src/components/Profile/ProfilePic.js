@@ -1,8 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
 
-const NavBar = props => (
+class ProfilePic extends Component {
+    render () {
+        return (
     <div>
+        <div>
+            <img src="../../images/profpic.jpg" alt="profile">
+            </img>
+        </div>
     </div> 
-)
+)}
+}
 
-export default NavBar;
+export default ProfilePic;
