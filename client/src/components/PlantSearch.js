@@ -1,7 +1,10 @@
 import React from "react";
 
-const NavBar = props => {
-
-}
-
-export default NavBar;
+const PlantSearch = props => (
+    <div>
+    </div>   
+   )
+   
+   
+   
+   export default PlantSearch;
