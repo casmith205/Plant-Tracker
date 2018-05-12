@@ -1,6 +1,6 @@
 import NavBar from "../../components/NavBar"
 import Plants from "../../components/Outside/Plants"
-import AddPlant from "../../components/AddPlant"
+// import AddPlant from "../../components/AddPlant"
 import AddPlantIcon from "../../components/AddPlantIcon"
 import React, { Component } from "react";
 import API from "../../utils/API";

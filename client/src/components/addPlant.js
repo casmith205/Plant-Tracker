@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 
-const PlantInfo = props => (
+const AddPlant = props => (
 
         <Draggable>
             <div
@@ -15,4 +15,4 @@ const PlantInfo = props => (
     
 )
 
-export default PlantInfo;
+export default AddPlant;
