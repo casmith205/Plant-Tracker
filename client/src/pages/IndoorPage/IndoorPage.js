@@ -11,9 +11,7 @@ class IndoorPage extends Component {
     render() {
         return (
             <div id="indoorPage">
-                <Window 
-                
-                />
+                {this.renderWeather(data)}
                 <div className="outsideweather"></div>
                 <Draggable>
                     <div><PottedPlants 
