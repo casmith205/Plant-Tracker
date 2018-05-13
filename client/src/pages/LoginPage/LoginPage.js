@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
-import Navbar from '../../components/NavBar'
-import Footer from '../../components/Footer'
 import styles from './LoginPage.css';
 
 class LoginPage extends Component {

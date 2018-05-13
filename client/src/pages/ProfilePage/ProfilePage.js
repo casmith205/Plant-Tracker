@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import ProfilePic from "../../components/Profile/ProfilePic";
 import BadgeContainer from "../../components/Profile/BadgeContainer";
