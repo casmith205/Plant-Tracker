@@ -10,17 +10,19 @@ class IndoorPage extends Component {
 
     render() {
         return (
-            <div>
-                <div className="sharethis-inline-share-buttons"></div>
+            <div id="indoorPage">
                 <Window 
-                onClick={this.handleGoOutside}
+                
                 />
+                <div className="outsideweather"></div>
                 <Draggable>
                     <div><PottedPlants 
                     name="pottedplant"
                     /></div>
                 </Draggable>
-                <Door />
+                <Door 
+                onClick={this.handleGoOutside}
+                />
                 <JokeContainer />
             </div>
         )
