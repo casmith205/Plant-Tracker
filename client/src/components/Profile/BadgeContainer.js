@@ -1,10 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-const BadgeContainer = props => (
- <div>
- </div>   
-)
+class BadgeContainer extends Component {
+    render () {
+        return (
+            <div>
+                <h4>Your Badges</h4>
+                <p>Render Badges here</p>
+            </div>  
+)}
+}
 
 
 
-export default BadegeContainer;
+export default BadgeContainer;
