@@ -4,6 +4,7 @@ import ProfilePic from "../../components/Profile/ProfilePic";
 import BadgeContainer from "../../components/Profile/BadgeContainer";
 import IndoorContainer from "../../components/Profile/IndoorPlantContainer";
 import OutdoorContainer from "../../components/Profile/OutdoorPlantContainer";
+import styles from "./ProfilePage.css"
 
 class ProfilePage extends Component {
     render () {

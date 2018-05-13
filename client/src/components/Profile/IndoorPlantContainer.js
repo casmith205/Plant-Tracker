@@ -4,7 +4,14 @@ class IndoorContainer extends Component {
     render() {
         return (
             <div>
-                <h4>Your Indoor Plants</h4>
+                <h4 className="center-align">Your Indoor Plants</h4>
+                <ul className="center-align">
+                    <li>Scully</li>
+                    <li>Dracula</li>
+                    <li>Audrey II</li>
+                    <li>Hades</li>
+                    <li>Queequeg</li>
+                </ul>
             </div> 
 )}
 }
