@@ -9,9 +9,7 @@ class ProfilePage extends Component {
     render () {
         return (
             <div id="profilepage">
-            <NavBar />
             <ProfilePic />
-            <Footer />
             </div>
 
         )};

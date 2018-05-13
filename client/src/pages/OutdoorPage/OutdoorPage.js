@@ -14,13 +14,11 @@ class OutdoorPage extends Component {
     render() {
         return (
             <div id="outdoorPage">
-                <NavBar />
                 <House
                 />
                 <AddPlantIcon
                     name="hello Matthew you lovely person. --matthew"
                 />
-                <Footer />
             </div>
         )
     }
