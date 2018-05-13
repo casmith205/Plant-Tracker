@@ -1,8 +1,12 @@
-import React from "react";
+import React, { Component } from "react";
 
-const NavBar = props => (
-    <div>
-    </div> 
-)
+class OutdoorContainer extends Component {
+    render() {
+        return (
+            <div>
+                <h4>Your Outdoor Plants</h4>
+            </div> 
+)}
+}
 
-export default NavBar;
+export default OutdoorContainer;
