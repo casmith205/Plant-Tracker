@@ -29,36 +29,22 @@ class LoginPage extends Component {
         }
     };
 
-    handleLoginSubmit = event => {
+    handleSignUpSubmit = event => {
         event.preventDefault();
         if (this.state.username && this.state.userpassword) {
             API.registerUser({
-                username: this.state.username,
+                userName: this.state.username,
                 password: this.state.password,
-                firstname: this.state.firstname,
-                lastname: this.state.lastname
+                email: this.state.email,
+                cellPhone: this.state.cellPhone,
+                address: this.state.address,
+                zipCode: this.state.zipCode
             })
                 .then(res => this.handleUserLogin())
                 .catch(err => console.log(err));
         }
     };
 
-    // handleUserLogin = event => {
-
-    // }
-
-        // Will need to add some helper on this but I don't know how to do this.
-        // handleHelpSubmit = event => {
-        //     event.preventDefault();
-        //     if (this.state.username && this.state.userpassword) {
-        //         API.loginUser({
-        //             username: this.state.username,
-        //             password: this.state.password
-        //         })
-        //             .then(res => this.handleUserLogin())
-        //             .catch(err => console.log(err));
-        //     }
-        // };
 
     render() {
         return (
@@ -85,7 +71,7 @@ class LoginPage extends Component {
                         </div>
                         <div className="col s6">
                             <a
-                                onClick={this.handleFormSubmit}
+                                onClick={this.handleLoginSubmit}
                                 type="success"
                                 className="input-lg waves-effect waves-light btn"
                             >
@@ -94,7 +80,7 @@ class LoginPage extends Component {
                         </div>
                         <div className="col s6">
                             <a
-                                onClick={this.handleFormSubmit}
+                                onClick={this.handleSignUpSubmit}
                                 type="success"
                                 className="input-lg waves-effect waves-light btn"
                             >
