@@ -1,10 +1,9 @@
 import React from "react";
 
-const House = () => (
+export const House = () => (
     <div>
-    <i class="material-icons">home</i>
+        <i className="material-icons">home</i>
+        <p>here's the house</p>
     </div>
 
 )
-
-export default House;

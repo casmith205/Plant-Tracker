@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import ProfilePic from "../../components/Profile/ProfilePic";
-import BadgeContainer from "../../components/Profile/BadgeContainer";
-import IndoorContainer from "../../components/Profile/IndoorPlantContainer";
-import OutdoorContainer from "../../components/Profile/OutdoorPlantContainer";
+import { ProfilePic, BadgeContainer, IndoorPlantContainer, OutdoorPlantContainer } from "../../components/Profile";
 import styles from "./ProfilePage.css"
 
 class ProfilePage extends Component {
@@ -25,10 +22,10 @@ class ProfilePage extends Component {
                 </div>
                 <div id ="plantcontainers" className="row">
                     <div className="col m6">
-                    <IndoorContainer />
+                    <IndoorPlantContainer />
                     </div>
                     <div className="col m6">
-                    <OutdoorContainer />
+                    <OutdoorPlantContainer />
                     </div>
                 </div>
             </div>

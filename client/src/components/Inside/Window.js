@@ -1,8 +1,7 @@
 import React from "react";
 
-const NavBar = props => (
+const Window = props => (
     <div>
+        <p>I'm a window</p>
     </div> 
 )
-
-export default NavBar;

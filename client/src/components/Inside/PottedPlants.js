@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import PlantInfo from "../PlantInfo"
+import { PlantInfo } from "../../components"
 
 
 class PottedPlants extends Component {
@@ -13,6 +13,5 @@ class PottedPlants extends Component {
     </div>
         )}
 }
-
 
 export default PottedPlants;
