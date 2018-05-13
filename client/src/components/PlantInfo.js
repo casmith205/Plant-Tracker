@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlantInfo = props => (
+export const PlantInfo = props => (
     <div>
         {/* <!-- Dropdown Trigger -->
         <a class='dropdown-trigger btn' href='#' data-target="plantDropdown">Plant</a> */}
@@ -18,6 +18,7 @@ const PlantInfo = props => (
             <li>I'm parched feed me<a class="waves-effect waves-light btn-small">WATER ME</a>
             </li>
         </ul>
+        <p>Plant Info component</p>
         {/* <!-- Dropdown Structure --> */}
         {/* <ul id='dropdown1' class='dropdown-content'>
             <li>Plant Name: {props.plantName}  </li>
@@ -35,5 +36,3 @@ const PlantInfo = props => (
     </div>
 
     )
-
-export default PlantInfo;

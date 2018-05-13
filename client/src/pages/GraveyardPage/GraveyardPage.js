@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { DeadPlantInfo, Tombstone } from "../../components/Inside/";
+import { DeadPlantInfo, Tombstone } from "../../components/Graveyard";
 import API from "../../utils/API";
 
 class GraveyardPage extends Component {

@@ -1,18 +1,21 @@
 import React from "react";
 
-const Modal = props => (
-  // <!-- Modal Trigger -->
-  <a class="waves-effect waves-light btn modal-trigger" href="#signUp">Modal</a>
-
-  // <!-- Modal Structure -->
-  <div id="signUp" class="modal">
-    <div class="modal-content">
-      <h4></h4>
-      <p><p>
+export const Modal = props => (
+  <div>
+    <div>
+    {/* // <!-- Modal Trigger --> */}
+      <a class="waves-effect waves-light btn modal-trigger" href="#signUp">Modal</a>
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat"{...props}>Sign Up</a>
+    {/* // <!-- Modal Structure --> */}
+    <div id="signUp" className="modal">
+      <div class="modal-content">
+        <h4>srgre</h4>
+        <p>bgdrbd</p>
+      </div>
     </div>
+      <div className="modal-footer">
+        <a href="#!" className="modal-close waves-effect waves-green btn-flat"{...props}>Sign Up</a>
+      </div>
   </div>
 );
 

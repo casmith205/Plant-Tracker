@@ -1,8 +1,7 @@
 import React from "react";
 
-const NavBar = props => (
+export const Tombstone = props => (
     <div>
+        I'm a tombstone, not the pizza kind
     </div> 
 )
-
-export default NavBar;

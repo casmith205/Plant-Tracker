@@ -1,12 +1,10 @@
-import Plants from "../../components/Outside/Plants";
-import AddPlant from "../../components/addPlant";
-import AddPlantIcon from "../../components/AddPlantIcon";
+import { addPlant, AddPlantIcon } from "../../components";
 import React, { Component } from "react";
 import API from "../../utils/API";
 // import styles from '/OutdoorPage.css';
-import House from '../../components/Outside/House';
+import { House, Plants, OutsidePlants } from '../../components/Outside';
 import IndoorPage from "../IndoorPage/IndoorPage";
-// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 class OutdoorPage extends Component {
     handleGoInside() {
@@ -19,6 +17,7 @@ class OutdoorPage extends Component {
                 <House
                     onClick={this.handleGoInside}
                 />
+                <OutsidePlants />
                 <Draggable>
                     <div>
                         <AddPlantIcon

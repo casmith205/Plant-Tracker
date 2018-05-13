@@ -1,7 +1,5 @@
 import React from "react";
 
-const NavBar = props => (
+export const DeadPlantInfo = props => (
     <h1> Dead Plant Info </h1>
 )
-
-export default NavBar;
