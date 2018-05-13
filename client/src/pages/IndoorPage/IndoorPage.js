@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import JokeContainer from "../../components/Inside/JokeContainer";
-import NavBar from "../../components/NavBar";
 import PottedPlants from "../../components/Inside/PottedPlants"
 
 class IndoorPage extends Component {
