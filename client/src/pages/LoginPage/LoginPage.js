@@ -66,7 +66,6 @@ class LoginPage extends Component {
         return (
             <div className="container">
                 <div className="row" id="topnav">
-                <Navbar />
                 </div>
                 <div id="loginpage" className="row">
                     <form className="col s12">
@@ -114,9 +113,6 @@ class LoginPage extends Component {
                             </a>
                         </div> */}
                     </form>
-                </div>
-                <div className="row" id="footer">
-                <Footer />
                 </div>
             </div>
             )
