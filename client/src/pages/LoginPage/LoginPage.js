@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import styles from './LoginPage.css';
+import RegistrationPage from "../RegistrationPage/RegistrationPage";
 
 class LoginPage extends Component {
     state = {
@@ -31,21 +32,6 @@ class LoginPage extends Component {
             .catch(err => console.log(err));
 
     };
-
-    handleSignUpSubmit = event => {
-        event.preventDefault();
-        API.registerUser({
-            userName: this.state.userName,
-            password: this.state.password,
-            email: this.state.email,
-            cellPhone: this.state.cellPhone,
-            address: this.state.address,
-            zipCode: this.state.zipCode
-        })
-            .then(res => console.log("signed up!"))
-            .catch(err => console.log(err));
-    };
-
 
     render() {
         return (
@@ -83,8 +69,7 @@ class LoginPage extends Component {
                             </div>
                             <div className="col s6">
                                 <a
-                                    onClick={this.handleSignUpSubmit}
-                                    type="success"
+                                    href="/registration"
                                     className="input-lg waves-effect waves-light btn"
                                 >
                                     Signup

@@ -7,16 +7,16 @@ import IndoorPage from "../IndoorPage/IndoorPage";
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 class OutdoorPage extends Component {
-    handleGoInside() {
-        return <IndoorPage />
-    }
+    // handleGoInside() {
+    //     return <IndoorPage />
+    // }
 
     render() {
         return (
             <div id="outdoorPage" clasNames="content">
-                <House
-                    onClick={this.handleGoInside}
-                />
+                <a href="/indoorplants"><House
+                    
+                /></a>
                 <OutsidePlants />
                 <Draggable>
                     <div>
