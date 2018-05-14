@@ -76,6 +76,9 @@ module.exports = function (sequelize, DataTypes) {
     User.hasMany(models.UserBadge, {
       onDelete: "cascade"
     });
+    User.hasMany(models.Friend, {
+      onDelete: "cascade"
+    });
   };
   console.log("User End")
 

@@ -18,13 +18,13 @@ module.exports = function (sequelize, DataTypes) {
         },
         // frequency in days of needing to be watered
         wateringInterval:{
-            type:DataTypes.INTEGER,
+            type:DataTypes.STRING,
             allowNull: false,
         },
         // last watered date and time
         lastWateredDate:{
             type:DataTypes.DATEONLY,
-            defaultValue: sequelize.NOW
+            defaultValue: DataTypes.NOW
         },
         //alive, dead, needs attention
         status: {
@@ -32,7 +32,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
             defaultValue: 'alive'
         },
-        //valid types are indoor, outdoor
+        //valid types are Indoor, Outdoor
         type: {
             type: DataTypes.STRING,
             allowNull: false,
