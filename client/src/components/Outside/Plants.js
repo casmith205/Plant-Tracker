@@ -9,32 +9,17 @@ export const Plants = props => (
 
         <div>
             {/* <!-- Dropdown Trigger --> */}
-            <a className='dropdown-button btn' data-activates="plantDropdown">Outside Plant</a>
+            <img className="dropdown-button" data-activates="plantDropdown" src="../../images/outsideplant.png" alt="outside plant" />
             <PlantInfo
                 plantName="the coolest flower"
-                type="indoor"
+                type="outdoor"
                 status="alive"
-                needsWater="true" />
+                needsWater="false" />
         </div>
     </Draggable>
 
 )
 
-// class OutsidePlants extends Component {
-//     render() {
-//         return (
-//             <Draggable>
-//             <div>
-//             <a className='dropdown-button btn' data-activates="plantDropdown">Potted Plant</a>
-//                     <PlantInfo 
-//                     plantName= "the coolest flower"
-//                     type = "indoor"
-//                     status = "alive"
-//                     needsWater = "true" /> 
-//                 </div>
-//             </Draggable>
-//         )
-//     }
-// }
+
 
 export default PottedPlants
