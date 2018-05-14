@@ -12,7 +12,7 @@ class PottedPlants extends Component {
                 <div>
                     {/* <!-- Dropdown Trigger --> */}
                     <img className ="dropdown-button" data-activates="plantDropdown" 
-                    src ="../../indoorflower.png" alt ="potted plant" />
+                    src ={require("../../images/indoorflower.png")} alt ="potted plant" />
                     <PlantInfo 
                     plantName= "the coolest flower"
                     type = "indoor"
