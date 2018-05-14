@@ -4,10 +4,12 @@ export default {
     // User axios functions
     // Check user login and log user in
     loginUser: function (user) {
+        console.log("heyo, let's log in, "+ user.userName)
         return axios.post("/api/login/", user);
     },
     // Register user
     registerUser: function (user) {
+        console.log("heyo, let's SIGN UP!")
         return axios.post("/api/signup/", user);
     },
     // Update user
