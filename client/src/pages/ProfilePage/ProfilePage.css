@@ -1,6 +1,14 @@
 /* body {
     background-image: url("../../images/profilebackground.jpg");
 } */
+#profilepage {
+    background-size: cover;
+    background-image: url("../../images/profilebackground.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-bottom: 7em;
+}
+
 #plantcontainers {
     /* border: 1px solid black; */
     padding: 25px;
