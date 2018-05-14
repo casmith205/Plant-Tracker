@@ -13,7 +13,7 @@ class OutdoorPage extends Component {
 
     render() {
         return (
-            <div id="outdoorPage">
+            <div id="outdoorPage" clasNames="content">
                 <House
                     onClick={this.handleGoInside}
                 />

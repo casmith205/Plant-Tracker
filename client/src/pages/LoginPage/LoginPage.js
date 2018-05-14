@@ -57,59 +57,61 @@ class LoginPage extends Component {
 
     render() {
         return (
-            <div id="loginpage">
-            <div className="container">
-                <div className="row" id="topnav">
-                </div>
-                <div className="row" id="loginbox">
-                    <form className="col s12">
-                        <div className="row">
-                            <Input
-                                name="userName"
-                                value={this.state.userName}
-                                onChange={this.handleInputChange}
-                                placeholder="Username"
-                            />
-                        </div>
-                        <div class="row">
-                            <Input
-                                name="password"
-                                value={this.state.password}
-                                onChange={this.handleInputChange}
-                                placeholder="Password"
-                            />
-                        </div>
-                        <div className="col s6">
-                            <a
-                                onClick={this.handleLoginSubmit}
-                                type="success"
-                                className="input-lg waves-effect waves-light btn"
-                            >
-                                Login
-                            </a>
-                        </div>
-                        <div className="col s6">
-                            <a
-                                onClick={this.handleSignUpSubmit}
-                                type="success"
-                                className="input-lg waves-effect waves-light btn"
-                            >
-                                Signup
-                            </a>
-                        </div>
-                        {/* <div className="col s6">
-                            <a
-                                onClick={this.handleHelpSubmit}
-                                type="success"
-                                className="input-lg waves-effect waves-light btn"
-                            >
-                                Help Logging In
-                            </a>
-                        </div> */}
-                    </form>
+            <main>
+            <div id="loginpage" className="content">
+                <div className="container">
+                    <div className="row" id="topnav">
+                    </div>
+                    <div className="row" id="loginbox">
+                        <form className="col s12">
+                            <div className="row">
+                                <Input
+                                    name="userName"
+                                    value={this.state.userName}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Username"
+                                />
+                            </div>
+                            <div class="row">
+                                <Input
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.handleInputChange}
+                                    placeholder="Password"
+                                />
+                            </div>
+                            <div className="col s6">
+                                <a
+                                    onClick={this.handleLoginSubmit}
+                                    type="success"
+                                    className="input-lg waves-effect waves-light btn"
+                                >
+                                    Login
+                                </a>
+                            </div>
+                            <div className="col s6">
+                                <a
+                                    onClick={this.handleSignUpSubmit}
+                                    type="success"
+                                    className="input-lg waves-effect waves-light btn"
+                                >
+                                    Signup
+                                </a>
+                            </div>
+                            {/* <div className="col s6">
+                                <a
+                                    onClick={this.handleHelpSubmit}
+                                    type="success"
+                                    className="input-lg waves-effect waves-light btn"
+                                >
+                                    Help Logging In
+                                </a>
+                            </div> */}
+                        </form>
+                    </div>
                 </div>
             </div>
-            </div>
+            </main>
         )
     }
 }

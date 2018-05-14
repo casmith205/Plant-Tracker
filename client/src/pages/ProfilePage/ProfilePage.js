@@ -6,7 +6,7 @@ import { ProfilePic, BadgeContainer, IndoorPlantContainer, OutdoorPlantContainer
 class ProfilePage extends Component {
     render () {
         return (
-            <div id="profilepage">
+            <div id="profilepage" className="content">
                 <div id="welcomebanner">
                     <h3> Welcome, Gardener! </h3>
                     </div>
