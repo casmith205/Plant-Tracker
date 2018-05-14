@@ -25,9 +25,6 @@ class LoginPage extends Component {
 
     handleLoginSubmit = event => {
         event.preventDefault();
-        console.log("Hello I am logging in!");
-        console.log(this.state);
-        console.log(this.state.userName);
         API.loginUser({
             userName: this.state.userName,
             password: this.state.password
@@ -39,9 +36,6 @@ class LoginPage extends Component {
 
     handleSignUpSubmit = event => {
         event.preventDefault();
-        console.log("Hello I am signing up!");
-        console.log(this.state);
-        console.log(this.state.userName);
         API.registerUser({
             userName: this.state.userName,
             password: this.state.password,
