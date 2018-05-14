@@ -1,0 +1,11 @@
+#topnav {
+    padding-bottom: 150px;
+}
+
+#regpage {
+    background-size: cover;
+    background-image: url("../../images/regbackground.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-bottom: 7em;
+}

@@ -6,7 +6,7 @@ const passport   = require("./config/passport");
 const session = require("express-session");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 
 
 // Configure body parser for AJAX requests
