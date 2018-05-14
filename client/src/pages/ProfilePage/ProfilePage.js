@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { ProfilePic, BadgeContainer, IndoorPlantContainer, OutdoorPlantContainer } from "../../components/Profile";
-// import styles from "./ProfilePage.css"
+import styles from "./ProfilePage.css"
 
 class ProfilePage extends Component {
     render () {
