@@ -1,0 +1,25 @@
+body {
+    background-image: url("../../images/profilebackground.jpg");
+}
+#plantcontainers {
+    /* border: 1px solid black; */
+    padding: 25px;
+    opacity: .8;
+    background-color: whitesmoke;
+}
+
+#mainprofile {
+    padding: 25px;
+    opacity: .8;
+    background-color: whitesmoke;
+}
+
+#welcomebanner {
+    padding-left: 100px;
+}
+
+#image {
+    padding-left: 100px;
+}
+
+

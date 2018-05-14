@@ -1,0 +1,19 @@
+body {
+    background-image: url("../../images/loginbackground.jpg");
+}
+
+#topnav {
+    padding-bottom: 150px;
+}
+
+#loginpage {
+    padding: 25px;
+    opacity: .7;
+    background-color: whitesmoke;
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    height: 14em;
+}
