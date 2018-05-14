@@ -19,8 +19,4 @@ export const Plants = props => (
         </div>
     </Draggable>
 
-)
-
-
-
-export default PottedPlants
+);
