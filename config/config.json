@@ -2,8 +2,9 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "plant_tracker_db",
-    "host": "127.0.0.1",
+    "database": "plantdb",
+    "host": "localhost",
+    "port": 8889,
     "dialect": "mysql"
   },
   "test": {
@@ -15,9 +16,10 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "root",
+    "database": "plantdb",
     "host": "127.0.0.1",
+    "port": 8889,
     "dialect": "mysql"
   }
 }
