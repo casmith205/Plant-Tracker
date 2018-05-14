@@ -19,12 +19,14 @@ passport.use(new LocalStrategy(
     }).then(function(dbUser) {
       // If there's no user with the given userName
       if (!dbUser) {
+        console.log("not found");
         return done(null, false, {
           message: "Incorrect email."
         });
       }
       // If there is a user with the given userName, but the password the user gives us is incorrect
       else if (!dbUser.validPassword(password)) {
+        console.log("nope wrong password");
         return done(null, false, {
           message: "Incorrect password."
         });
