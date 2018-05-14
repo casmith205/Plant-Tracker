@@ -8,7 +8,7 @@ class GraveyardPage extends Component {
 
     render() {
         return (
-            <div id="graveyardpage">
+            <div id="graveyardpage" className="content">
                 <h1>Welcome to the spooooooooky graveyard</h1>
                 <Draggable>
                 <Tombstone />

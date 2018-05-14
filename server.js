@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const sequelize = require("sequelize");
 const passport   = require("./config/passport");
 const session = require("express-session");
-const routes = require("./routes");
+const apiRoutes = require("./routes/api/api-routes.js");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Add routes, both API and view
-const apiRoutes = require("./routes/api/api-routes.js");
+
 app.use(apiRoutes);
 
 // Send every request to the React app

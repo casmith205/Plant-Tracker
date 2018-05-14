@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { ProfilePic, BadgeContainer, IndoorPlantContainer, OutdoorPlantContainer } from "../../components/Profile";
-// import styles from "./ProfilePage.css"
+import styles from "./ProfilePage.css"
 
 class ProfilePage extends Component {
     render () {
         return (
-            <div id="profilepage">
+            <div id="profilepage" className="content">
                 <div id="welcomebanner">
                     <h3> Welcome, Gardener! </h3>
                     </div>
