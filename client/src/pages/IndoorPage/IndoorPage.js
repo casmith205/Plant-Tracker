@@ -12,20 +12,22 @@ class IndoorPage extends Component {
 
     render() {
         return (
-            <div id="indoorPage">
-                {/* {this.renderWeather(data)} */}
-                <div className="outsideweather"></div>
-                <Draggable>
-                    <div><PottedPlants 
-                    name="pottedplant"
-                    /></div>
-                </Draggable>
-                <Door 
-                onClick={this.handleGoOutside}
-                />
-                <JokeContainer />
-                <Window />
-            </div>
+            <main>
+                <div id="indoorPage" className="content">
+                    {/* {this.renderWeather(data)} */}
+                    <div className="outsideweather"></div>
+                    <Draggable>
+                        <div><PottedPlants 
+                        name="pottedplant"
+                        /></div>
+                    </Draggable>
+                    <Door 
+                    onClick={this.handleGoOutside}
+                    />
+                    <JokeContainer />
+                    <Window />
+                </div>
+            </main>
         )
     }
 }
