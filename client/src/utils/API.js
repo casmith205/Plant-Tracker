@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
     // User axios functions
     // Check user login and log user in
-    loginUser: function (id) {
-        return axios.get("/api/login/" + id);
+    loginUser: function (user) {
+        return axios.post("/api/login/", user);
     },
     // Register user
     registerUser: function (user) {

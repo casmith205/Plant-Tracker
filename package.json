@@ -4,7 +4,13 @@
   "description": "A full-stack project utilizing React, MySQL, and JavaScript to effectively track a user's indoor and outdoor plants.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
+    "seed": "node scripts/seedDB.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "installDeps": "yarn && cd client && yarn"
   },
   "repository": {
     "type": "git",
@@ -20,17 +26,25 @@
     "axios": "^0.18.0",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
     "express": "^4.16.3",
-    "sequelize-auto": "^0.4.29",
     "express-session": "^1.15.6",
     "fs": "^0.0.1-security",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-draggable": "^3.0.5",
     "react-lightweight-tooltip": "^1.0.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "router": "^1.3.2",
     "sequelize": "^4.37.7",
-    "sequelize-cli": "^4.0.0"
+    "sequelize-auto": "^0.4.29",
+    "sequelize-cli": "^4.0.0",
+    "yarn": "^1.6.0"
   }
 }
