@@ -8,7 +8,7 @@ export default {
     },
     // Register user
     registerUser: function (user) {
-        return axios.post("/api/signup", user);
+        return axios.post("/api/signup/", user);
     },
     // Update user
     updateUser: function (user) {

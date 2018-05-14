@@ -6,7 +6,7 @@ import styles from './LoginPage.css';
 
 class LoginPage extends Component {
     state = {
-        user: "",
+        userName: "",
         password: ""
     };
 
@@ -19,9 +19,12 @@ class LoginPage extends Component {
 
     handleLoginSubmit = event => {
         event.preventDefault();
+        console.log("Hello I am logging in!");
+        console.log(this.state);
+        console.log(this.state.userName);
         if (this.state.username && this.state.userpassword) {
             API.loginUser({
-                username: this.state.username,
+                username: this.state.userName,
                 password: this.state.password
             })
                 .then(res => this.handleUserLogin())
@@ -31,63 +34,64 @@ class LoginPage extends Component {
 
     handleSignUpSubmit = event => {
         event.preventDefault();
-        if (this.state.username && this.state.userpassword) {
-            API.registerUser({
-                userName: this.state.username,
-                password: this.state.password,
-                email: this.state.email,
-                cellPhone: this.state.cellPhone,
-                address: this.state.address,
-                zipCode: this.state.zipCode
-            })
-                .then(res => this.handleUserLogin())
-                .catch(err => console.log(err));
-        }
-    };
+        console.log("Hello I am signing up!");
+        console.log(this.state);
+        console.log(this.state.username);
+        API.registerUser({
+            userName: this.state.username,
+            password: this.state.password,
+            email: this.state.email,
+            cellPhone: this.state.cellPhone,
+            address: this.state.address,
+            zipCode: this.state.zipCode
+        })
+            .then(res => this.handleUserLogin())
+            .catch(err => console.log(err));
+};
 
 
-    render() {
-        return (
-            <div className="container">
-                <div className="row" id="topnav">
-                </div>
-                <div id="loginpage" className="row">
-                    <form className="col s12">
-                        <div className="row">
-                            <Input
-                                name="userlogin"
-                                value={this.state.username}
-                                onChange={this.handleInputChange}
-                                placeholder="Username"
-                            />
-                        </div>
-                        <div className="row">
-                            <Input
-                                name="userlogin"
-                                value={this.state.password}
-                                onChange={this.handleInputChange}
+render() {
+    return (
+        <div className="container">
+            <div className="row" id="topnav">
+            </div>
+            <div id="loginpage" className="row">
+                <form className="col s12">
+                    <div className="row">
+                        <Input
+                            name="userName"
+                            value={this.state.userName}
+                            onChange={this.handleInputChange}
+                            placeholder="Username"
+                        />
+                    </div>
+                    <div class="row">
+                        <Input
+                            name="password"
+                            value={this.state.password}
+                            onChange={this.handleInputChange}
                             placeholder="Password"
-                            />
-                        </div>
-                        <div className="col s6">
-                            <a
-                                onClick={this.handleLoginSubmit}
-                                type="success"
-                                className="input-lg waves-effect waves-light btn"
-                            >
-                                Login
+                        />
+                    </div>
+                    <div className="col s6">
+                        <a
+                            onClick={this.handleLoginSubmit}
+                            type="success"
+                            className="input-lg waves-effect waves-light btn"
+                        >
+                            Login
                             </a>
-                        </div>
-                        <div className="col s6">
-                            <a
-                                onClick={this.handleSignUpSubmit}
-                                type="success"
-                                className="input-lg waves-effect waves-light btn"
-                            >
-                                Signup
+                    </div>
+                    <div className="col s6">
+                        <a
+                            onClick={this.handleSignUpSubmit}
+                            type="success"
+                            className="input-lg waves-effect waves-light btn"
+                        >
+                            Signup
                             </a>
-                        </div>
-                        {/* <div className="col s6">
+                    </div>
+                    {/* <div className="col s6">
                             <a
                                 onClick={this.handleHelpSubmit}
                                 type="success"
@@ -96,11 +100,11 @@ class LoginPage extends Component {
                                 Help Logging In
                             </a>
                         </div> */}
-                    </form>
-                </div>
+                </form>
             </div>
-            )
-        }
+        </div>
+    )
+}
     }
 
 export default LoginPage;
