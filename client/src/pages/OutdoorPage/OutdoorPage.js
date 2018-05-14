@@ -14,6 +14,7 @@ class OutdoorPage extends Component {
     render() {
         return (
             <div id="outdoorPage" clasNames="content">
+
             {/* <div className="row"> */}
             <OutsidePlants />
                 <Draggable>
@@ -25,6 +26,7 @@ class OutdoorPage extends Component {
                 <Plants />
             {/* </div> */}
             <div className="row">
+
             </div>
             <div className="row">
             <div className="col l2">
