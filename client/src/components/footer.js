@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./Footer.css";
 
 class Footer extends Component {
     render() {
@@ -6,10 +7,11 @@ class Footer extends Component {
             <footer className="page-footer">
                 <div className="container">
                     <div className="row">
-                        <div className="col l6 s12">
-                            <h5 className="white-text">Footer Content</h5>
+                        <div className="col l6 s6">
                             <p className="grey-text text-lighten-4">Feeding your plant love since 2018</p>
-                            <div className="sharethis-inline-share-buttons"></div>
+                        </div>
+                        <div className="col l6 s6">
+                        <div id="sharebuttons" className="sharethis-inline-share-buttons"></div>
                         </div>
                     </div>
                 </div>
