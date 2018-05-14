@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import Input from '../../components/Login/Input'
-import styles from './LoginPage.css';
+// import styles from './LoginPage.css';
 
 class LoginPage extends Component {
     state = {
@@ -57,6 +57,11 @@ class LoginPage extends Component {
 
     render() {
         return (
+            <div
+            style={{
+                background: `url("../../images/loginbackground.jpg") no-repeat center`
+            }}
+                >
             <div className="container">
                 <div className="row" id="topnav">
                 </div>
@@ -107,6 +112,7 @@ class LoginPage extends Component {
                         </div> */}
                     </form>
                 </div>
+            </div>
             </div>
         )
     }

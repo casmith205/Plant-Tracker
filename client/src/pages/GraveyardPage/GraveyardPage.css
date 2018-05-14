@@ -1,7 +1,12 @@
-#graveyardpage {
-    margin-bottom: 0px;
-    background-image: url("../../images/graceyardBackground.jpg");
-    background-position: 0% 25%;
-    background-size: cover;
+/* body {
+    background-image: url("../../images/graveyardBackground.jpg");
     background-repeat: no-repeat;
+} */
+
+#topnav {
+    padding-bottom: 150px;
+}
+#graveyardpage {
+
+    margin-bottom: 0px;
 }
