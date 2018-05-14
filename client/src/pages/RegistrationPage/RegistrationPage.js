@@ -26,7 +26,6 @@ class RegistrationPage extends Component {
     handleRegSubmit = event => {
         event.preventDefault();
         console.log("Hello I am signing up!");
-        console.log(this.state);
         console.log(this.state.userName);
         API.registerUser({
             userName: this.state.userName,
