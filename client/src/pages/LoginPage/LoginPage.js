@@ -16,6 +16,8 @@ class LoginPage extends Component {
 
     handleInputChange = event => {
         const { name, value } = event.target;
+        console.log("name: ", name, "value: ", value)
+        console.log(event.target)
         this.setState({
             [name]: value
         })
@@ -70,7 +72,7 @@ class LoginPage extends Component {
                         </div>
                         <div class="row">
                             <Input
-                                name="password"
+                                name="userpassword"
                                 value={this.state.password}
                                 onChange={this.handleInputChange}
                                 placeholder="Password"

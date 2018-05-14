@@ -1,9 +1,11 @@
 import React from "react";
 
+
+
 export const PlantInfo = props => (
     <div>
-        {/* <!-- Dropdown Trigger -->
-        <a className='dropdown-trigger btn' href='#' data-target="plantDropdown">Plant</a> */}
+        {/* <!-- Dropdown Trigger --> */}
+        <a className='dropdown-trigger btn' href='#' data-target="plantDropdown">Plant</a>
 
         {/* TEST W/O USING PROPS */}
         <ul id="plantDropdown" className='dropdown-content'>

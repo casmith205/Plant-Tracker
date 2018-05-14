@@ -24,6 +24,7 @@ class OutdoorPage extends Component {
                             name="addplant"
                         /></div>
                 </Draggable>
+                <Plants />
             </div>
         )
     }
