@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const plantsController = require("../controllers/plantsController");
-const authController = require("../controllers/authController");
+const plantsController = require("../../controllers/plantsController");
+const authController = require("../../controllers/authController");
 
 // Handle get for users login and createUser - /api/user
 router.route("/api/login")
