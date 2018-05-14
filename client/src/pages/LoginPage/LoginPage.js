@@ -7,7 +7,11 @@ import styles from './LoginPage.css';
 class LoginPage extends Component {
     state = {
         userName: "",
-        password: ""
+        password: "",
+        email: "",
+        cellPhone: "",
+        address: "",
+        zipCode: ""
     };
 
     handleInputChange = event => {
@@ -22,76 +26,75 @@ class LoginPage extends Component {
         console.log("Hello I am logging in!");
         console.log(this.state);
         console.log(this.state.userName);
-        if (this.state.username && this.state.userpassword) {
-            API.loginUser({
-                username: this.state.userName,
-                password: this.state.password
-            })
-                .then(res => this.handleUserLogin())
-                .catch(err => console.log(err));
-        }
+        API.loginUser({
+            userName: this.state.userName,
+            password: this.state.password
+        })
+            .then(res => console.log("logged in!"))
+            .catch(err => console.log(err));
+
     };
 
     handleSignUpSubmit = event => {
         event.preventDefault();
         console.log("Hello I am signing up!");
         console.log(this.state);
-        console.log(this.state.username);
+        console.log(this.state.userName);
         API.registerUser({
-            userName: this.state.username,
+            userName: this.state.userName,
             password: this.state.password,
             email: this.state.email,
             cellPhone: this.state.cellPhone,
             address: this.state.address,
             zipCode: this.state.zipCode
         })
-            .then(res => this.handleUserLogin())
+            .then(res => console.log("signed up!"))
             .catch(err => console.log(err));
-};
+    };
 
 
-render() {
-    return (
-        <div className="container">
-            <div className="row" id="topnav">
-            </div>
-            <div id="loginpage" className="row">
-                <form className="col s12">
-                    <div className="row">
-                        <Input
-                            name="userName"
-                            value={this.state.userName}
-                            onChange={this.handleInputChange}
-                            placeholder="Username"
-                        />
-                    </div>
-                    <div class="row">
-                        <Input
-                            name="password"
-                            value={this.state.password}
-                            onChange={this.handleInputChange}
-                            placeholder="Password"
-                        />
-                    </div>
-                    <div className="col s6">
-                        <a
-                            onClick={this.handleLoginSubmit}
-                            type="success"
-                            className="input-lg waves-effect waves-light btn"
-                        >
-                            Login
+    render() {
+        return (
+            <div className="container">
+                <div className="row" id="topnav">
+                </div>
+                <div id="loginpage" className="row">
+                    <form className="col s12">
+                        <div className="row">
+                            <Input
+                                name="userName"
+                                value={this.state.userName}
+                                onChange={this.handleInputChange}
+                                placeholder="Username"
+                            />
+                        </div>
+                        <div class="row">
+                            <Input
+                                name="password"
+                                value={this.state.password}
+                                onChange={this.handleInputChange}
+                                placeholder="Password"
+                            />
+                        </div>
+                        <div className="col s6">
+                            <a
+                                onClick={this.handleLoginSubmit}
+                                type="success"
+                                className="input-lg waves-effect waves-light btn"
+                            >
+                                Login
                             </a>
-                    </div>
-                    <div className="col s6">
-                        <a
-                            onClick={this.handleSignUpSubmit}
-                            type="success"
-                            className="input-lg waves-effect waves-light btn"
-                        >
-                            Signup
+                        </div>
+                        <div className="col s6">
+                            <a
+                                onClick={this.handleSignUpSubmit}
+                                type="success"
+                                className="input-lg waves-effect waves-light btn"
+                            >
+                                Signup
                             </a>
-                    </div>
-                    {/* <div className="col s6">
+                        </div>
+                        {/* <div className="col s6">
                             <a
                                 onClick={this.handleHelpSubmit}
                                 type="success"
@@ -100,11 +103,11 @@ render() {
                                 Help Logging In
                             </a>
                         </div> */}
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-    )
-}
+        )
     }
+}
 
 export default LoginPage;
