@@ -72,7 +72,7 @@ class LoginPage extends Component {
                         </div>
                         <div class="row">
                             <Input
-                                name="userpassword"
+                                name="password"
                                 value={this.state.password}
                                 onChange={this.handleInputChange}
                                 placeholder="Password"
