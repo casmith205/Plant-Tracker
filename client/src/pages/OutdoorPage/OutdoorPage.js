@@ -26,9 +26,6 @@ class OutdoorPage extends Component {
                 <Plants />
             {/* </div> */}
             <div className="row">
-
-            </div>
-            <div className="row">
             <div className="col l2">
             </div>
                 <div className="col l2">
