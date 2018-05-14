@@ -1,7 +1,12 @@
-/* #indoorPage {
-    margin-bottom: 0px;
+#indoorPage {
     background-image: url("../../images/IndoorBackground.png");
-} */
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-bottom: 7em;
+    margin-bottom: 0px;
+}
+
+
 .outsideweather {
     z-index: -1;
     background-position: 0% 25%;

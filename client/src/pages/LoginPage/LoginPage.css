@@ -1,6 +1,5 @@
 /* body {
     background-image: url("../../images/loginbackground.jpg");
-
     background-repeat: no-repeat;
 } */
 
@@ -8,14 +7,20 @@
     padding-bottom: 150px;
 }
 
-#loginpage {
-    padding: 25px;
+#loginbox {
     opacity: .7;
     background-color: whitesmoke;
-    background-position: 0% 25%;
-    background-size: cover;
- 
     color: white;
     text-align: center;
-    height: 14em;
+    height: 100%;
+    margin: 3em;
+    padding: 3em;
+}
+
+#loginpage {
+    background-size: cover;
+    background-image: url("../../images/loginbackground.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-bottom: 7em;
 }

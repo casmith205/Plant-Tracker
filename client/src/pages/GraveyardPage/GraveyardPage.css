@@ -1,12 +1,11 @@
-/* body {
-    background-image: url("../../images/graveyardBackground.jpg");
-    background-repeat: no-repeat;
-} */
-
 #topnav {
     padding-bottom: 150px;
 }
-#graveyardpage {
 
+#graveyardpage {
+    background-image: url("../../images/graveyardBackground.jpg");
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-bottom: 7em;
     margin-bottom: 0px;
 }

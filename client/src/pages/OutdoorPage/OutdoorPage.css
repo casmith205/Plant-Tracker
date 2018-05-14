@@ -1,10 +1,9 @@
 #outdoorPage {
     margin-bottom: 0px;
-    background-image: url("../../images/outsideBackground.jpg");
-    background-position: 0% 25%;
+    background-image: url("../../images/OutsideBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    height: 14em;
+    min-height: 100%;
+    padding-bottom: 7em;
+    bottom: 100px;
 }
