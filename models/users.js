@@ -3,7 +3,7 @@
 var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function (sequelize, DataTypes) {
-  console.log("User start")
+  console.log("User creation")
   var User = sequelize.define("User", {
 
     userName: {
@@ -80,7 +80,6 @@ module.exports = function (sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
-  console.log("User End")
 
   // Creating a custom method for our User model.
   //  This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
