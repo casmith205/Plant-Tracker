@@ -14,11 +14,11 @@ class IndoorPage extends Component {
             <div id="indoorPage">
                 {/* {this.renderWeather(data)} */}
                 <div className="outsideweather"></div>
-                <Draggable>
-                    <div><PottedPlants 
+                {/* <Draggable> */}
+                    <PottedPlants 
                     name="pottedplant"
-                    /></div>
-                </Draggable>
+                    />
+                {/* </Draggable> */}
                 <Door 
                 onClick={this.handleGoOutside}
                 />
