@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { JokeContainer, PottedPlants, Door  } from "../../components/Inside";
+import { JokeContainer, PottedPlants, Door, Window  } from "../../components/Inside";
 import OutdoorPage from "../OutdoorPage/OutdoorPage"
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 import API from "../../utils/API";
@@ -23,7 +23,7 @@ class IndoorPage extends Component {
                 onClick={this.handleGoOutside}
                 />
                 <JokeContainer />
-                {/* <Window /> Don't know why but it does not like the Window component*/}
+                <Window />
             </div>
         )
     }

@@ -8,7 +8,7 @@ class PottedPlants extends Component {
 
     <div>
         {/* <!-- Dropdown Trigger --> */}
-        <a class='dropdown-trigger btn' href='#' data-target="plantDropdown">Plant</a>
+        <a className='dropdown-trigger btn' href='#' data-target="plantDropdown">Potted Plant</a>
         <PlantInfo />
     </div>
         )}
