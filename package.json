@@ -21,7 +21,7 @@
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
-    "sequelize-auto": "^0.4.29"
+    "sequelize-auto": "^0.4.29",
     "express-session": "^1.15.6",
     "fs": "^0.0.1-security",
     "mysql": "^2.15.0",
