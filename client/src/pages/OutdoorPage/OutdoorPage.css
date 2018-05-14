@@ -1,10 +1,11 @@
 #outdoorPage {
     margin-bottom: 0px;
+    margin-right: 0px;
     background-image: url("../../images/OutsideBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
     min-width: 100%;
-    padding-bottom: 7em;
+    padding-bottom: 30em;
     bottom: 100px;
 }
