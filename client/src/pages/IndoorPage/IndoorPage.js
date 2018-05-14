@@ -6,9 +6,9 @@ import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 import API from "../../utils/API";
 
 class IndoorPage extends Component {
-    handleGoOutside() {
-        return <OutdoorPage />
-    }
+    // handleGoOutside() {
+    //     return <OutdoorPage />
+    // }
 
     render() {
         return (
@@ -21,9 +21,9 @@ class IndoorPage extends Component {
                         name="pottedplant"
                         /></div>
                     </Draggable>
-                    <Door 
-                    onClick={this.handleGoOutside}
-                    />
+                    <a href="/outdoorplants">
+                        <Door />
+                    </a>
                     <JokeContainer />
                     <Window />
                 </div>

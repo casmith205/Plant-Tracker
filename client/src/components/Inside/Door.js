@@ -2,6 +2,6 @@ import React from "react";
 
 export const Door = props => (
     <div>
-        Door goes here
+        <img src={require("../../images/door.png")} />
     </div> 
 )
