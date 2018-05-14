@@ -7,7 +7,11 @@ import styles from './LoginPage.css';
 class LoginPage extends Component {
     state = {
         userName: "",
-        password: ""
+        password: "",
+        email: "",
+        cellPhone: "",
+        address: "",
+        zipCode: ""
     };
 
     handleInputChange = event => {
@@ -22,7 +26,7 @@ class LoginPage extends Component {
         console.log("Hello I am logging in!");
         console.log(this.state);
         console.log(this.state.userName);
-        if (this.state.username && this.state.userpassword) {
+        if (this.state.userName && this.state.password) {
             API.loginUser({
                 username: this.state.userName,
                 password: this.state.password
