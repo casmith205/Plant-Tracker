@@ -16,8 +16,6 @@ class LoginPage extends Component {
 
     handleInputChange = event => {
         const { name, value } = event.target;
-        console.log("name: ", name, "value: ", value)
-        console.log(event.target)
         this.setState({
             [name]: value
         })
