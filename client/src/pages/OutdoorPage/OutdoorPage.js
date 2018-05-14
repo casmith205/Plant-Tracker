@@ -13,17 +13,14 @@ class OutdoorPage extends Component {
 
     render() {
         return (
-            <div id="outdoorPage" clasNames="content">
-
+            <div id="outdoorPage" className="content">\                
+                <Plants />
             {/* <div className="row"> */}
-            <OutsidePlants />
-                <Draggable>
                     <div>
                         <AddPlantIcon
                             name="addplant"
                         /></div>
-                </Draggable>
-                <Plants />
+
             {/* </div> */}
             <div className="row">
             <div className="col l2">
