@@ -13,18 +13,18 @@ class OutdoorPage extends Component {
 
     render() {
         return (
-            <div id="outdoorPage" clasNames="content">
+            <div id="outdoorPage" className="content">
                 <House
                     onClick={this.handleGoInside}
                 />
                 <OutsidePlants />
-                <Draggable>
+                
+                <Plants />
+
                     <div>
                         <AddPlantIcon
                             name="addplant"
                         /></div>
-                </Draggable>
-                <Plants />
             </div>
         )
     }
