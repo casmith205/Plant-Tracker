@@ -4,8 +4,9 @@ const passport = require("../config/passport");
 module.exports = {
     userLogin: function (req, res) {
       console.log("inside userLogin");
-      passport.authenticate("local");
+      // passport.authenticate("local")(req,res);
       res.json("/profile");
+      console.log("passport test!: ", req.body);
     },
     userSignUp: function (req, res) {
       console.log("in userSignUp");
