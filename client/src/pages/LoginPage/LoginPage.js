@@ -61,7 +61,7 @@ class LoginPage extends Component {
                                 placeholder="Username"
                             />
                         </div>
-                        <div class="row">
+                        <div className="row">
                             <Input
                                 name="userlogin"
                                 value={this.state.password}

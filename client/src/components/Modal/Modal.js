@@ -4,11 +4,11 @@ export const Modal = props => (
   <div>
     <div>
     {/* // <!-- Modal Trigger --> */}
-      <a class="waves-effect waves-light btn modal-trigger" href="#signUp">Modal</a>
+      <a className="waves-effect waves-light btn modal-trigger" href="#signUp">Modal</a>
     </div>
     {/* // <!-- Modal Structure --> */}
     <div id="signUp" className="modal">
-      <div class="modal-content">
+      <div className="modal-content">
         <h4>srgre</h4>
         <p>bgdrbd</p>
       </div>

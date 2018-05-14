@@ -10,6 +10,4 @@ class BadgeContainer extends Component {
 )}
 }
 
-
-
 export default BadgeContainer;
