@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import styles from './LoginPage.css';
 import RegistrationPage from "../RegistrationPage/RegistrationPage";
@@ -12,14 +12,16 @@ class LoginPage extends Component {
         email: "",
         cellPhone: "",
         address: "",
-        zipCode: ""
+        zipCode: "",
+        userInfo: {}
     };
 
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
-        })
+        })  
+        
     }
 
     handleLoginSubmit = event => {
@@ -28,7 +30,15 @@ class LoginPage extends Component {
             userName: this.state.userName,
             password: this.state.password
         })
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res.data)
+                this.setState({
+                    userInfo: res.data
+                })
+                console.log(this.state);
+                this.props.history.push("/profile")
+        })
+            
             .catch(err => console.log(err));
 
     };
@@ -93,4 +103,4 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
