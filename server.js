@@ -20,8 +20,6 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-
-
 // Serve up static assets
 app.use(express.static("client/build"));
 
@@ -31,6 +29,7 @@ app.use(session({ secret: 'keyboard cat',resave: true, saveUninitialized:true}))
 app.use(passport.initialize());
  
 app.use(passport.session()); // persistent login sessions
+
 
 // Add routes, both API and view
 app.use(apiRoutes);

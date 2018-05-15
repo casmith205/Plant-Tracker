@@ -10,15 +10,22 @@ class OutdoorPlantContainer extends Component {
             }
         }
         return (
-            <div>
-                <h4 className="center-align">Your Outdoor Plants</h4>
-                <ul className="center-align">
-                    {outdoorPlantList.length ? (
-                         outdoorPlantList 
-                    ) : (
-                            <h4>None</h4>
-                        )}
-                </ul>
+            <div class="row">
+                <div class="col s12 m10">
+                    <div class="card">
+                        <span class="card-title center-align"><h4>Your Outdoor Plants</h4></span>
+
+                        <div class="card-content">
+                            <ul className="center-align">
+                                {outdoorPlantList.length ? (
+                                    outdoorPlantList
+                                ) : (
+                                        <ul>None</ul>
+                                    )}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
@@ -26,16 +33,3 @@ class OutdoorPlantContainer extends Component {
 
 export default OutdoorPlantContainer;
 
-// {this.state.savedArticles.length ? (
-//     <List>
-//       {this.state.savedArticles.map(savedArticles => (
-//         <ListItem key={savedArticles._id}>
-//           <h3>{savedArticles.title}</h3>
-//           <h4>{savedArticles.date}</h4>
-//           <DeleteBtn onClick={() => this.deleteArticle(savedArticles._id)} />
-//         </ListItem>
-//       ))}
-//     </List>
-//   ) : (
-//       <h3>No Results to Display</h3>
-//     )}

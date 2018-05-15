@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     const UserBadge = sequelize.define("UserBadge", {
-        badgeName: {
+        badgeId: {
             type: DataTypes.STRING,
             allowNull: false,
         }

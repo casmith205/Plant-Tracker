@@ -11,9 +11,12 @@
 #door {
     height: 600px;
     margin-top: 220px;
-    margin-left: 40px
+    margin-left: 150px
 }
 
-.weatherbg {
-    z-index: -1;
+#weatherbg {
+    z-index: -10;
+    position:absolute;
+   width: 100%;
+    /* overflow: none; */
 }
