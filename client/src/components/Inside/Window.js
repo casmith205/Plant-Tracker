@@ -1,7 +1,9 @@
 import React from "react";
+// import Weather from "./Weather";
 
 export const Window = props => (
     <div>
-        <p>I'm a window</p>
+        <p>Why won't you work?</p>
+        
     </div> 
 )
