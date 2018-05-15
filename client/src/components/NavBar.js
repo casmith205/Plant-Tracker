@@ -4,7 +4,9 @@ class NavBar extends Component {
     
     handleLogOut = props => {
     
-    //sessionStorage.setItem("userID", res.data.id)
+    sessionStorage.clear()
+    //setItem("userID", "")
+
     }
 
 
@@ -21,11 +23,9 @@ class NavBar extends Component {
                             <li><a href='/profile'><i className="small material-icons">person</i>Profile</a></li>
                             <li><a href='/' onClick={this.handleLogOut}><i class="small material-icons">brightness_3</i>Logout</a></li>
                         </ul>
-                        </div>
-                        </nav>
-
-                  
-    </div >
+                    </div>
+                </nav>      
+            </div >
 
         )
     };
