@@ -12,8 +12,11 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+let sendList ="";
+
 findPhones = phone => {
-    let sendList = phone + "@txt.att.net," + phone + "@tmomail.net," + phone + "@vzwpix.com," + phone + "@messaging.sprintpcs.com"
+    sendList = phone + "@txt.att.net," + phone + "@tmomail.net," + phone + "@vzwpix.com," + phone + "@messaging.sprintpcs.com";
+    return sendList
 }
 
 sendText = phoneNumber => {
@@ -36,4 +39,4 @@ sendText = phoneNumber => {
 
 module.exports = sendText;
 
-sendText(6155947241);
+sendText("6155947241");
