@@ -6,7 +6,7 @@ import { House, Plants, OutsidePlants } from '../../components/Outside';
 import IndoorPage from "../IndoorPage/IndoorPage";
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
-let userId = sessionStorage.getItem('userId');
+// let userId = sessionStorage.getItem('userId');
 
 class OutdoorPage extends Component {
     // handleGoInside() {
