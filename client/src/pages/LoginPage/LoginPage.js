@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import styles from './LoginPage.css';
 import RegistrationPage from "../RegistrationPage/RegistrationPage";
@@ -19,7 +19,8 @@ class LoginPage extends Component {
         const { name, value } = event.target;
         this.setState({
             [name]: value
-        })
+        })  
+        
     }
 
     handleLoginSubmit = event => {
@@ -28,7 +29,14 @@ class LoginPage extends Component {
             userName: this.state.userName,
             password: this.state.password
         })
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res.data)
+                sessionStorage.setItem("userID", res.data.id)
+                this.props.history.push({
+                    pathname:"/profile",
+                })
+        })
+            
             .catch(err => console.log(err));
 
     };
@@ -93,4 +101,4 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
