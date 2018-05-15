@@ -1,20 +1,23 @@
 import React, { Component } from "react";
 
-class OutdoorContainer extends Component {
+class OutdoorPlantContainer extends Component {
     render() {
+        let menuList = [];
+        console.log("inside OutdoorPLantCOntainer", this.props.plantsArray);
+        for (var i = 0; i < this.props.plantsArray.length; i++) {
+            if (this.props.plantsArray[i].type.toLowerCase()  == 'outdoor') {
+                menuList.push(<li key={this.props.plantsArray[i].id}>{this.props.plantsArray[i].plantName}</li>);
+            }
+        }
         return (
             <div>
                 <h4 className="center-align">Your Outdoor Plants</h4>
                 <ul className="center-align">
-                    <li>Steve</li>
-                    <li>Lazarus</li>
-                    <li>Atila</li>
-                    <li>Achilles</li>
-                    <li>Laura Palmer</li>
-                    <li>Napolean</li>
+                    {menuList}
                 </ul>
-            </div> 
-)}
+            </div>
+        )
+    }
 }
 
-export default OutdoorContainer;
+export default OutdoorPlantContainer;

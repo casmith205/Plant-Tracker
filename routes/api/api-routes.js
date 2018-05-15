@@ -4,16 +4,15 @@ const authController = require("../../controllers/authController");
 
 // Handle get for users login and createUser - /api/user
 router.route("/api/login")
-  .post(authController.userLogin)
+  .post(authController.userLogin);
 
 // Handle get for users login and createUser - /api/user
 router.route("/api/signup")
   .post(authController.userSignUp);
 
-
 //Get user and their plants and badges
-// router.route("/api/user/:id")
-//   .get(authController.findUserById)
+router.route("/api/user/:id")
+  .get(plantsController.findUserById);
 //   .put(authController.updateUserById)
 //   .delete(authController.deleteUser);
   
