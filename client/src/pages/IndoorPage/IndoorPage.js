@@ -29,14 +29,16 @@ class IndoorPage extends Component {
                     <JokeContainer />
                     <Window />
                     </div>
+                    <div className="col lg4">
                     </div>
-                </div>
-                <div id="door">
-                <img src={require("../../images/door.png")} usemap="#image-map2" />
+                <div className="col lg4">
+                <img id="door" src={require("../../images/door.png")} usemap="#image-map2" />
 
                 <map name="image-map2">
                     <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />
                 </map>
+                </div>
+                </div>
                 </div>
             </main>
         )
