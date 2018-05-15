@@ -18,7 +18,7 @@ passport.use(new LocalStrategy(
       },
       include: [db.UserPlant, db.UserBadge, db.Friend],
     }).then(function(dbUser) {
-      console.log(dbUser);
+      // console.log(dbUser);
       // If there's no user with the given userName
       if (!dbUser) {
         console.log("not found");
@@ -35,7 +35,6 @@ passport.use(new LocalStrategy(
       }
       // If none of the above, return the user
       console.log("yay you're in!")
-      // window.localStorage.setItem("dbUser", dbUser.id)
       return done(null, dbUser);
     });
   }
