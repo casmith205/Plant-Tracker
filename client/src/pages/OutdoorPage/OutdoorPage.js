@@ -16,8 +16,8 @@ class OutdoorPage extends Component {
 
     state = {
         search: {
-            plant: "",
-            type: "outdoor",
+            commonName: "",
+            indoorOutdoor: "outdoor",
             userId:""
         },
         results: [],
@@ -29,8 +29,8 @@ class OutdoorPage extends Component {
         this.setState(
             {
                 search: {
-                    plant: event.target.value,
-                    type: "outdoor",
+                    commonName: event.target.value,
+                    indoorOutdoor: "outdoor",
                     userId:1
                     // userId: userId
                 }
