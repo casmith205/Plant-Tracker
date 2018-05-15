@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const db = require("../../models");
+const moment = require("moment")
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -58,6 +59,10 @@ db.User.findAll({include: [db.UserPlant, db.UserBadge, db.Friend]})
                 console.log("USER PLANT NAME:", plantName);
                 console.log("USER PLANT WATERING INTERVAL:", waterInterval);
                 console.log("USER PLANT LAST WATERED:", lastWatered);
+                // lastWatered = moment(lastWatered, "YYYY-MM-DD");
+                let currentDate = moment().date();
+                console.log(currentDate);
+                console.log(lastWatered);
                 switch(waterInterval) {
                     case "high":
                         waterInterval = 2
