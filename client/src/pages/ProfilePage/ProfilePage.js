@@ -37,9 +37,10 @@ class ProfilePage extends Component {
 
     render() {
         return (
-            <div id="profilepage" className="content center-align">
+            <div id="profilepage" className="content">
+            <div className="container">
                 <div id="welcomebanner">
-                    <h3> Welcome, {this.state.userName}! </h3>
+                    <h3 className="left-align"> Welcome, {this.state.userName}! </h3>
                 </div>
                 <div className="row">
                     <div className="col m6">
@@ -63,6 +64,7 @@ class ProfilePage extends Component {
                     </div>
                     </div>
                 </div>
+            </div>
             </div>
 
         )
