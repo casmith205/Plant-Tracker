@@ -26,7 +26,7 @@ class IndoorPage extends Component {
                     </Draggable>
                     <Weather />
                     <JokeContainer />
-                    <Window />
+                    {/* <Window /> */}
                     </div>
                     <div className="col lg4">
                     </div>

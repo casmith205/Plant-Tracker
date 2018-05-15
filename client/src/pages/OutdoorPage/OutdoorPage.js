@@ -18,7 +18,6 @@ class OutdoorPage extends Component {
 
                 <div className="row">
                     <OutsidePlants />
-
                 </div>
 
                 <div className="row">
@@ -28,7 +27,6 @@ class OutdoorPage extends Component {
                             <AddPlantIcon
                                 name="addplant"
                             /></div>
-
                     </Draggable>
                     <Plants />
                     </div>
