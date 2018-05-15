@@ -36,6 +36,7 @@ sendText = (phoneNumber, plantName) => {
 
 module.exports = sendText;
 
+
 let phoneArr = [];
 let messageArr = [];
 
