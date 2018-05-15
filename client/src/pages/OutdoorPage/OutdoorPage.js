@@ -50,7 +50,7 @@ class OutdoorPage extends Component {
                 // if (res.data.status === "error") {
                 //   throw new Error(res.data.message);
                 // }
-                console.log(res)
+                console.log("res",res)
                 this.setState({ results: res });
             })
             .catch(err => console.log(err))
