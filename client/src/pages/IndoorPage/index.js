@@ -1,0 +1,4 @@
+
+export { IndoorPage } from "./IndoorPage";
+
+

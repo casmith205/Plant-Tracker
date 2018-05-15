@@ -18,13 +18,22 @@ use plantdb;
 INSERT INTO users (userName, password, email, cellPhone, address, zipCode, createdAt, updatedAt) VALUES ('mickey-mouse', '123456', 'mickey@disney.com', '0123456789', '10 Main Street', 55401, now(), now());
 INSERT INTO users (userName, password, email, cellPhone, address, zipCode, createdAt, updatedAt) VALUES ('superman', '123456', 'sup-man@hall-of-justice.com', '0123456789', '10 Main Street', 55401, now(), now());
 
+INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('basil', 'medium', 'indoor', now(), now(), '5');
+INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('spider plant', 'high', 'indoor', now(), now(), '5');
+INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('rose', 'high', 'outdoor', now(), now(), '5');
 
-INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('basil', 'medium', 'indoor', now(), now(), '2');
-INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('spider plant', 'high', 'indoor', now(), now(), '2');
+
+INSERT INTO userbadges (badgeId, createdAt, updatedAt, UserId) VALUES ('1', now(), now(), '2');
+
+INSERT INTO userbadges (badgeId, createdAt, updatedAt, UserId) VALUES ('1', now(), now(), '5');
+INSERT INTO badges (badgeName, badgeDescription, createdAt, updatedAt) VALUES ('Greenish Thumb', 'You are doing well.  That thumb of yours is a bit like a leprechaun', now(), now());
+
 
 ### adding theses to work with sequelize
 ALTER TABLE usda_plant_data_db ADD Column createdAt timestamp NOT NULL DEFAULT now();
 ALTER TABLE usda_plant_data_db ADD Column updatedAt timestamp NOT NULL DEFAULT now();
+
+DELETE FROM `plantdb`.`users` WHERE `id`='6';
 
 
 

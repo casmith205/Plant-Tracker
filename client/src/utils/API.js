@@ -24,10 +24,10 @@ export default {
         return axios.get("/api/user" + user);
     },
 
-    // Plant axios functions
-    // Search plant database
-    searchPlant: function (id) {
-        return axios.get("/api/search" + id)
+    // User and associated attributes axios functions
+    // Get all plants database by calling get user
+    getUser: function (id) {
+        return axios.get("/api/user/" + id)
     },
     // Save a plant to user's database
     savePlant: function (plant) {

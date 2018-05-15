@@ -26,8 +26,7 @@ class Weather extends Component {
     getWeather() {
         // Need to change the zip code to userZip after we get some data to test with and uncomment above
         axios.get({
-            url: "https://api.openweathermap.org/data/2.5/weather?zip=" + 55414 + ",us&appid=d23506797d07737660408148e7533f22",
-            method: "GET"
+            url: "https://api.openweathermap.org/data/2.5/weather?zip=" + 55414 + ",us&appid=d23506797d07737660408148e7533f22"
         })
             .then(function (response) {
                 let weatherImage = this.response.weather[0].id;
