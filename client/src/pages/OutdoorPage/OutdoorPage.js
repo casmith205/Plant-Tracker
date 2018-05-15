@@ -85,30 +85,25 @@ class OutdoorPage extends Component {
     render() {
         return (
             <div id="outdoorPage" className="content">
-             
-             <div className="row">
-                    <OutsidePlants />
-                </div>
-
 
                 <div className="row">
-                <div className="col lg4">
-                    <Draggable>
+                    <div className="col lg4">
                         <div>
                             <AddPlantIcon
-                                name="addplant"
-                            /></div>
-                    </Draggable>
-                    <Plants />
+                                handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit} />
+                            <Draggable>
+                                <Plants />
+                            </Draggable>
+                        </div>
+                        <div id="house" className="col l2">
+                            <img src={require("../../images/house.png")} useMap="#image-map" />
+                            <map name="image-map">
+                                <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
+                            </map>
+                        </div>
                     </div>
-                    <div id="house" className="col l2">
-                        <img src={require("../../images/house.png")} useMap="#image-map" />
-                        <map name="image-map">
-                            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
-                        </map>
-                    </div>
-                    </div>
-            </div>
+                </div>
             </div>
         )
     }
