@@ -83,6 +83,7 @@ class OutdoorPage extends Component {
                     </div>
                     </div>
             </div>
+            </div>
         )
     }
 }
