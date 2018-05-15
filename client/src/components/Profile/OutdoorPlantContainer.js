@@ -11,21 +11,22 @@ class OutdoorPlantContainer extends Component {
         }
         return (
             <div class="row">
-            <div class="col s12 m7">
-                <div class="card">
-                    <span class="card-title center-align"><h4>Your Outdoor Plants</h4></span>
-                </div>
-                <div class="card-content">
-                        <ul className="center-align">
-                            {outdoorPlantList.length ? (
-                                outdoorPlantList
-                            ) : (
-                                    <ul>None</ul>
-                                )}
-                        </ul>
+                <div class="col s12 m10">
+                    <div class="card">
+                        <span class="card-title center-align"><h4>Your Outdoor Plants</h4></span>
+
+                        <div class="card-content">
+                            <ul className="center-align">
+                                {outdoorPlantList.length ? (
+                                    outdoorPlantList
+                                ) : (
+                                        <ul>None</ul>
+                                    )}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         )
     }
 }

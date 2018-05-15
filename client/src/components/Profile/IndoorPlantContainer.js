@@ -11,10 +11,10 @@ class IndoorContainer extends Component {
         }
         return (
             <div className="row">
-                <div className="col s12 m7">
+                <div className="col s12 m10">
                     <div className="card">
                         <span className="card-title center-align"><h4>Your Indoor Plants</h4></span>
-                    </div>
+                    
                     <div className="card-content">
                         <ul className="center-align">
                             {indoorPlantList.length ? (
@@ -23,6 +23,7 @@ class IndoorContainer extends Component {
                                     <ul>None</ul>
                                 )}
                         </ul>
+                        </div>
                     </div>
                 </div>
             </div>
