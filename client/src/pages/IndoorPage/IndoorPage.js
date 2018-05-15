@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { JokeContainer, PottedPlants, Door, Window  } from "../../components/Inside";
+import { JokeContainer, PottedPlants, Door, Window, Weather  } from "../../components/Inside";
 import OutdoorPage from "../OutdoorPage/OutdoorPage";
 import styles from './IndoorPage.css';
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
@@ -14,7 +14,7 @@ class IndoorPage extends Component {
         return (
             <main>
                 <div id="indoorPage" className="content">
-                    {/* {this.renderWeather(data)} */}
+                    {/* <Weather /> */}
                     <div className="outsideweather"></div>
                     <Draggable>
                         <div><PottedPlants 
