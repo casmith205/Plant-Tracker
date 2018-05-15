@@ -33,13 +33,17 @@ export default {
     savePlant: function (plant) {
         return axios.post("/api/plant", plant);
     },
+    //get all plants related to logged in use 
+    getPlants : function(id){
+        return axios.get("/api/plants/"+id)
+    },
     // Update plant status
     updatePlant: function (plant) {
-        return axios.put("/api/plants" + plant);
+        return axios.put("/api/plant/" + plant);
     },
     // Remove plant form user's database
     deletePlant: function (id) {
-        return axios.delete("/api/plants" + id);
+        return axios.delete("/api/plant/" + id);
     },
 
     // Badge axios functions
