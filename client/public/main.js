@@ -1,4 +1,4 @@
-console.log("working",M)
+console.log("working")
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');

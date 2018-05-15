@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import { PlantInfo } from "../../components"
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
-import { PottedPlants } from "../Inside";
 
 
 export const Plants = props => (
@@ -10,7 +9,7 @@ export const Plants = props => (
         <div>
             
             <img className = "dropdown-trigger" href='#' data-target="plantDropdown"
-            src="../../images/outsideplant.png" alt="outside plant" />
+            src={require("../../images/outsideplant.png")} alt="outside plant" />
 
             <PlantInfo
                 plantName="the coolest flower"
