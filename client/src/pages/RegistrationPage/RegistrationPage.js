@@ -26,7 +26,6 @@ class RegistrationPage extends Component {
     handleRegSubmit = event => {
         event.preventDefault();
         console.log("Hello I am signing up!");
-        console.log(this.state);
         console.log(this.state.userName);
         API.registerUser({
             userName: this.state.userName,
@@ -56,7 +55,7 @@ class RegistrationPage extends Component {
                                     placeholder="Username"
                                 />
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <Input
                                     name="password"
                                     value={this.state.password}
@@ -64,7 +63,7 @@ class RegistrationPage extends Component {
                                     placeholder="Password"
                                 />
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <Input
                                     name="email"
                                     value={this.state.email}
@@ -72,28 +71,31 @@ class RegistrationPage extends Component {
                                     placeholder="Email"
                                 />
                             </div>
-                            <div class="row">
+                            <div className="row">
+                            <i className="material-icons prefix col s2">phone</i>
+                            <div className="col s10">
                                 <Input
                                     name="cellPhone"
                                     value={this.state.cellPhone}
                                     onChange={this.handleInputChange}
-                                    placeholder="8001236789"
+                                    placeholder="Cell Phone Number"
                                 />
+                                </div>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <Input
                                     name="address"
                                     value={this.state.address}
                                     onChange={this.handleInputChange}
-                                    placeholder="123 ICanGrow Rd"
+                                    placeholder="Address"
                                 />
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <Input
                                     name="zipCode"
                                     value={this.state.zipCode}
                                     onChange={this.handleInputChange}
-                                    placeholder="55123"
+                                    placeholder="Zip Code"
                                 />
                             </div>
                             <div className="col s6">

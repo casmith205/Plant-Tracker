@@ -11,10 +11,8 @@ class PottedPlants extends Component {
 
                 <div>
                     {/* <!-- Dropdown Trigger --> */}
-
-                    {/* <a class="btn dropdown-button" href="#" data-activates="plantDropdown">Plant
-         <i class="mdi-navigation-arrow-drop-down right"></i></a> */}
-                    <a className='dropdown-button btn' data-activates="plantDropdown">Potted Plant</a>
+                    <img className = "dropdown-trigger" href='#' data-target="plantDropdown"
+                    src ={require("../../images/indoorflower.png")} alt ="potted plant" />
                     <PlantInfo 
                     plantName= "the coolest flower"
                     type = "indoor"

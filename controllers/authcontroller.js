@@ -1,11 +1,10 @@
 const db = require("../models");
-const passport = require("../config/passport");
+// const passport = require("../config/passport");
 
 module.exports = {
     userLogin: function (req, res) {
-      console.log("inside userLogin");
-      passport.authenticate("local");
-      res.json("/profile");
+      res.json(req.user);
+      console.log("passport test!: ", res.statusCode);
     },
     userSignUp: function (req, res) {
       console.log("in userSignUp");

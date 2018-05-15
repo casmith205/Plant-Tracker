@@ -1,9 +1,19 @@
 #outdoorPage {
-    margin-bottom: 0px;
+    margin:0;
     background-image: url("../../images/OutsideBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
-    padding-bottom: 7em;
-    bottom: 100px;
+    min-width: 100%;
+    margin-top:0px;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+#house {
+    margin: none;
+    padding-top: 140px;
+    padding-right: 505px;
+    padding-bottom: 10px;
+    float: right;
 }
