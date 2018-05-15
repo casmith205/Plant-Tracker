@@ -1,6 +1,13 @@
 import React, { Component } from "react";
 
 class NavBar extends Component {
+    
+    handleLogOut = props => {
+    
+    //sessionStorage.setItem("userID", res.data.id)
+    }
+
+
     render() {
         return (
 
@@ -12,6 +19,7 @@ class NavBar extends Component {
                             <li><a href='/outdoorplants'><i className="small material-icons">local_florist</i>Outdoor</a></li>
                             <li><a href='/graveyard'><i className="small material-icons">broken_image</i>Graveyard</a></li>
                             <li><a href='/profile'><i className="small material-icons">person</i>Profile</a></li>
+                            <li><a href='/' onClick={this.handleLogOut}><i class="small material-icons">brightness_3</i>Logout</a></li>
                         </ul>
                         </div>
                         </nav>
@@ -19,7 +27,7 @@ class NavBar extends Component {
                   
     </div >
 
-    )
+        )
     };
 };
 
