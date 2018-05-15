@@ -13,9 +13,9 @@ class OutdoorPage extends Component {
 
     render() {
         return (
-            <div id="outdoorPage" clasNames="content">
+            <div id="outdoorPage" className="content">
 
-            {/* <div className="row"> */}
+            <div className="row">
             <OutsidePlants />
                 <Draggable>
                     <div>
@@ -24,17 +24,16 @@ class OutdoorPage extends Component {
                         /></div>
                 </Draggable>
                 <Plants />
-            {/* </div> */}
-            <div className="row">
-            <div className="col l2">
             </div>
-                <div className="col l2">
-                <a href="/indoorplants"><House
-                /></a>
-                </div>
-                </div>
-               
-            </div>    
+            <div className="row">
+            <div id="house"className="col l2">
+                <img src={require("../../images/house.png")} usemap="#image-map"/>
+            <map name="image-map">
+            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect"/>
+                    </map>
+            </div>
+            </div>
+            </div>  
         )
     }
 }
