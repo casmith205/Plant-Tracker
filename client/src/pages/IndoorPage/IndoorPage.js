@@ -5,6 +5,7 @@ import OutdoorPage from "../OutdoorPage/OutdoorPage";
 import styles from './IndoorPage.css';
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 import API from "../../utils/API";
+import Weather from "../../components/Inside/Weather"
 
 // let userId = sessionStorage.getItem('userId');
 
@@ -73,7 +74,7 @@ class IndoorPage extends Component {
                             name="pottedplant"
                         /></div>
                     </Draggable>
-                    
+                    <Weather />
                     <JokeContainer />
                     <Window />
 
@@ -81,7 +82,7 @@ class IndoorPage extends Component {
                     <div className="col lg4">
                     </div>
                 <div className="col lg4">
-                <img id="door" src={require("../../images/door.png")} usemap="#image-map2" />
+                <img id="door" src={require("../../images/door.png")} useMap="#image-map2" />
 
                 <map name="image-map2">
                     <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />
