@@ -17,6 +17,10 @@ findPhones = phone => {
     return sendList
 }
 
+let phoneArr = [];
+let plantNameArr = [];
+
+
 sendText = (phoneNumber, plantName) => {
     findPhones(phoneNumber);
 
@@ -37,17 +41,14 @@ sendText = (phoneNumber, plantName) => {
 
 module.exports = sendText;
 
-let phoneArr = [];
-let plantName = [];
-let messageArr = [];
-
 // FIND ALL USERS
 db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
     .then(res => {
         // FOR EVERY USER IN DB...
         for (i = 0; i < res.length; i++) {
             console.log("-------------------------------------------------------")
-            console.log("USER'S CELL PHONE: ", res[i].dataValues.cellPhone)
+            let userCell = res[i].dataValues.cellPhone
+            console.log("USER'S CELL PHONE: ", userCell)
             let numPlants = res[i].dataValues.UserPlants.length
 
             // FOR EVERY PLANT FOR EACH USER IN DB...
@@ -79,16 +80,24 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
                 console.log(waterInterval);
                 lastWatered = moment(lastWatered).add(waterInterval, 'days').format("YYYY-MM-DD");
                 console.log(lastWatered);
-                console.log(moment(lastWatered).isAfter(currentDate));
-                // let difference = lastWatered.diff(currentDate, 'days');
-                // needsWater = true;
+                let needsWater = moment(lastWatered).isAfter(currentDate)
+                console.log(needsWater);
+                if (needsWater) {
+                    phoneArr.push(userCell);
+                    plantNameArr.push(plantName);
+                }
             }
         }
 
-    })
+        console.log(phoneArr);
+        console.log(plantNameArr);
+        for(w=phoneArr.length; w>=0; w--){
+            sendText(phoneArr[w], plantNameArr[w]);
+            phoneArr.pop();
+            plantName.pop();
+        }
+    });
 
-// run logic on who to send texts to 
-// if(needsWater){
-// sendText("6155947241");
-// }
+
+
 
