@@ -15,7 +15,8 @@ router.route("/api/login")
 router.route("/api/signup")
   .post(authController.userSignUp);
 
-
+router.route("/")
+  .get(authController.findAllUsers);
 //Get user and their plants and badges
 // router.route("/api/user/:id")
 //   .get(authController.findUserById)
