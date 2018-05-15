@@ -65,9 +65,9 @@ class Weather extends Component {
 }
         render() {
             return (
-                <div id="weatherbg">
+                <div>
                 {/* {this.getWeather()} */}
-                <img src={this.state.dailyWeather} />
+                <img id="weatherbg" src={this.state.dailyWeather}/>
                 {/* {console.log("render this",this)} */}
                 
                 </div>

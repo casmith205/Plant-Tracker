@@ -59,7 +59,7 @@ class OutdoorPage extends Component {
 
     render() {
         return (
-            <div id="outdoorPage" className="content">\
+            <div id="outdoorPage" className="content">
              
              <div className="row">
                     <OutsidePlants />
@@ -80,6 +80,7 @@ class OutdoorPage extends Component {
                         <map name="image-map">
                             <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
                         </map>
+                    </div>
                     </div>
             </div>
         )
