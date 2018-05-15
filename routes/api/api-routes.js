@@ -6,6 +6,7 @@ const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 // Handle get for users login and createUser - /api/user
 router.route("/api/login")
+
   .post(
     passport.authenticate("local"),
     authController.userLogin
@@ -15,10 +16,9 @@ router.route("/api/login")
 router.route("/api/signup")
   .post(authController.userSignUp);
 
-
 //Get user and their plants and badges
-// router.route("/api/user/:id")
-//   .get(authController.findUserById)
+router.route("/api/user/:id")
+  .get(plantsController.findUserById);
 //   .put(authController.updateUserById)
 //   .delete(authController.deleteUser);
 

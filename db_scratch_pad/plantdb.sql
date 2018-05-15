@@ -21,6 +21,7 @@ INSERT INTO users (userName, password, email, cellPhone, address, zipCode, creat
 
 INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('basil', 'medium', 'indoor', now(), now(), '2');
 INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('spider plant', 'high', 'indoor', now(), now(), '2');
+INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt, UserId) VALUES ('rose', 'high', 'outdoor', now(), now(), '2');
 
 ### adding theses to work with sequelize
 ALTER TABLE usda_plant_data_db ADD Column createdAt timestamp NOT NULL DEFAULT now();
