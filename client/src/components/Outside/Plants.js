@@ -8,9 +8,10 @@ export const Plants = props => (
     <Draggable>
 
         <div>
-            {/* <!-- Dropdown Trigger --> */}
-            <img className="dropdown-button" data-activates="plantDropdown" 
-            src={require("../../images/outsideplant.png")} alt="outside plant" />
+            
+            <img className = "dropdown-trigger" href='#' data-target="plantDropdown"
+            src="../../images/outsideplant.png" alt="outside plant" />
+
             <PlantInfo
                 plantName="the coolest flower"
                 type="outdoor"
