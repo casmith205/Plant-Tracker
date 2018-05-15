@@ -13,22 +13,23 @@ class OutdoorPage extends Component {
 
     render() {
         return (
+
             <div id="outdoorPage" className="content">
 
             <div className="row">
             <OutsidePlants />
-               
-            </div>
-            <div className="row">
-            <div className="col 14">
-            <Draggable>
+                <Draggable>
+
                     <div>
                         <AddPlantIcon
                             name="addplant"
                         /></div>
+
                 </Draggable>
                 <Plants />
-                </div>
+            </div>
+
+            <div className="row">
             <div id="house"className="col l2">
                 <img src={require("../../images/house.png")} usemap="#image-map"/>
             <map name="image-map">

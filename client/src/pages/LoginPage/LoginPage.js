@@ -28,7 +28,7 @@ class LoginPage extends Component {
             userName: this.state.userName,
             password: this.state.password
         })
-            .then(res => console.log("logged in!"))
+            .then(res => console.log(res))
             .catch(err => console.log(err));
 
     };

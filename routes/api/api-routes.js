@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const plantsController = require("../../controllers/plantsController");
 const authController = require("../../controllers/authController");
-
 const passport = require("../../config/passport");
 
 // Handle get for users login and createUser - /api/user
