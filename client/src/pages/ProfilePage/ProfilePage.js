@@ -8,6 +8,7 @@ class ProfilePage extends Component {
     // *******need to update userId with the currently logged in user ********
     state = {
         plants: [],
+        badges: [],
         userId: 2
     };
 
@@ -20,7 +21,7 @@ class ProfilePage extends Component {
         API.getUser(this.state.userId)
             .then(res => {
                 console.log("get plants", res.data.UserPlants)
-                this.setState({ plants: res.data.UserPlants })
+                this.setState({ plants: res.data.UserPlants, badges: res.data.UserBadges, userId:2 })
             })
             .catch(err => console.log(err))
     };
@@ -38,7 +39,7 @@ class ProfilePage extends Component {
                     <div className="col m3">
                     </div>
                     <div className="col m3">
-                        <BadgeContainer />
+                        <BadgeContainer badgesArray={this.state.badges}/>
                     </div>
                 </div>
                 <div id="plantcontainers" className="row">
