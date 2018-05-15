@@ -81,7 +81,7 @@ class LoginPage extends Component {
                                     <a
                                         href="/registration"
                                         className="input-lg waves-effect waves-light btn"
-                                    >
+                                    ><i class="material-icons right">send</i>
                                         Signup
                                 </a>
                                 </div>
