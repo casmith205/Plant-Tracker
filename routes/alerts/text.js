@@ -44,7 +44,7 @@ db.User.findAll({include: [db.UserPlant, db.UserBadge, db.Friend]})
     {
         for(i=0; i<res.length; i++){
             // console.log("THIS IS WHERE WE ARE: ", res[i])
-            console.log("this found all users!", res[i].dataValues.UserPlants) 
+            console.log("USER PLANTS:", res[i].dataValues.UserPlants) 
         }
 
         // console.log("THIS IS WHERE WE ARE: ", res.length)

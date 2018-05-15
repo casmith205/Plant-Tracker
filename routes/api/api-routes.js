@@ -22,11 +22,10 @@ router.route("/api/login")
 router.route("/api/signup")
   .post(authController.userSignUp);
 
-<<<<<<< HEAD
+
 router.route("/")
   .get(authController.findAllUsers);
-=======
->>>>>>> e58de3f622443fea4f0ea95c2710ae1d2d53f696
+
 //Get user and their plants and badges
 router.route("/api/user/:id")
   .get(plantsController.findUserById);
