@@ -34,7 +34,7 @@ router.route("/api/userBadge")
   .post(plantsController.addUserBadge);
 
 //route to get all plants related to user 
-router.route ("/api/plants/:userId")
+router.route ("/api/findplant/:userId")
 .get(plantsController.findPlantsByUser)
 
 module.exports = router;

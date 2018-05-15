@@ -64,9 +64,10 @@ module.exports = {
   // // GET - /api/plant/:userId  by req.params.userId
   // //   plantsController.findUserById -> Sequelize find
   findPlantsByUser: function (req, res) {
-    db.userPlant.find({
+    console.log(req.params)
+    db.UserPlant.findAll({
       where: {
-        userId: req.params.id
+        userId: req.params.userId
       },
     }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

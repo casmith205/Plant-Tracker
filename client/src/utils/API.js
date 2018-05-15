@@ -35,7 +35,7 @@ export default {
     },
     //get all plants related to logged in use 
     getPlants : function(id){
-        return axios.get("/api/plants/"+id)
+        return axios.get("/api/findplant/"+id)
     },
     // Update plant status
     updatePlant: function (plant) {

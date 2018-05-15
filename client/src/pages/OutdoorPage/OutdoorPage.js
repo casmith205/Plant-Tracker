@@ -8,6 +8,7 @@ import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 // let userId = sessionStorage.getItem('userId');
 
+
 class OutdoorPage extends Component {
     // handleGoInside() {
     //     return <IndoorPage />
@@ -18,7 +19,7 @@ class OutdoorPage extends Component {
         search: {
             commonName: "",
             indoorOutdoor: "outdoor",
-            userId:""
+            userId: ""
         },
         newPlant: [],
         outdoorPlants: [],
@@ -26,27 +27,36 @@ class OutdoorPage extends Component {
         // error: ""
     };
 
-    componentDidMount(){
+    componentDidMount() {
         this.loadOutdoorPlants()
     }
 
-    loadOutdoorPlants =() => {
+    loadOutdoorPlants = () => {
         console.log(this.state.userId)
-        API.getUser(this.state.userId)
-        .then(res => {
-            this.setState({outdoorPlants: res.data.UserPlants})
-        })
+        API.getPlants(this.state.userId)
+            .then(res => {
+                let odPlantArr = []
+                console.log(res.data)
+                for (var i = 0; i < res.data.length; i++) {
+                    // console.log(res.data[i].type)
+                    if (res.data[i].type === "outdoor") {
+                        odPlantArr.push(res.data[i])
+                    }
+                }
+                console.log(odPlantArr)
+                // this.setState({outdoorPlants: res.data})
+            })
         console.log(this.state)
     }
 
     handleInputChange = event => {
-    
+
         this.setState(
             {
                 search: {
                     commonName: event.target.value,
                     indoorOutdoor: "outdoor",
-                    userId:1
+                    userId: 1
                     // userId: userId
                 }
             }
@@ -65,7 +75,7 @@ class OutdoorPage extends Component {
                 // if (res.data.status === "error") {
                 //   throw new Error(res.data.message);
                 // }
-                console.log("res",res)
+                console.log("res", res)
                 this.setState({ newPlant: res });
             })
             .catch(err => console.log(err))
@@ -82,12 +92,12 @@ class OutdoorPage extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
 
-                    {/* <div id="house" className="col l2"> */}
-                        <img src={require("../../images/house.png")} useMap="#image-map" />
-                        <map name="image-map">
-                            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
-                        </map>
-                    {/* </div> */}
+                {/* <div id="house" className="col l2"> */}
+                <img src={require("../../images/house.png")} useMap="#image-map" />
+                <map name="image-map">
+                    <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
+                </map>
+                {/* </div> */}
             </div>
         )
     }
