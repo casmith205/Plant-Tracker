@@ -1,15 +1,23 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class ProfilePic extends Component {
-    render () {
+    render() {
         return (
-    <div>
-        <div id="image">
-            <img src={require('../../images/profpic.jpg')} alt="profile" />
-            
-        </div>
-    </div> 
-)}
+            <div class="row">
+                <div class="col s12 m7">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src={require('../../images/profpic.jpg')} alt="profile" />
+                        </div>
+                        <div class="card-content center-align">
+                            <p>I am gnome profile picture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default ProfilePic;
+

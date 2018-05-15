@@ -10,18 +10,27 @@ class IndoorContainer extends Component {
             }
         }
         return (
-            <div>
-                <h4 className="center-align">Your Indoor Plants</h4>
-                <ul className="center-align">
-                    {indoorPlantList.length ? (
-                         indoorPlantList
-                    ) : (
-                            <h4>None</h4>
-                        )}
-                </ul>
+            <div className="row">
+                <div className="col s12 m7">
+                    <div className="card">
+                        <span className="card-title center-align"><h4>Your Indoor Plants</h4></span>
+                    </div>
+                    <div className="card-content">
+                        <ul className="center-align">
+                            {indoorPlantList.length ? (
+                                indoorPlantList
+                            ) : (
+                                    <ul>None</ul>
+                                )}
+                        </ul>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
 export default IndoorContainer;
+
+
+

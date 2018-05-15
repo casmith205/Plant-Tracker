@@ -10,18 +10,21 @@ class BadgeContainer extends Component {
             }
         }
         return (
-            <div>
-                <h4 className="center-align">Your Badges</h4>
-                <ul className="center-align">
-                    {badgeList.length ? (
-                         badgeList 
-                    ) : (
-                            <h4>None</h4>
-                        )}
-                </ul>
-            </div>
+                <div class="col s12 m7">
+                    <div class="card">
+                        <span class="card-title center-align"><h4>Your Badges</h4></span>
+                    </div>
+                    <ul className="center-align">
+                        {badgeList.length ? (
+                            badgeList
+                        ) : (
+                                <ul>None</ul>
+                            )}
+                    </ul>
+                </div>
         )
     }
 }
 
 export default BadgeContainer;
+
