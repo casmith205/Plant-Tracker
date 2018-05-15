@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const plantsController = require("../../controllers/plantsController");
 const authController = require("../../controllers/authController");
-
 const passport = require("../../config/passport");
+const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
 // Handle get for users login and createUser - /api/user
 router.route("/api/login")
@@ -14,6 +14,15 @@ router.route("/api/login")
 // Handle get for users login and createUser - /api/user
 router.route("/api/signup")
   .post(authController.userSignUp);
+
+// ?????? does this work -- how do we get re-routed to profile with info from passport
+// router.route("/profile")
+//   .get(
+//     isAuthenticated,
+//     function(req, res){
+//       res.send("need it here")
+//     }
+// )
 
 
 //Get user and their plants and badges

@@ -8,13 +8,14 @@
 }
 
 #loginbox {
-    opacity: .7;
+    /* opacity: .7; */
     background-color: whitesmoke;
     color: white;
     text-align: center;
     height: 100%;
     margin: 3em;
     padding: 3em;
+    background: rgba(204, 204, 204, 0.5);
 }
 
 #loginpage {

@@ -67,16 +67,12 @@ class OutdoorPage extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit} />
 
-                {/* </div> */}
-                <div className="row">
-                    <div className="col l2">
+                    <div id="house" className="col l2">
+                        <img src={require("../../images/house.png")} usemap="#image-map" />
+                        <map name="image-map">
+                            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
+                        </map>
                     </div>
-                    <div className="col l2">
-                        <a href="/indoorplants"><House
-                        /></a>
-                    </div>
-                </div>
-
             </div>
         )
     }
