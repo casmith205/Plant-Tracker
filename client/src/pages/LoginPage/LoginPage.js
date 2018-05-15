@@ -19,8 +19,8 @@ class LoginPage extends Component {
         const { name, value } = event.target;
         this.setState({
             [name]: value
-        })  
-        
+        })
+
     }
 
     handleLoginSubmit = event => {
@@ -36,55 +36,56 @@ class LoginPage extends Component {
                 this.props.history.push({
                     pathname:"/profile",
                 })
-        })
-            
+                console.log(this.state);
+                this.props.history.push("/profile")
+            })
             .catch(err => console.log(err));
-
-    };
+        }
 
     render() {
         return (
             <main>
-            <div id="loginpage" className="content">
-                <div className="container">
-                    <div className="row" id="topnav">
-                    </div>
-                    <div className="row" id="loginbox">
-                        <form className="col s12">
-                            <div className="row">
-                                <Input
-                                    name="userName"
-                                    value={this.state.userName}
-                                    onChange={this.handleInputChange}
-                                    placeholder="Username"
-                                />
-                            </div>
-                            <div class="row">
-                                <Input
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleInputChange}
-                                    placeholder="Password"
-                                />
-                            </div>
-                            <div className="col s6">
-                                <a
-                                    onClick={this.handleLoginSubmit}
-                                    type="success"
-                                    className="input-lg waves-effect waves-light btn"
-                                >
-                                    Login
+                <div id="loginpage" className="content">
+                    <div className="container">
+                        <div className="row" id="topnav">
+                        </div>
+                        <div className="row" id="loginbox">
+                        <h4 className="white-text left-align">How do trees get on the internet?</h4>
+                            <form className="col s12">
+                                <div className="row">
+                                    <Input
+                                        name="userName"
+                                        value={this.state.userName}
+                                        onChange={this.handleInputChange}
+                                        placeholder="Username"
+                                    />
+                                </div>
+                                <div class="row">
+                                    <Input
+                                        name="password"
+                                        value={this.state.password}
+                                        onChange={this.handleInputChange}
+                                        placeholder="Password"
+                                    />
+                                </div>
+                                <div className="col s6">
+                                    <a
+                                        onClick={this.handleLoginSubmit}
+                                        type="success"
+                                        className="input-lg waves-effect waves-light btn"
+                                    >
+                                        Login
                                 </a>
-                            </div>
-                            <div className="col s6">
-                                <a
-                                    href="/registration"
-                                    className="input-lg waves-effect waves-light btn"
-                                >
-                                    Signup
+                                </div>
+                                <div className="col s6">
+                                    <a
+                                        href="/registration"
+                                        className="input-lg waves-effect waves-light btn"
+                                    >
+                                        Signup
                                 </a>
-                            </div>
-                            {/* <div className="col s6">
+                                </div>
+                                {/* <div className="col s6">
                                 <a
                                     onClick={this.handleHelpSubmit}
                                     type="success"
@@ -93,10 +94,11 @@ class LoginPage extends Component {
                                     Help Logging In
                                 </a>
                             </div> */}
-                        </form>
+                            </form>
+                            <h4 className="white-text right">They LOGin!</h4>
+                        </div>
                     </div>
                 </div>
-            </div>
             </main>
         )
     }

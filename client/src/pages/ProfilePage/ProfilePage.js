@@ -31,6 +31,7 @@ class ProfilePage extends Component {
                 console.log("get plants #1", res.data)
                 console.log("get plants", res.data.UserPlants)
                 this.setState({ userName:res.data.userName, plants: res.data.UserPlants, badges: res.data.UserBadges})
+
             })
             .catch(err => console.log(err))
     };
@@ -57,7 +58,6 @@ class ProfilePage extends Component {
                     </div>
                     <div className="col m6">
                         <OutdoorPlantContainer plantsArray={this.state.plants} />
-
                     </div>
                 </div>
             </div>

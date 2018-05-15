@@ -11,22 +11,40 @@ export const AddPlantIcon = props => (
         <div id="addPlantModal" className="modal">
             <div className="modal-content">
                 <h4>Add a new plant to your family</h4>
-                <p>A bunch of text</p>
             </div>
-            <div class="input-field col s12">
-                <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label>Materialize Select</label>
-            </div>
-            <div className="modal-footer">
-                <a href="#!" className="modal-close waves-effect waves-green btn-flat">ADD!</a>
-            </div>
-        </div>
 
-    </div>
+            <div className="row">
+                <div className="input-field col s8">
+                    <textarea
+                        id="plantInput"
+                        name="plantName"
+                        className="materialize-textarea"
+                        onChange = {props.handleInputChange}
+                    />
+                    <label>Plant Name</label>
+                    <span className="helper-text"
+                        data-error="wrong"
+                        data-success="right">
+                        Ex: Basil, Poppy, Tulip ...</span>
+                </div>
+            </div>
+
+            {/* <div className="row">
+                <div className="input-field col s8">
+                    <select>
+                        <option value="" disabled defaultValue>Does your plant live inside or roam free?</option>
+                        <option value="indoor">Indoor</option>
+                        <option value="outdoor">Outdoor</option>
+                    </select>
+                </div>
+            </div>  */}
+            <div className="modal-footer row">
+                <a href="#!" 
+                className="modal-close pulse btn-floating btn-large col s2"
+                onClick = {props.handleFormSubmit}>ADD</a>
+            </div>
+        </div >
+
+    </div >
 )
 

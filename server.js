@@ -8,6 +8,7 @@ const apiRoutes = require("./routes/api/api-routes.js");
 const app = express();
 const models = require("./models");
 const PORT = process.env.PORT || 3001;
+const sendText =require("./routes/alerts/text.js");
 
 
 // Configure body parser for AJAX requests
