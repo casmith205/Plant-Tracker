@@ -3,15 +3,15 @@
 var bcrypt = require("bcrypt-nodejs");
 
 module.exports = function (sequelize, DataTypes) {
-  console.log("User start")
+  console.log("User creation")
   var User = sequelize.define("User", {
 
     userName: {
       type: DataTypes.STRING,
       allowNull: false,
+      Unique: true,
       validate: {
         notEmpty: true,
-        isAlpha: true,
         len: {
           args: [3, 20],
           msg: "Your username is not the correct length.  It must be between 3 and 20 characters."
@@ -80,7 +80,6 @@ module.exports = function (sequelize, DataTypes) {
       onDelete: "cascade"
     });
   };
-  console.log("User End")
 
   // Creating a custom method for our User model.
   //  This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
@@ -90,7 +89,7 @@ module.exports = function (sequelize, DataTypes) {
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
   User.hook("beforeCreate", function (user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+    user.password = bcrypt.hashSync(user.password);
   });
   return User;
 };

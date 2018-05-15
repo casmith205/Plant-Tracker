@@ -1,4 +1,4 @@
-.page-footer {
+/* .page-footer {
   flex-shrink: 0;
   right: 0;
   bottom: 0;
@@ -10,4 +10,14 @@
   flex-direction: column;
   flex: 1;
   margin-top: auto;
+} */
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }

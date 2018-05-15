@@ -20,6 +20,9 @@ export default {
     deleteUser: function (user) {
         return axios.delete("/api/user", user);
     },
+    searchUser: function (user) {
+        return axios.get("/api/user" + user);
+    },
 
     // User and associated attributes axios functions
     // Get all plants database by calling get user
