@@ -31,7 +31,7 @@ export default {
     },
     // Save a plant to user's database
     savePlant: function (plant) {
-        return axios.post("/api/plants", plant);
+        return axios.post("/api/plant", plant);
     },
     // Update plant status
     updatePlant: function (plant) {
