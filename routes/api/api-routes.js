@@ -15,15 +15,6 @@ router.route("/api/login")
 router.route("/api/signup")
   .post(authController.userSignUp);
 
-// ?????? does this work -- how do we get re-routed to profile with info from passport
-// router.route("/profile")
-//   .get(
-//     isAuthenticated,
-//     function(req, res){
-//       res.send("need it here")
-//     }
-// )
-
 
 //Get user and their plants and badges
 // router.route("/api/user/:id")

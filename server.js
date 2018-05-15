@@ -8,6 +8,7 @@ const apiRoutes = require("./routes/api/api-routes.js");
 const app = express();
 const models = require("./models");
 const PORT = process.env.PORT || 3001;
+const sendText =require("./routes/alerts/text.js");
 
 
 // Configure body parser for AJAX requests
@@ -19,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-
+sendText(6155947241);
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
