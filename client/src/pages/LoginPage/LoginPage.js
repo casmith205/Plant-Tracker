@@ -31,6 +31,7 @@ class LoginPage extends Component {
         })
             .then(res => {
                 console.log(res.data)
+                console.log("set userid ", res.data.id)
                 sessionStorage.setItem("userID", res.data.id)
                 this.props.history.push({
                     pathname:"/profile",
