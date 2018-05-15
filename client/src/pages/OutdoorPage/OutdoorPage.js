@@ -103,7 +103,7 @@ class OutdoorPage extends Component {
                             </map>
                         </div>
                     </div>
-                </div>
+                    </div>
             </div>
         )
     }
