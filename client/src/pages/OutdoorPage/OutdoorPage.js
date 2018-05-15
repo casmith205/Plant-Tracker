@@ -17,15 +17,18 @@ class OutdoorPage extends Component {
 
             <div className="row">
             <OutsidePlants />
-                <Draggable>
+               
+            </div>
+            <div className="row">
+            <div className="col 14">
+            <Draggable>
                     <div>
                         <AddPlantIcon
                             name="addplant"
                         /></div>
                 </Draggable>
                 <Plants />
-            </div>
-            <div className="row">
+                </div>
             <div id="house"className="col l2">
                 <img src={require("../../images/house.png")} usemap="#image-map"/>
             <map name="image-map">
