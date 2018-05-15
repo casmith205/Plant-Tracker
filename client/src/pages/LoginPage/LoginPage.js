@@ -12,8 +12,7 @@ class LoginPage extends Component {
         email: "",
         cellPhone: "",
         address: "",
-        zipCode: "",
-        userInfo: {}
+        zipCode: ""
     };
 
     handleInputChange = event => {
@@ -32,11 +31,10 @@ class LoginPage extends Component {
         })
             .then(res => {
                 console.log(res.data)
-                this.setState({
-                    userInfo: res.data
+                sessionStorage.setItem("userID", res.data.id)
+                this.props.history.push({
+                    pathname:"/profile",
                 })
-                console.log(this.state);
-                this.props.history.push("/profile")
         })
             
             .catch(err => console.log(err));

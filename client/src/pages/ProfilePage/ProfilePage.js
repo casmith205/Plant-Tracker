@@ -4,6 +4,9 @@ import { ProfilePic, BadgeContainer, IndoorPlantContainer, OutdoorPlantContainer
 import styles from "./ProfilePage.css"
 
 class ProfilePage extends Component {
+    state = {
+        userInfo: {}
+    };
     render () {
         return (
             <div id="profilepage" className="content">
