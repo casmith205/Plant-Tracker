@@ -1,8 +1,5 @@
-// get from database
-// run logic on who to send texts to 
-// put in repeating logic for sending a text 
-
 const nodemailer = require('nodemailer');
+const db = require("../../models");
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -39,4 +36,24 @@ sendText = phoneNumber => {
 
 module.exports = sendText;
 
-sendText("6155947241");
+let phoneArr = [];
+// let 
+
+db.User.findAll({include: [db.UserPlant, db.UserBadge, db.Friend]})
+.then(res => 
+    {
+        for(i=0; i<res.length; i++){
+            // console.log("THIS IS WHERE WE ARE: ", res[i])
+            console.log("USER PLANTS:", res[i].dataValues.UserPlants) 
+        }
+
+        // console.log("THIS IS WHERE WE ARE: ", res.length)
+        // console.log("this found all users!", res[0].dataValues.UserPlants)
+        // .dataValues.cellPhone)
+    })
+
+// run logic on who to send texts to 
+// if(needsWater){
+// sendText("6155947241");
+// }
+
