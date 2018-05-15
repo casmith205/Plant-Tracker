@@ -4,8 +4,15 @@ const authController = require("../../controllers/authController");
 const passport = require("../../config/passport");
 const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
+//Get user and their plants and badges
+router.route("/api/user/:id")
+  .get(plantsController.findUserById);
+//   .put(authController.updateUserById)
+//   .delete(authController.deleteUser);
+
 // Handle get for users login and createUser - /api/user
 router.route("/api/login")
+
   .post(
     passport.authenticate("local"),
     authController.userLogin
@@ -15,19 +22,13 @@ router.route("/api/login")
 router.route("/api/signup")
   .post(authController.userSignUp);
 
-// ?????? does this work -- how do we get re-routed to profile with info from passport
-// router.route("/profile")
-//   .get(
-//     isAuthenticated,
-//     function(req, res){
-//       res.send("need it here")
-//     }
-// )
 
+router.route("/")
+  .get(authController.findAllUsers);
 
 //Get user and their plants and badges
-// router.route("/api/user/:id")
-//   .get(authController.findUserById)
+router.route("/api/user/:id")
+  .get(plantsController.findUserById);
 //   .put(authController.updateUserById)
 //   .delete(authController.deleteUser);
 
