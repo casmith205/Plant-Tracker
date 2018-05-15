@@ -14,13 +14,11 @@
 
 #plantcontainers {
     /* border: 1px solid black; */
-    padding: 25px;
     opacity: .8;
     background-color: whitesmoke;
 }
 
 #mainprofile {
-    padding: 25px;
     opacity: .8;
     background-color: whitesmoke;
 }
@@ -33,4 +31,12 @@
     padding-left: 100px;
 }
 
+#badgecontainer {
+    opacity: .8;
+    background-color: whitesmoke;
+}
 
+#indoorcontainer {
+    opacity: .8;
+    background-color: whitesmoke;
+}
