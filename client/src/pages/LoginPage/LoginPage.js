@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import Input from '../../components/Login/Input'
 import styles from './LoginPage.css';
 import RegistrationPage from "../RegistrationPage/RegistrationPage";
+import videoBG from "../../images/homepage.mp4"
 
 class LoginPage extends Component {
     state = {
@@ -34,23 +35,27 @@ class LoginPage extends Component {
                 console.log("set userid ", res.data.id)
                 sessionStorage.setItem("userID", res.data.id)
                 this.props.history.push({
-                    pathname:"/profile",
+                    pathname: "/profile",
                 })
                 console.log(this.state);
                 this.props.history.push("/profile")
             })
             .catch(err => console.log(err));
-        }
+    }
 
     render() {
         return (
             <main>
+                <video className='videoTag' id="videobg" autoPlay muted>
+                    <source src={videoBG} type='video/mp4' />
+                </video>
                 <div id="loginpage" className="content">
                     <div className="container">
                         <div className="row" id="topnav">
                         </div>
+
                         <div className="row" id="loginbox">
-                        <h4 className="white-text left-align">How do trees get on the internet?</h4>
+                            <h4 className="white-text left-align">How do trees get on the internet?</h4>
                             <form className="col s12">
                                 <div className="row">
                                     <Input
@@ -60,7 +65,7 @@ class LoginPage extends Component {
                                         placeholder="Username"
                                     />
                                 </div>
-                                <div class="row">
+                                <div className="row">
                                     <Input
                                         name="password"
                                         type="password"
@@ -82,7 +87,7 @@ class LoginPage extends Component {
                                     <a
                                         href="/registration"
                                         className="input-lg waves-effect waves-light btn"
-                                    ><i class="material-icons right">send</i>
+                                    ><i className="material-icons right">send</i>
                                         Signup
                                 </a>
                                 </div>
