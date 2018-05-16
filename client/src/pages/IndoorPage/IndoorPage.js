@@ -96,7 +96,6 @@ class IndoorPage extends Component {
                             <div className="col s2">
                                 <Draggable>
                                     <div><PottedPlants
-                                        name="pottedplant"
                                         key={plant.id}
                                         plantId={plant.id}
                                         plantName={plant.plantName}

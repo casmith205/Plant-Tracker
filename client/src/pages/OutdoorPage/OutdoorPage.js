@@ -99,7 +99,7 @@ class OutdoorPage extends Component {
 
                 <div className="row">
                     {this.state.outdoorPlants.map(plant => (
-                        <div className="col s 2">
+                        <div className="col s2">
                             <Draggable>
                                 <Plants
                                     key={plant.id}
