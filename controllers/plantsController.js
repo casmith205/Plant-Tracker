@@ -155,7 +155,7 @@ module.exports = {
   findAllBadges: function (req, res) {
     db.Badge.findAll()
       .then(res => {
-        console.log("this found all users!", res)
+        console.log("this found all badges!", res)
       })
   },
   // POST - /api/userBadge by req.body
