@@ -6,7 +6,7 @@ import { House, Plants, OutsidePlants } from '../../components/Outside';
 import IndoorPage from "../IndoorPage/IndoorPage";
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
-// let userId = sessionStorage.getItem('userId');
+let userId = sessionStorage.getItem('userID');
 
 
 class OutdoorPage extends Component {
@@ -14,21 +14,21 @@ class OutdoorPage extends Component {
     //     return <IndoorPage />
     // }
 
-
     state = {
         search: {
             commonName: "",
             indoorOutdoor: "outdoor",
-            userId: ""
+            userId: userId
         },
         newPlant: [],
         outdoorPlants: [],
-        userId: 1
+        userId: userId
         // error: ""
     };
 
     componentDidMount() {
         this.loadOutdoorPlants()
+        // console.log("id from storage", userId)
     }
 
     loadOutdoorPlants = () => {
@@ -56,7 +56,7 @@ class OutdoorPage extends Component {
                 search: {
                     commonName: event.target.value,
                     indoorOutdoor: "outdoor",
-                    userId: 1
+                    userId: userId
                     // userId: userId
                 }
             }
