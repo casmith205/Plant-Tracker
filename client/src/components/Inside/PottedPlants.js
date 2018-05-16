@@ -7,7 +7,7 @@ import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 class PottedPlants extends Component {
     render() {
         return (
-            <Draggable>
+            // <Draggable>
 
                 <div>
                     {/* <!-- Dropdown Trigger --> */}
@@ -19,7 +19,7 @@ class PottedPlants extends Component {
                     status = "alive"
                     needsWater = "true" />
                 </div>
-            </Draggable>
+            // </Draggable>
 
         )
     }

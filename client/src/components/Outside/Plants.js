@@ -4,7 +4,7 @@ import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 
 export const Plants = props => (
-    <Draggable>
+    // <Draggable>
 
         <div>
             
@@ -12,11 +12,12 @@ export const Plants = props => (
             src={require("../../images/outsideplant.png")} alt="outside plant" />
 
             <PlantInfo
+                plantId= {props.id}
                 plantName="the coolest flower"
                 type="outdoor"
                 status="alive"
                 needsWater="false" />
         </div>
-    </Draggable>
+    /* </Draggable> */
 
 );
