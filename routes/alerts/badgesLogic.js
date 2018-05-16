@@ -12,7 +12,7 @@ addBadge = (userId, badgeName) => {
 
 // FIND ALL BADGES
 
-// FIND ALL PLANTS
+// FIND ALL PLAN
 
 // ADD TO USERBADGES
 
