@@ -5,6 +5,7 @@ import styles from './OutdoorPage.css';
 import { House, Plants, OutsidePlants } from '../../components/Outside';
 import IndoorPage from "../IndoorPage/IndoorPage";
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
 
@@ -32,6 +33,12 @@ class OutdoorPage extends Component {
     }
 
     loadOutdoorPlants = () => {
+        if (sessionStorage.getItem("userID") == undefined) {
+            console.log("inside of no user ID in session");
+            this.props.history.push({
+                pathname: "/",
+            })
+        }
         // console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
