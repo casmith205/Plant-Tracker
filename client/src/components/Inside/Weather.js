@@ -10,27 +10,18 @@ import rainy from "../../images/rainyday.jpg";
 
 // Plant axios functions
 // Get all plants database by calling get user
-// let userZip;
+// let zipCode;
 
 class Weather extends Component {
-
+    
     state= {
         dailyWeather: ""
     }
 
-    componentDidMount() {
-    //     API.searchUser(this.props.match.params.id).then(response => {
-    //         userZip = response.data;
-    //         console.log(userZip);
-    //         return userZip;
-    //     })
-    //         .catch(err => console.log(err));
-    // }
-    
-    //getWeather= () => {
-        // Need to change the zip code to userZip after we get some data to test with and uncomment above
+    getWeather= (zipCode) => {
+        // Need to change the zip code to zipCode after we get some data to test with and uncomment above
         axios.get(
-            "https://api.openweathermap.org/data/2.5/weather?zip=" + 99501 + ",us&appid=d23506797d07737660408148e7533f22"
+            "https://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + ",us&appid=d23506797d07737660408148e7533f22"
         )
             .then( (response) => {
                 // console.log("this",this)
@@ -63,6 +54,19 @@ class Weather extends Component {
                 console.log(weatherImage);
             })
 }
+    componentDidMount() {
+        let zipCode = ""
+        //API.getUser=(user.id)=>)
+        API.getUser(this.props.userid).then(response => {
+            
+            zipCode = response.data.zipCode;
+            console.log("datashiz", response.data.zipCode);
+            this.getWeather(zipCode);
+        })
+            .catch(err => console.log(err));
+    }
+    
+
         render() {
             return (
                 <div>

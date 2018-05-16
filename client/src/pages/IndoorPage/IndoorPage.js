@@ -62,7 +62,7 @@ class IndoorPage extends Component {
     render() {
         return (
             <main>
-                <Weather />
+                <Weather userid={userId} />
                 <div id="indoorPage" className="content">
                     {/* <Weather /> */}
                     <div className="outsideweather"></div>
