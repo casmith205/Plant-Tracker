@@ -63,6 +63,7 @@ class LoginPage extends Component {
                                 <div class="row">
                                     <Input
                                         name="password"
+                                        type="password"
                                         value={this.state.password}
                                         onChange={this.handleInputChange}
                                         placeholder="Password"
@@ -95,7 +96,7 @@ class LoginPage extends Component {
                                 </a>
                             </div> */}
                             </form>
-                            <h4 className="white-text right">They LOGin!</h4>
+                            <h4 className="white-text right">They "LOG" in!</h4>
                         </div>
                     </div>
                 </div>
