@@ -30,4 +30,8 @@
 #videobg {
     z-index: -10;
     position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    width: auto;
 }
