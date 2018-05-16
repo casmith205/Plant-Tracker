@@ -7,6 +7,8 @@ import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 import API from "../../utils/API";
 import Weather from "../../components/Inside/Weather"
 
+let userId = sessionStorage.getItem('userID');
+
 class IndoorPage extends Component {
     // handleGoOutside() {
     //     return <OutdoorPage />
@@ -15,10 +17,12 @@ class IndoorPage extends Component {
         search: {
             commonName: "",
             indoorOutdoor: "indoor",
-            userId: ""
+            userId: userId
         },
-        results: [],
-        // error: ""
+        newPlant: [],
+        indoorPlants: [],
+        userId: userId
+                // error: ""
     };
 
     handleInputChange = event => {
@@ -28,7 +32,7 @@ class IndoorPage extends Component {
                 search: {
                     commonName: event.target.value,
                     indoorOutdoor: "indoor",
-                    userId: 1
+                    userId: userId
                     // userId: userId
                 }
             }
@@ -48,7 +52,7 @@ class IndoorPage extends Component {
                 //   throw new Error(res.data.message);
                 // }
                 console.log("res", res)
-                this.setState({ results: res });
+                this.setState({ newPlant: res });
             })
             .catch(err => console.log(err))
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
