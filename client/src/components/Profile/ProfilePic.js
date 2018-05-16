@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import UploadImage from "../Profile/UploadImage";
 
 class ProfilePic extends Component {
+
     render() {
         return (
             <div class="row">
@@ -10,7 +12,7 @@ class ProfilePic extends Component {
                             <img src={require('../../images/profpic.jpg')} alt="profile" />
                         </div>
                         <div class="card-content center-align">
-                            <p>I am a gnome profile picture</p>
+                            <UploadImage />
                         </div>
                     </div>
                 </div>
