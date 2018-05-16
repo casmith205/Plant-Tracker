@@ -11,7 +11,8 @@ class GraveyardPage extends Component {
             <main>
 
                 <div id="graveyardpage" className="content">
-                    <h1>Welcome to the spooooooooky graveyard</h1>
+                    <h2 className="center-align" id="graveyardtitle">Welcome to the spooooooooky graveyard</h2>
+                    <h4 className="center-align" id="graveyardtitle">Where plants go to rest... for good...</h4>
                     <Tombstone
                         name="tombstone"
                     />

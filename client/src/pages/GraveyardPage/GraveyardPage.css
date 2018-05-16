@@ -11,3 +11,8 @@
     padding-bottom: 30em;
     margin-bottom: 0px;
 }
+
+#graveyardtitle {
+    bottom: 100px;
+    position: relative;
+}
