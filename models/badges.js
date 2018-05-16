@@ -28,8 +28,8 @@ module.exports = function (sequelize, DataTypes) {
     Badge.associate = function(models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
-        Badge.belongsToMany(models.UserBadge, {
-            through: 'badgeIdLink',
+        Badge.hasMany(models.UserBadge, {
+            onDelete: "cascade"
         })
       };
 

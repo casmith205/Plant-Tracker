@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     const UserBadge = sequelize.define("UserBadge", {
-        badgeId: {
+        userBadgeId: {
             type: DataTypes.STRING,
             allowNull: false,
         }
@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             },
         }),
-        UserBadge.hasOne(models.Badge, {
+        UserBadge.belongsTo(models.Badge, {
             foreignKey: {
                 allowNull: false
             },
