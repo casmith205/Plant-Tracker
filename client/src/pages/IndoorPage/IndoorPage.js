@@ -117,7 +117,7 @@ class IndoorPage extends Component {
                             <img id="door" src={require("../../images/door.png")} useMap="#image-map2" />
 
                             <map name="image-map2">
-                                <area target="_self" alt="" title="" href="/indoorPlants" coords="6,8,196,423" shape="rect" />
+                                <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />
                             </map>
                         </div>
                     </div>
