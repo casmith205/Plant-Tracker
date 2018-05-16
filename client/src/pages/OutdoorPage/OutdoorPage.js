@@ -96,14 +96,17 @@ class OutdoorPage extends Component {
                                 <Plants />
                             </Draggable>
                         </div>
-                        <div id="house" className="col l2">
+                        </div>
+                        <div className="row">
+                        <div id="house">
                             <img src={require("../../images/house.png")} useMap="#image-map" />
                             <map name="image-map">
                                 <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
                             </map>
                         </div>
+                        </div>
                     </div>
-                    </div>
+
             </div>
         )
     }

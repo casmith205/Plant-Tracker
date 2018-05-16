@@ -12,8 +12,8 @@
 
 #house {
     margin: none;
-    padding-top: 140px;
-    padding-right: 505px;
-    padding-bottom: 10px;
+    padding-left: 80%;
+    padding-top: 20%;
+    position: relative;
     float: right;
 }
