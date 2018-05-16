@@ -11,7 +11,17 @@ module.exports = function (sequelize, DataTypes) {
         badgeDescription: {
             type: DataTypes.TEXT,
             allowNull: false,
+        },
+        badgeImage: {
+            type: DataTypes.TEXT
+        },
+        numberCriteria: {
+            type: DataTypes.TEXT
+        },
+        statusCriteria: {
+            type: DataTypes.TEXT
         }
+        
 
     });
 
