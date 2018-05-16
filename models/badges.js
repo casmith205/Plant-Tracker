@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT
         },
         numberCriteria: {
-            type: DataTypes.TEXT
+            type: DataTypes.INTEGER
         },
         statusCriteria: {
             type: DataTypes.TEXT
