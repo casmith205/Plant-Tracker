@@ -6,7 +6,7 @@ export const PlantInfo = props => (
     <div>
     
         {/* <!-- Dropdown Structure --> */}
-        <ul id="plantDropdown" className='dropdown-content'>
+        <ul id="plantDropdown" className={'dropdown-content'+ props.plantId}>
             <li>Plant Name: {props.plantName}  </li>
             <li> Indoor/outdoor: {props.type} </li>
             <li className="divider" tabIndex="-1"></li>

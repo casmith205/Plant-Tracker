@@ -89,29 +89,41 @@ class OutdoorPage extends Component {
 
                 <div className="row">
                     <div className="col lg4">
-                        <div>
 
-                            <AddPlantIcon
-                                handleInputChange={this.handleInputChange}
-                                handleFormSubmit={this.handleFormSubmit} />
-                            {this.state.outdoorPlants.map(plant => (
-                                <Draggable>
-                                    <Plants />
-                                </Draggable>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div id="house">
-                            <img src={require("../../images/house.png")} useMap="#image-map" />
-                            <map name="image-map">
-                                <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
-                            </map>
-                        </div>
+                        <AddPlantIcon
+                            handleInputChange={this.handleInputChange}
+                            handleFormSubmit={this.handleFormSubmit}
+                        />
                     </div>
                 </div>
 
-            </div>
+                <div className="row">
+                    {this.state.outdoorPlants.map(plant => (
+                        <div className="col s2">
+                            <Draggable>
+                                <Plants
+                                    key={plant.id}
+                                    plantId={plant.id}
+                                    plantName={plant.plantName}
+                                    type={plant.type}
+                                    status={plant.status}
+                                    needsWater={plant.needsToBeWatered_bool}
+
+                                />
+                            </Draggable>
+                        </div>
+                    ))}
+                </div>
+                <div className="row">
+                    <div id="house">
+                        <img src={require("../../images/house.png")} useMap="#image-map" />
+                        <map name="image-map">
+                            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
+                        </map>
+                    </div>
+                </div>
+
+            </div >
         )
     }
 }

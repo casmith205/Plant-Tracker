@@ -22,9 +22,29 @@ class IndoorPage extends Component {
         newPlant: [],
         indoorPlants: [],
         userId: userId
-                // error: ""
+        // error: ""
     };
-
+    componentDidMount() {
+        this.loadIndoorPlants()
+    }
+    loadIndoorPlants = () => {
+        // console.log(this.state.userId)
+        API.getPlants(this.state.userId)
+            .then(res => {
+                let idPlantArr = []
+                console.log(res.data)
+                for (var i = 0; i < res.data.length; i++) {
+                    // console.log(res.data[i].type)
+                    if (res.data[i].type === "indoor") {
+                        idPlantArr.push(res.data[i])
+                    }
+                }
+                // console.log("array",odPlantArr)
+                this.setState({ indoorPlants: idPlantArr })
+                console.log("array in state", this.state.indoorPlants)
+                // this.setState({indoorPlants: res.data})
+            })
+    }
     handleInputChange = event => {
 
         this.setState(
@@ -72,14 +92,24 @@ class IndoorPage extends Component {
                         handleInputChange={this.handleInputChange}
                         handleFormSubmit={this.handleFormSubmit} />
                     <div className="row">
+                        {this.state.indoorPlants.map(plant => (
+                            <div className="col s2">
+                                <Draggable>
+                                    <div><PottedPlants
+                                        key={plant.id}
+                                        plantId={plant.id}
+                                        plantName={plant.plantName}
+                                        type={plant.type}
+                                        status={plant.status}
+                                        needsWater={plant.needsToBeWatered_bool}
+                                    /></div>
+                                </Draggable>
+                            </div>
+                        ))}
+                        {/* <Window /> */}
+                    </div>
+                    <div className="row">
                         <div className="col lg4">
-                            <Draggable>
-                                <div><PottedPlants
-                                    name="pottedplant"
-                                /></div>
-                            </Draggable>
-
-                            {/* <Window /> */}
                         </div>
                         <div className="col lg4">
                         </div>
@@ -87,12 +117,12 @@ class IndoorPage extends Component {
                             <img id="door" src={require("../../images/door.png")} useMap="#image-map2" />
 
                             <map name="image-map2">
-                                <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />
+                                <area target="_self" alt="" title="" href="/indoorPlants" coords="6,8,196,423" shape="rect" />
                             </map>
                         </div>
                     </div>
                 </div>
-            </main>
+            </main >
         )
     }
 }
