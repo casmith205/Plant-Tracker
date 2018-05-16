@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import API from "../../utils/API";
-// import styles from './RegistrationPage.css';
+import './RegistrationPage.css';
 import Input from '../../components/Login/Input'
 
 class RegistrationPage extends Component {
@@ -35,7 +35,16 @@ class RegistrationPage extends Component {
             address: this.state.address,
             zipCode: this.state.zipCode
         })
-            .then(res => console.log("signed up!"))
+            .then(res => {
+                console.log("signed up!");
+                console.log(res)
+                console.log("set userid ", res.data.id)
+                sessionStorage.setItem("userID", res.data.id)
+                this.props.history.push({
+                    pathname: "/profile",
+                })
+                console.log(this.state);
+            })
             .catch(err => console.log(err));
     };
 

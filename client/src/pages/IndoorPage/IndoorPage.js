@@ -6,6 +6,7 @@ import './IndoorPage.css';
 import Draggable from 'react-draggable'; //draggable
 import API from "../../utils/API";
 import Weather from "../../components/Inside/Weather"
+import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
 
@@ -13,6 +14,8 @@ class IndoorPage extends Component {
     // handleGoOutside() {
     //     return <OutdoorPage />
     // }
+
+
     state = {
         search: {
             commonName: "",
@@ -24,10 +27,19 @@ class IndoorPage extends Component {
         userId: userId
         // error: ""
     };
+
+
+
     componentDidMount() {
         this.loadIndoorPlants()
     }
     loadIndoorPlants = () => {
+        if (sessionStorage.getItem("userID") == undefined) {
+            console.log("inside of no user ID in session");
+            this.props.history.push({
+                pathname: "/",
+            })
+        }
         // console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
@@ -73,6 +85,7 @@ class IndoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
+                alert ("You added a new plant!  Looks like you have plants this weekend!")
             })
             .catch(err => console.log(err))
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned

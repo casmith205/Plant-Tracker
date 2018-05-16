@@ -4,7 +4,11 @@ import API from "../../utils/API";
 import './GraveyardPage.css';
 // import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
+
+import { withRouter } from "react-router-dom";
+
 let userId = sessionStorage.getItem('userID');
+
 
 class GraveyardPage extends Component {
     state = {
@@ -35,6 +39,15 @@ class GraveyardPage extends Component {
                 console.log("array in state", this.state.deadPlants)
                 // this.setState({deadPlants: res.data})
             })
+    }
+
+    componentDidMount() { 
+    if (sessionStorage.getItem("userID") == undefined) {
+        console.log("inside of no user ID in session");
+        this.props.history.push({
+            pathname: "/",
+        })
+        }
     }
 
     render() {
