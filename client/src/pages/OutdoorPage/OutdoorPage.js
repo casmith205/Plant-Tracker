@@ -78,6 +78,7 @@ class OutdoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
+                alert ("You added a new plant!  I'm so excited, I wet my plants!")
             })
             .catch(err => console.log(err))
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
