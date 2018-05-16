@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import React from "react";
+import Draggable from 'react-draggable'; //draggable
 import { DeadPlantInfo } from "../../components/Graveyard";
 
 export const Tombstone = props => (

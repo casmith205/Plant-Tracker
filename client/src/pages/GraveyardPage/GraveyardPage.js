@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Tombstone } from "../../components/Graveyard/";
 import API from "../../utils/API";
-import styles from './GraveyardPage.css';
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import './GraveyardPage.css';
+// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 let userId = sessionStorage.getItem('userID');
 

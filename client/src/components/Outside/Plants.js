@@ -1,6 +1,6 @@
 import React from "react";
 import { PlantInfo } from "../../components"
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 
 export const Plants = props => (
@@ -27,3 +27,4 @@ export const Plants = props => (
     /* </Draggable> */
 
 );
+

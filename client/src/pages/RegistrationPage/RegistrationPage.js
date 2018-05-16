@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import styles from './RegistrationPage.css';
+// import styles from './RegistrationPage.css';
 import Input from '../../components/Login/Input'
 
 class RegistrationPage extends Component {

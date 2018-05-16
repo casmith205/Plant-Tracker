@@ -5,7 +5,7 @@ class OutdoorPlantContainer extends Component {
         let outdoorPlantList = [];
         console.log("inside OutdoorPLantCOntainer", this.props.plantsArray, outdoorPlantList.length);
         for (var i = 0; i < this.props.plantsArray.length; i++) {
-            if (this.props.plantsArray[i].type.toLowerCase() == 'outdoor') {
+            if (this.props.plantsArray[i].type.toLowerCase() === 'outdoor') {
                 outdoorPlantList.push(<li key={this.props.plantsArray[i].id}>{this.props.plantsArray[i].plantName} {outdoorPlantList.length}</li>);
             }
         }

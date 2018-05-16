@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { PlantInfo } from "../../components";
+// import { PlantInfo } from "../../components";
 import API from "../../utils/API";
 import axios from "axios";
 import cloudy from "../../images/cloudyday.jpg";
@@ -43,7 +43,7 @@ class Weather extends Component {
                     this.setState({dailyWeather: foggy} )
                 //     //foggy
                  }
-                else if (weatherImage == 800) {
+                else if (weatherImage === 800) {
                     this.setState({dailyWeather: sunny})
                     //sunny/clear
                 }
@@ -71,7 +71,7 @@ class Weather extends Component {
             return (
                 <div>
                 {/* {this.getWeather()} */}
-                <img id="weatherbg" src={this.state.dailyWeather}/>
+                <img id="weatherbg" src={this.state.dailyWeather} alt ="weatherpic"/>
                 {/* {console.log("render this",this)} */}
                 
                 </div>

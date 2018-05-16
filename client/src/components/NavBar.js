@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "./NavBar.css";
+import "./NavBar.css";
 import logoImage from "../images/logo.png";
 
 class NavBar extends Component {
@@ -18,7 +18,7 @@ class NavBar extends Component {
             <div className="navbar-fixed">
                 <nav className='extended'>
                     <div className="nav-wrapper">
-                        <img id="logoimage" src={logoImage} />
+                        <img id="logoimage" src={logoImage}   alt = "logo"/>
                         <a href="/" className="brand-logo left" id="logo">Plant Tracker</a>
                         <ul className="side-nav trigger right" id="mobile-demo">
                             <li><a href='/indoorplants'><i id="navbar-button" className="small material-icons">home</i>Indoor</a></li>
