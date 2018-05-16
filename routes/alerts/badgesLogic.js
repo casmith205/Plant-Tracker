@@ -6,9 +6,9 @@ let userIdArr = [];
 let badgeNameArr = [];
 
 
-addBadge = (userId, badgeName) => {
+// addBadge = (userId, badgeName) => {
 
-};
+// };
 
 // FIND ALL BADGES
 
@@ -17,13 +17,15 @@ addBadge = (userId, badgeName) => {
 // ADD TO USERBADGES
 
 // FIND ALL USERS & THEIR PLANTS
+findUsers = () => {
+    console.log("IM IN FIND USERS!")
 db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
     .then(res => {
         // FOR EVERY USER IN DB...
         // for (i = 0; i < res.length; i++) {
-        //     console.log("-------------------------------------------------------")
-        //     let userCell = res[i].dataValues.cellPhone
-        //     console.log("USER'S CELL PHONE: ", userCell)
+            console.log("-------------------------------------------------------")
+            let userID = res[0]
+            console.log("AYYYYYYYYYYYYYYYY", userID)
         //     let numPlants = res[i].dataValues.UserPlants.length
 
         //     // FOR EVERY PLANT FOR EACH USER IN DB...
@@ -72,3 +74,8 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
         //     plantName.pop();
     // }
     });
+};
+
+findUsers();
+
+module.exports = findUsers;
