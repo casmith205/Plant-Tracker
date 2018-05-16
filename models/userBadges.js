@@ -1,9 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     const UserBadge = sequelize.define("UserBadge", {
-        userBadgeId: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
     });
 
     UserBadge.associate = function(models) {
