@@ -22,8 +22,8 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
         // FOR EVERY USER IN DB...
         // for (i = 0; i < res.length; i++) {
         //     console.log("-------------------------------------------------------")
-        //     let userCell = res[i].dataValues.cellPhone
-        //     console.log("USER'S CELL PHONE: ", userCell)
+            let userCell = res[i].dataValues.id
+            console.log("USER'S CELL PHONE: ", userCell)
         //     let numPlants = res[i].dataValues.UserPlants.length
 
         //     // FOR EVERY PLANT FOR EACH USER IN DB...
