@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 import { JokeContainer, PottedPlants, Window } from "../../components/Inside";
-
 import OutdoorPage from "../OutdoorPage/OutdoorPage";
 import styles from './IndoorPage.css';
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
