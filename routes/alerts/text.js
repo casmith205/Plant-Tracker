@@ -97,7 +97,3 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
             plantName.pop();
         }
     });
-
-
-
-

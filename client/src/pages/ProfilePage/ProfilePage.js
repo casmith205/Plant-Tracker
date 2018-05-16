@@ -30,6 +30,8 @@ class ProfilePage extends Component {
             .then(res => {
                 console.log("get plants #1", res.data)
                 console.log("get plants", res.data.UserPlants)
+                console.log("get plants", res.data.UserBadges)
+                
                 this.setState({ userName:res.data.userName, plants: res.data.UserPlants, badges: res.data.UserBadges})
             })
             .catch(err => console.log(err))

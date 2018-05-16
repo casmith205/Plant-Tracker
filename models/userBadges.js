@@ -14,8 +14,10 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             },
         }),
-        UserBadge.hasMany(models.Badge, {
-            onDelete: "cascade"
+        UserBadge.hasOne(models.Badge, {
+            foreignKey: {
+                allowNull: false
+            },
         })
       };
 
