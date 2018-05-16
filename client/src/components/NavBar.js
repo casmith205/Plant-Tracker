@@ -15,7 +15,7 @@ class NavBar extends Component {
     render() {
         return (
 
-            <div>
+            <div className="navbar-fixed">
                 <nav className='extended'>
                     <div className="nav-wrapper">
                         <img id="logoimage" src={logoImage} />
