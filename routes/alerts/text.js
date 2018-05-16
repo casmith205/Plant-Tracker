@@ -46,9 +46,9 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
     .then(res => {
         // FOR EVERY USER IN DB...
         for (i = 0; i < res.length; i++) {
-            console.log("-------------------------------------------------------")
+            // console.log("-------------------------------------------------------")
             let userCell = res[i].dataValues.cellPhone
-            console.log("USER'S CELL PHONE: ", userCell)
+            // console.log("USER'S CELL PHONE: ", userCell)
             let numPlants = res[i].dataValues.UserPlants.length
 
             // FOR EVERY PLANT FOR EACH USER IN DB...
@@ -57,13 +57,12 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
                 let plantName = res[i].dataValues.UserPlants[j].dataValues.plantName;
                 let waterInterval = res[i].dataValues.UserPlants[j].dataValues.wateringInterval;
                 let lastWatered = res[i].dataValues.UserPlants[j].dataValues.lastWateredDate;
-                console.log("USER PLANT NAME:", plantName);
-                console.log("USER PLANT WATERING INTERVAL:", waterInterval);
-                console.log("USER PLANT LAST WATERED:", lastWatered);
-                // lastWatered = moment(lastWatered, "YYYY-MM-DD");
+                // console.log("USER PLANT NAME:", plantName);
+                // console.log("USER PLANT WATERING INTERVAL:", waterInterval);
+                // console.log("USER PLANT LAST WATERED:", lastWatered);
                 let currentDate = moment().format("YYYY-MM-DD");
-                console.log(currentDate);
-                console.log(lastWatered);
+                // console.log(currentDate);
+                // console.log(lastWatered);
                 switch (waterInterval) {
                     case "high":
                         waterInterval = 2
@@ -77,11 +76,11 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
                     default:
                         console.log("NO WATERS")
                 }
-                console.log(waterInterval);
+                // console.log(waterInterval);
                 lastWatered = moment(lastWatered).add(waterInterval, 'days').format("YYYY-MM-DD");
-                console.log(lastWatered);
+                // console.log(lastWatered);
                 let needsWater = moment(lastWatered).isAfter(currentDate)
-                console.log(needsWater);
+                // console.log(needsWater);
                 if (needsWater) {
                     phoneArr.push(userCell);
                     plantNameArr.push(plantName);
@@ -94,6 +93,6 @@ db.User.findAll({ include: [db.UserPlant, db.UserBadge, db.Friend] })
         for(w=phoneArr.length; w>=0; w--){
             sendText(phoneArr[w], plantNameArr[w]);
             phoneArr.pop();
-            plantName.pop();
+            plantNameArr.pop();
         }
     });

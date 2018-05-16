@@ -24,7 +24,8 @@ router.route("/api/signup")
 
 
 router.route("/")
-  .get(authController.findAllUsers);
+  // .get(authController.findAllUsers)
+  .get(plantsController.findAllBadges);
 
 //Get user and their plants and badges
 router.route("/api/user/:id")

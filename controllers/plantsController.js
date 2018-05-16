@@ -32,7 +32,7 @@ module.exports = {
       // include: [db.UserPlant, db.UserBadge, db.Friend]
       include: [
         db.UserPlant,
-        {model: db.UserBadge, include: [db.Badge]},
+        { model: db.UserBadge, include: [db.Badge] },
         db.Friend],
     }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -150,6 +150,13 @@ module.exports = {
       .destroy({ where: { id: req.params.plantId } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  // GET - get all badges
+  findAllBadges: function (req, res) {
+    db.Badge.findAll()
+      .then(res => {
+        console.log("this found all users!", res)
+      })
   },
   // POST - /api/userBadge by req.body
   //   plantsController.createUserPlant -> Sequelize find .then (create)
