@@ -8,6 +8,7 @@ import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 // let userId = sessionStorage.getItem('userId');
 
+
 class OutdoorPage extends Component {
     // handleGoInside() {
     //     return <IndoorPage />
@@ -18,20 +19,44 @@ class OutdoorPage extends Component {
         search: {
             commonName: "",
             indoorOutdoor: "outdoor",
-            userId:""
+            userId: ""
         },
-        results: [],
+        newPlant: [],
+        outdoorPlants: [],
+        userId: 1
         // error: ""
     };
 
+    componentDidMount() {
+        this.loadOutdoorPlants()
+    }
+
+    loadOutdoorPlants = () => {
+        console.log(this.state.userId)
+        API.getPlants(this.state.userId)
+            .then(res => {
+                let odPlantArr = []
+                console.log(res.data)
+                for (var i = 0; i < res.data.length; i++) {
+                    // console.log(res.data[i].type)
+                    if (res.data[i].type === "outdoor") {
+                        odPlantArr.push(res.data[i])
+                    }
+                }
+                console.log(odPlantArr)
+                // this.setState({outdoorPlants: res.data})
+            })
+        console.log(this.state)
+    }
+
     handleInputChange = event => {
-    
+
         this.setState(
             {
                 search: {
                     commonName: event.target.value,
                     indoorOutdoor: "outdoor",
-                    userId:1
+                    userId: 1
                     // userId: userId
                 }
             }
@@ -50,8 +75,8 @@ class OutdoorPage extends Component {
                 // if (res.data.status === "error") {
                 //   throw new Error(res.data.message);
                 // }
-                console.log("res",res)
-                this.setState({ results: res });
+                console.log("res", res)
+                this.setState({ newPlant: res });
             })
             .catch(err => console.log(err))
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
@@ -59,20 +84,29 @@ class OutdoorPage extends Component {
 
     render() {
         return (
-            <div id="outdoorPage" className="content">\
-                <Plants />
-                {/* <div className="row"> */}
-                <AddPlantIcon
-                    name="addplant"
-                    handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit} />
+            <div id="outdoorPage" className="content">
 
-                    <div id="house" className="col l2">
-                        <img src={require("../../images/house.png")} useMap="#image-map" />
-                        <map name="image-map">
-                            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
-                        </map>
+                <div className="row">
+                    <div className="col lg4">
+                        <div>
+                            <AddPlantIcon
+                                handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit} />
+                            <Draggable>
+                                <Plants />
+                            </Draggable>
+                        </div>
+                        </div>
+                        <div className="row">
+                        <div id="house">
+                            <img src={require("../../images/house.png")} useMap="#image-map" />
+                            <map name="image-map">
+                                <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
+                            </map>
+                        </div>
+                        </div>
                     </div>
+
             </div>
         )
     }

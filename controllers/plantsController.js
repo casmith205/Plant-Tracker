@@ -64,16 +64,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // // GET - /api/userPlant/:id  by req.params.plantId
+  // // GET - /api/plant/:userId  by req.params.userId
   // //   plantsController.findUserById -> Sequelize find
-  // findPlantById: function (req, res) {
-  //   db.userPlant.find({
-  //     where: {
-  //       userId: req.params.id
-  //     },
-  //   }).then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  findPlantsByUser: function (req, res) {
+    console.log(req.params)
+    db.UserPlant.findAll({
+      where: {
+        userId: req.params.userId
+      },
+    }).then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   // POST - /api/plant/  by req.body 
   //   plantsController.createUserPlant -> Sequelize find .then (create)
   createUserPlant: function (req, res) {

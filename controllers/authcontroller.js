@@ -1,5 +1,4 @@
 const db = require("../models");
-// const passport = require("../config/passport");
 
 module.exports = {
     userLogin: function (req, res) {
@@ -20,4 +19,10 @@ module.exports = {
         .then(res.redirect(307, "/api/login"))
         .catch(err => res.status(422).json(err));
     },
+    findAllUsers: function (req, res) {
+      db.User.findAll()
+      .then(res => {
+        console.log("this found all users!", res)
+      })
+    }
 }

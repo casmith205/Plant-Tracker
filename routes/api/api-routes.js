@@ -22,6 +22,10 @@ router.route("/api/login")
 router.route("/api/signup")
   .post(authController.userSignUp);
 
+
+router.route("/")
+  .get(authController.findAllUsers);
+
 //Get user and their plants and badges
 router.route("/api/user/:id")
   .get(plantsController.findUserById);
@@ -30,7 +34,7 @@ router.route("/api/user/:id")
 
 //Handle get, put, and delete for a particular article - could also call just .route("/:id")
 router.route("/api/plant/:plantId?/:status?")
-  // .get(plantsController.findPlantById)
+  // .get(plantsController.findPlantsByUser)
   .post(plantsController.createUserPlant)
   .put(plantsController.updateUserPlantById)
   .delete(plantsController.deleteUserPlant);
@@ -38,5 +42,9 @@ router.route("/api/plant/:plantId?/:status?")
 // Handle post for badge 
 router.route("/api/userBadge")
   .post(plantsController.addUserBadge);
+
+//route to get all plants related to user 
+router.route ("/api/findplant/:userId")
+.get(plantsController.findPlantsByUser)
 
 module.exports = router;
