@@ -73,6 +73,7 @@ class IndoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
+                alert ("You added a new plant!  Looks like you have plants this weekend!")
             })
             .catch(err => console.log(err))
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
