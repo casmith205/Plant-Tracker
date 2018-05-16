@@ -1,10 +1,11 @@
 import { AddPlantIcon } from "../../components";
 import React, { Component } from "react";
 import API from "../../utils/API";
-import styles from './OutdoorPage.css';
-import { House, Plants, OutsidePlants } from '../../components/Outside';
-import IndoorPage from "../IndoorPage/IndoorPage";
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import './OutdoorPage.css';
+import { Plants } from '../../components/Outside';
+// import IndoorPage from "../IndoorPage/IndoorPage";
+import Draggable from 'react-draggable'; //draggable
+
 import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
@@ -124,7 +125,7 @@ class OutdoorPage extends Component {
                 </div>
                 <div className="row">
                     <div id="house">
-                        <img src={require("../../images/house.png")} useMap="#image-map" />
+                        <img src={require("../../images/house.png")} useMap="#image-map" alt="house" />
                         <map name="image-map">
                             <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
                         </map>

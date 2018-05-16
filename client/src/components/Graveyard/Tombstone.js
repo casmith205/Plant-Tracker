@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import React from "react";
+import Draggable from 'react-draggable'; //draggable
 import { DeadPlantInfo } from "../../components/Graveyard";
 
 export const Tombstone = props => (
@@ -7,16 +7,22 @@ export const Tombstone = props => (
         <div>
 
             <img className="dropdown-trigger"
-                id="tombstone"
-                data-target="plantDropdown"
+                // id="tombstone"
+                href="#"
+                data-target={"tombstoneDropdown"+ props.plantId}
                 src={require("../../images/tombstone.png")}
-                alt="outside plant"
+                alt="tombstone"
             />
 
             <DeadPlantInfo
-                plantName="I'm a tombstone, not the pizza kind"
-                type="graveyard"
-                status="dead"
+                key = {props.plantId}
+                plantId = {props.plantId}
+                plantName={props.plantName}
+                type={props.type}
+                status={props.status}
+                bday = {props.born}
+                dday= {props.died}
+
             />
 
         </div>

@@ -5,7 +5,7 @@ class IndoorContainer extends Component {
         let indoorPlantList = [];
         console.log("inside OutdoorPLantCOntainer", this.props.plantsArray);
         for (var i = 0; i < this.props.plantsArray.length; i++) {
-            if (this.props.plantsArray[i].type.toLowerCase() == 'indoor') {
+            if (this.props.plantsArray[i].type.toLowerCase() === 'indoor') {
                 indoorPlantList.push(<li key={this.props.plantsArray[i].id}>{this.props.plantsArray[i].plantName} {indoorPlantList.length}</li>);
             }
         }

@@ -1,6 +1,6 @@
 import React from "react";
 import { PlantInfo } from "../../components"
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 
 export const Plants = props => (
@@ -8,8 +8,12 @@ export const Plants = props => (
 
         <div>
             
-            <img className = "dropdown-trigger" href='#' data-target={"plantDropdown" + props.plantId}
-            src={require("../../images/outsideplant.png")} alt="outside plant" />
+            <img className = "dropdown-trigger" 
+            href='#' 
+            data-target={"plantDropdown" + props.plantId}
+            src={require("../../images/outsideplant.png")} 
+            alt="outside plant" 
+            />
 
             <PlantInfo
                 key = {props.plantId}
@@ -23,3 +27,4 @@ export const Plants = props => (
     /* </Draggable> */
 
 );
+
