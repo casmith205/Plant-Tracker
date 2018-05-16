@@ -30,7 +30,10 @@ module.exports = {
         id: req.params.id
       },
       // include: [db.UserPlant, db.UserBadge, db.Friend]
-      include: [db.UserPlant, db.UserBadge, db.Friend],
+      include: [
+        db.UserPlant,
+        {model: db.UserBadge, include: [db.Badge]},
+        db.Friend],
     }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -48,7 +51,7 @@ module.exports = {
   updateUserById: function (req, res) {
     console.log("in updateUserById");
     db.User
-      .update(req.body, {where: { id: req.params.id } })
+      .update(req.body, { where: { id: req.params.id } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -61,16 +64,17 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // // GET - /api/userPlant/:id  by req.params.plantId
+  // // GET - /api/plant/:userId  by req.params.userId
   // //   plantsController.findUserById -> Sequelize find
-  // findPlantById: function (req, res) {
-  //   db.userPlant.find({
-  //     where: {
-  //       userId: req.params.id
-  //     },
-  //   }).then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // },
+  findPlantsByUser: function (req, res) {
+    console.log(req.params)
+    db.UserPlant.findAll({
+      where: {
+        userId: req.params.userId
+      },
+    }).then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   // POST - /api/plant/  by req.body 
   //   plantsController.createUserPlant -> Sequelize find .then (create)
   createUserPlant: function (req, res) {
@@ -100,7 +104,7 @@ module.exports = {
         for (let i = 0; i < findDbModel.length; i++) {
           if (findDbModel[i].dataValues.MoistureUse != '') {
             moistureUseVar = findDbModel[i].dataValues.MoistureUse;
-            foundIndex=i;
+            foundIndex = i;
             break;
           }
         }
@@ -127,13 +131,13 @@ module.exports = {
     //   else the user plant status is changing
     if (req.params.status === undefined) {
       db.UserPlant
-        .update({ lastWateredDate: (new Date) }, {where: { id: req.params.plantId }})
+        .update({ lastWateredDate: (new Date) }, { where: { id: req.params.plantId } })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
     else {
       db.UserPlant
-        .update({ status: req.params.status }, {where: { id: req.params.plantId } })
+        .update({ status: req.params.status }, { where: { id: req.params.plantId } })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
@@ -141,9 +145,9 @@ module.exports = {
   // DELETE - /api/plant/:plantId  by req.params.plantId
   //   plantsController.deleteUserPlant -> Sequelize destroy
   deleteUserPlant: function (req, res) {
-    console.log("inside deleteUserPLant", req.params.plantId );
+    console.log("inside deleteUserPLant", req.params.plantId);
     db.UserPlant
-      .destroy({ where: {id: req.params.plantId }})
+      .destroy({ where: { id: req.params.plantId } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

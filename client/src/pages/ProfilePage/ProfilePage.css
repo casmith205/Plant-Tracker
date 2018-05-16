@@ -14,23 +14,37 @@
 
 #plantcontainers {
     /* border: 1px solid black; */
-    padding: 25px;
     opacity: .8;
     background-color: whitesmoke;
 }
 
 #mainprofile {
-    padding: 25px;
     opacity: .8;
     background-color: whitesmoke;
 }
 
 #welcomebanner {
-    padding-left: 100px;
+    /* padding-left: 100px; */
+    color: #203c35;
+    opacity: .8;
 }
 
 #image {
     padding-left: 100px;
 }
 
+#badgecontainer {
+    opacity: .8;
+    padding: 0;
+    background-color: whitesmoke;
+}
 
+#indoorcontainer {
+    opacity: .8;
+    background-color: whitesmoke;
+}
+
+#outdoorcontainer {
+    opacity: .8;
+    background-color: whitesmoke;
+}

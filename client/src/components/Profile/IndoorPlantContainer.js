@@ -2,18 +2,36 @@ import React, { Component } from "react";
 
 class IndoorContainer extends Component {
     render() {
+        let indoorPlantList = [];
+        console.log("inside OutdoorPLantCOntainer", this.props.plantsArray);
+        for (var i = 0; i < this.props.plantsArray.length; i++) {
+            if (this.props.plantsArray[i].type.toLowerCase() == 'indoor') {
+                indoorPlantList.push(<li key={this.props.plantsArray[i].id}>{this.props.plantsArray[i].plantName} {indoorPlantList.length}</li>);
+            }
+        }
         return (
-            <div>
-                <h4 className="center-align">Your Indoor Plants</h4>
-                <ul className="center-align">
-                    <li>Scully</li>
-                    <li>Dracula</li>
-                    <li>Audrey II</li>
-                    <li>Hades</li>
-                    <li>Queequeg</li>
-                </ul>
-            </div> 
-)}
+            <div className="row">
+                <div className="col s12 m10">
+                    <div className="card">
+                        <span className="card-title center-align"><h4>Your Indoor Plants</h4></span>
+                    
+                    <div className="card-content">
+                        <ul className="center-align">
+                            {indoorPlantList.length ? (
+                                indoorPlantList
+                            ) : (
+                                    <ul>None</ul>
+                                )}
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default IndoorContainer;
+
+
+

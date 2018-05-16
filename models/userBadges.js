@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     const UserBadge = sequelize.define("UserBadge", {
-        badgeName: {
+        badgeId: {
             type: DataTypes.STRING,
             allowNull: false,
         }
@@ -14,8 +14,10 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             },
         }),
-        UserBadge.hasMany(models.Badge, {
-            onDelete: "cascade"
+        UserBadge.hasOne(models.Badge, {
+            foreignKey: {
+                allowNull: false
+            },
         })
       };
 

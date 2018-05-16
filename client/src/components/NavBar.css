@@ -1,0 +1,26 @@
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+}
+
+.inline-icon {
+    vertical-align: bottom;
+    font-size: 18px !important;
+ }
+
+#logo {
+    padding-left: 10px;
+    /* color: #B1FF5E; */
+}
+
+#logoimage {
+    padding-left: 20px;
+}
+
+.nav-wrapper {
+    background-color: #08B27A;
+}
+
+#navbar-button {
+    float: left;
+}
