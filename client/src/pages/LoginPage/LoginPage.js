@@ -38,7 +38,6 @@ class LoginPage extends Component {
                     pathname: "/profile",
                 })
                 console.log(this.state);
-                this.props.history.push("/profile")
             })
             .catch(err => console.log(err));
     }
