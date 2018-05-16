@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { DeadPlantInfo, Tombstone } from "../../components/Graveyard/";
+import { Tombstone } from "../../components/Graveyard/";
 import API from "../../utils/API";
 import styles from './GraveyardPage.css';
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
@@ -8,15 +8,16 @@ class GraveyardPage extends Component {
 
     render() {
         return (
-            <div id="graveyardpage" className="content">
-                <h1>Welcome to the spooooooooky graveyard</h1>
-                <Draggable>
-                <Tombstone />
-                </Draggable>
-            </div>
+            <main>
 
-            //     {/* //call gravestone on click
-            //     //call hover modal on hover */}
+                <div id="graveyardpage" className="content">
+                    <h1>Welcome to the spooooooooky graveyard</h1>
+                    <Tombstone
+                        name="tombstone"
+                    />
+                </div>
+
+            </main>
         )
     }
 }

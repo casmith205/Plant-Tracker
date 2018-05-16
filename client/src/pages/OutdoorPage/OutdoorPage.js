@@ -6,7 +6,7 @@ import { House, Plants, OutsidePlants } from '../../components/Outside';
 import IndoorPage from "../IndoorPage/IndoorPage";
 import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
-// let userId = sessionStorage.getItem('userId');
+let userId = sessionStorage.getItem('userID');
 
 
 class OutdoorPage extends Component {
@@ -14,25 +14,25 @@ class OutdoorPage extends Component {
     //     return <IndoorPage />
     // }
 
-
     state = {
         search: {
             commonName: "",
             indoorOutdoor: "outdoor",
-            userId: ""
+            userId: userId
         },
         newPlant: [],
         outdoorPlants: [],
-        userId: 1
+        userId: userId
         // error: ""
     };
 
     componentDidMount() {
         this.loadOutdoorPlants()
+        // console.log("id from storage", userId)
     }
 
     loadOutdoorPlants = () => {
-        console.log(this.state.userId)
+        // console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
                 let odPlantArr = []
@@ -43,10 +43,11 @@ class OutdoorPage extends Component {
                         odPlantArr.push(res.data[i])
                     }
                 }
-                console.log(odPlantArr)
+                // console.log("array",odPlantArr)
+                this.setState({ outdoorPlants: odPlantArr })
+                console.log("array in state", this.state.outdoorPlants)
                 // this.setState({outdoorPlants: res.data})
             })
-        console.log(this.state)
     }
 
     handleInputChange = event => {
@@ -56,7 +57,7 @@ class OutdoorPage extends Component {
                 search: {
                     commonName: event.target.value,
                     indoorOutdoor: "outdoor",
-                    userId: 1
+                    userId: userId
                     // userId: userId
                 }
             }
@@ -89,23 +90,26 @@ class OutdoorPage extends Component {
                 <div className="row">
                     <div className="col lg4">
                         <div>
+
                             <AddPlantIcon
                                 handleInputChange={this.handleInputChange}
                                 handleFormSubmit={this.handleFormSubmit} />
-                            <Draggable>
-                                <Plants />
-                            </Draggable>
+                            {this.state.outdoorPlants.map(plant => (
+                                <Draggable>
+                                    <Plants />
+                                </Draggable>
+                            ))}
                         </div>
-                        </div>
-                        <div className="row">
+                    </div>
+                    <div className="row">
                         <div id="house">
                             <img src={require("../../images/house.png")} useMap="#image-map" />
                             <map name="image-map">
                                 <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
                             </map>
                         </div>
-                        </div>
                     </div>
+                </div>
 
             </div>
         )
