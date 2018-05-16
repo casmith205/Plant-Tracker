@@ -30,7 +30,10 @@ module.exports = {
         id: req.params.id
       },
       // include: [db.UserPlant, db.UserBadge, db.Friend]
-      include: [db.UserPlant, db.UserBadge, db.Friend],
+      include: [
+        db.UserPlant,
+        {model: db.UserBadge, include: [db.Badge]},
+        db.Friend],
     }).then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -48,7 +51,7 @@ module.exports = {
   updateUserById: function (req, res) {
     console.log("in updateUserById");
     db.User
-      .update(req.body, {where: { id: req.params.id } })
+      .update(req.body, { where: { id: req.params.id } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -100,7 +103,7 @@ module.exports = {
         for (let i = 0; i < findDbModel.length; i++) {
           if (findDbModel[i].dataValues.MoistureUse != '') {
             moistureUseVar = findDbModel[i].dataValues.MoistureUse;
-            foundIndex=i;
+            foundIndex = i;
             break;
           }
         }
@@ -127,13 +130,13 @@ module.exports = {
     //   else the user plant status is changing
     if (req.params.status === undefined) {
       db.UserPlant
-        .update({ lastWateredDate: (new Date) }, {where: { id: req.params.plantId }})
+        .update({ lastWateredDate: (new Date) }, { where: { id: req.params.plantId } })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
     else {
       db.UserPlant
-        .update({ status: req.params.status }, {where: { id: req.params.plantId } })
+        .update({ status: req.params.status }, { where: { id: req.params.plantId } })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }
@@ -141,9 +144,9 @@ module.exports = {
   // DELETE - /api/plant/:plantId  by req.params.plantId
   //   plantsController.deleteUserPlant -> Sequelize destroy
   deleteUserPlant: function (req, res) {
-    console.log("inside deleteUserPLant", req.params.plantId );
+    console.log("inside deleteUserPLant", req.params.plantId);
     db.UserPlant
-      .destroy({ where: {id: req.params.plantId }})
+      .destroy({ where: { id: req.params.plantId } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

@@ -3,11 +3,10 @@ import React, { Component } from "react";
 class BadgeContainer extends Component {
     render() {
         let badgeList = [];
-        console.log("inside OutdoorPLantCOntainer", this.props.badgesArray, badgeList.length);
+        console.log("inside Badges", this.props.badgesArray);
         for (var i = 0; i < this.props.badgesArray.length; i++) {
-            if (this.props.badgesArray[i].type.toLowerCase() == 'outdoor') {
-                badgeList.push(<li key={this.props.badgesArray[i].id}>{this.props.badgesArray[i].plantName} {badgeList.length}</li>);
-            }
+                badgeList.push(<li key={this.props.badgesArray[i].id}>{this.props.badgesArray[i].id} {badgeList.length}</li>);
+
         }
         return (
             <div>

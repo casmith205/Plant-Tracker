@@ -39,4 +39,4 @@ sendText = phoneNumber => {
 
 module.exports = sendText;
 
-sendText("6155947241");
+// sendText("6155947241");

@@ -24,10 +24,12 @@ INSERT INTO userplants (plantName, wateringInterval, type, createdAt, updatedAt,
 
 
 INSERT INTO userbadges (badgeId, createdAt, updatedAt, UserId) VALUES ('1', now(), now(), '2');
-
 INSERT INTO userbadges (badgeId, createdAt, updatedAt, UserId) VALUES ('1', now(), now(), '5');
-INSERT INTO badges (badgeName, badgeDescription, createdAt, updatedAt) VALUES ('Greenish Thumb', 'You are doing well.  That thumb of yours is a bit like a leprechaun', now(), now());
+INSERT INTO userbadges (badgeId, createdAt, updatedAt, UserId) VALUES ('2', now(), now(), '5');
 
+INSERT INTO badges (badgeName, badgeDescription, createdAt, updatedAt) VALUES ('Black Thumb', "You are....well let's just say the gnomes make fun of you.", now(), now());
+INSERT INTO badges (badgeName, badgeDescription, createdAt, updatedAt) VALUES ('Greenish Thumb', 'You are doing well.  That thumb of yours is a bit like a leprechaun', now(), now());
+INSERT INTO badges (badgeName, badgeDescription, createdAt, updatedAt) VALUES ('Emerald Thumb', "The irish are considering renaming St. Patrick's day after you.", now(), now());
 
 ### adding theses to work with sequelize
 ALTER TABLE usda_plant_data_db ADD Column createdAt timestamp NOT NULL DEFAULT now();
