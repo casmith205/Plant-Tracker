@@ -129,6 +129,7 @@ class OutdoorPage extends Component {
 
                  <div id="DraggablePlants" className="row">
                     <div className="col s7">
+                    
                         <div className="row"> {this.state.outdoorPlants.map(plant => (
                         <div className="col s2">
                             {/* <Draggable> */}
@@ -149,7 +150,7 @@ class OutdoorPage extends Component {
                 </div>
                 </div>
                 {/* <div className="row"> */}
-                    <div className="col s5" id="house">
+                    <div className="col s2" id="house">
                         <img src={require("../../images/house.png")} useMap="#image-map" alt="house" />
                         <map name="image-map">
                             <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
