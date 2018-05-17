@@ -11,7 +11,8 @@ class RegistrationPage extends Component {
         email: "",
         cellPhone: "",
         address: "",
-        zipCode: ""
+        zipCode: "",
+        goodInfo: true
     };
 
     handleInputChange = event => {
@@ -47,9 +48,16 @@ class RegistrationPage extends Component {
             })
             .catch(err => { 
                 let errArray=err.response.data.errors
+                
                 errArray.forEach(function (error) {
-                    alert(error.message)
+                    let inputID=document.getElementById(error.path).getAttribute("name")
+                    console.log("error path", error.path)
+                    console.log("input name", inputID)
+                    if (error.path == inputID) {
+                        document.getElementById(error.path).setAttribute("class", "invalid");
+                    }
                 })
+                window.M.toast({html: 'Please fix fields underlined in red'})
             })
     };
 
@@ -65,6 +73,7 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">account_box</i>
                                 <div className="col s10">
                                     <Input
+                                        id="userName"
                                         name="userName"
                                         value={this.state.userName}
                                         onChange={this.handleInputChange}
@@ -77,6 +86,7 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">lock_outline</i>
                                 <div className="col s10">
                                     <Input
+                                        id="password"
                                         name="password"
                                         type="password"
                                         value={this.state.password}
@@ -89,7 +99,7 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">email</i>
                                 <div className="col s10">
                                     <Input
-                                        required
+                                        id="email"
                                         name="email"
                                         type="email"
                                         value={this.state.email}
@@ -103,6 +113,7 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">phone</i>
                                 <div className="col s10">
                                     <Input
+                                        id="cellPhone"
                                         name="cellPhone"
                                         value={this.state.cellPhone}
                                         onChange={this.handleInputChange}
@@ -114,6 +125,7 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">contact_mail</i>
                                 <div className="col s10">
                                     <Input
+                                        id="address"
                                         name="address"
                                         value={this.state.address}
                                         onChange={this.handleInputChange}
@@ -125,6 +137,7 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">add_location</i>
                                 <div className="col s10">
                                     <Input
+                                        id="zipCode"
                                         name="zipCode"
                                         value={this.state.zipCode}
                                         onChange={this.handleInputChange}
