@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import styles from "./BadgeContainer.css"
+
 
 class BadgeContainer extends Component {
     render() {
@@ -12,9 +12,9 @@ class BadgeContainer extends Component {
         }
         return (
                 <div className="col s12 m10">
-                    <div className="card">
+                    <div className="card plantContainer">
                         <span className="card-title center-align"><h4>Your Badges</h4></span>
-                    
+                    <hr></hr>
                     <ul className="center-align">
                         {badgeList.length ? (
                             badgeList
