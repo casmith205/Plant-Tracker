@@ -7,16 +7,19 @@
     min-width: 100%;
     margin-top:0px;
     padding-bottom: 2em;
-    padding-top: 2em;
+    padding-top: 0em;
 }
+
 #DraggablePlants {
     display: inline-block;
     position: relative;
 }
+
 #house {
     margin: none;
     padding-left: 4%;
-    padding-top: 20%;
-    /* position: relative; */
+    /* padding-top: 20%; */
+    /* padding-right: 40%;  */
+    position: relative;
     float: right;
 }
