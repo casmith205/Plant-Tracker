@@ -9,11 +9,14 @@
     padding-bottom: 2em;
     padding-top: 2em;
 }
-
+#DraggablePlants {
+    display: inline-block;
+    position: relative;
+}
 #house {
     margin: none;
-    padding-top: 140px;
-    padding-right: 505px;
-    padding-bottom: 10px;
+    padding-left: 4%;
+    padding-top: 20%;
+    /* position: relative; */
     float: right;
 }

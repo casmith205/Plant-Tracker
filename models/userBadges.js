@@ -1,9 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     const UserBadge = sequelize.define("UserBadge", {
-        badgeName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
     });
 
     UserBadge.associate = function(models) {
@@ -14,8 +10,10 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             },
         }),
-        UserBadge.hasMany(models.Badge, {
-            onDelete: "cascade"
+        UserBadge.belongsTo(models.Badge, {
+            foreignKey: {
+                allowNull: false
+            },
         })
       };
 

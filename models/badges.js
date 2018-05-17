@@ -11,17 +11,24 @@ module.exports = function (sequelize, DataTypes) {
         badgeDescription: {
             type: DataTypes.TEXT,
             allowNull: false,
+        },
+        badgeImage: {
+            type: DataTypes.TEXT
+        },
+        numberCriteria: {
+            type: DataTypes.INTEGER
+        },
+        statusCriteria: {
+            type: DataTypes.TEXT
         }
-
+        
     });
 
     Badge.associate = function(models) {
         // Associating Author with Posts
         // When an Author is deleted, also delete any associated Posts
-        Badge.belongsTo(models.UserBadge, {
-            foreignKey: {
-                allowNull: false
-            },
+        Badge.hasMany(models.UserBadge, {
+            onDelete: "cascade"
         })
       };
 
