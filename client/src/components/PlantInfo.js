@@ -17,14 +17,15 @@ export const PlantInfo = props => (
             {/* <li className="divider" tabIndex="-1"></li> */}
             <li><i className="material-icons">nature</i>Plant Status: {props.status}</li>
             {!props.needsWater ? (
-                <li><i className="material-icons">wb_sunny</i>Water Status: I am full of hydration!
+                <li>
+                    <i className="material-icons">wb_sunny</i>Water Status: I am full of hydration!
              </li>)
                 : (
                     <li>I'm parched feed me </li>
                 )}
             <li>
                 <a onClick={() => props.waterPlant(props.plantId)}
-                    className="waves-effect waves-light btn-small">WATER ME</a>
+                    className="btn-small">WATER ME</a>
             </li>
         </ul>
     </div>

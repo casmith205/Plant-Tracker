@@ -4,8 +4,8 @@ import API from "../../utils/API";
 import './OutdoorPage.css';
 import { Plants } from '../../components/Outside';
 // import IndoorPage from "../IndoorPage/IndoorPage";
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
-import { withRouter } from "react-router-dom";
+// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+// import { withRouter } from "react-router-dom";
 let userId = sessionStorage.getItem('userID');
 
 
@@ -37,7 +37,7 @@ class OutdoorPage extends Component {
     }
 
     loadOutdoorPlants = () => {
-        if (sessionStorage.getItem("userID") == undefined) {
+        if (sessionStorage.getItem("userID") === undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",
@@ -50,7 +50,7 @@ class OutdoorPage extends Component {
                 console.log(res.data)
                 for (var i = 0; i < res.data.length; i++) {
                     // console.log(res.data[i].type)
-                    if (res.data[i].type === "outdoor" && res.data[i].status != "dead") {
+                    if (res.data[i].type === "outdoor" && res.data[i].status !== "dead") {
                         odPlantArr.push(res.data[i])
                     }
                 }
@@ -115,7 +115,7 @@ class OutdoorPage extends Component {
                 <div className="row">
                     {this.state.outdoorPlants.map(plant => (
                         <div className="col s2">
-                            <Draggable>
+                            {/* <Draggable> */}
                                 <Plants
                                     key={plant.id}
                                     plantId={plant.id}
@@ -125,7 +125,7 @@ class OutdoorPage extends Component {
                                     needsWater={plant.needsToBeWatered_bool}
 
                                 />
-                            </Draggable>
+                            {/* </Draggable> */}
                         </div>
                     ))}
                 </div>
