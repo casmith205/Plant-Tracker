@@ -3,8 +3,6 @@ import { Tombstone } from "../../components/Graveyard/";
 import API from "../../utils/API";
 import './GraveyardPage.css';
 // import Draggable, { DraggableCore } from 'react-draggable'; //draggable
-
-
 import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
@@ -17,13 +15,9 @@ class GraveyardPage extends Component {
         // error: ""
     };
 
-    componentDidMount() {
-        this.loadDeadPlants()
-        // console.log("id from storage", userId)
-    }
 
     loadDeadPlants = () => {
-        // console.log(this.state.userId)
+        console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
                 let deadPlantArr = []
@@ -48,6 +42,7 @@ class GraveyardPage extends Component {
             pathname: "/",
         })
         }
+        this.loadDeadPlants()
     }
 
     render() {
