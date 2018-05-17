@@ -50,7 +50,7 @@ class OutdoorPage extends Component {
                 console.log(res.data)
                 for (var i = 0; i < res.data.length; i++) {
                     // console.log(res.data[i].type)
-                    if (res.data[i].type === "outdoor") {
+                    if (res.data[i].type === "outdoor" && res.data[i].status != "dead") {
                         odPlantArr.push(res.data[i])
                     }
                 }

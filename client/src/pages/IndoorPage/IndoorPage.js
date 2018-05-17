@@ -54,7 +54,7 @@ class IndoorPage extends Component {
                 console.log(res.data)
                 for (var i = 0; i < res.data.length; i++) {
                     // console.log(res.data[i].type)
-                    if (res.data[i].type === "indoor") {
+                    if (res.data[i].type === "indoor" && res.data[i].status != "dead") {
                         idPlantArr.push(res.data[i])
                     }
                 }
