@@ -1,0 +1,9 @@
+/* STYLING THE DROPDOWN */
+.dropdown-content li {
+  padding: 5px;
+}
+
+.dropdown-content li .btn-small{
+  height: 100%;
+  color: white;
+}
