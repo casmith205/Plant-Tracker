@@ -17,12 +17,6 @@ class IndoorPage extends Component {
             indoorOutdoor: "indoor",
             userId: userId
         },
-        // kill :{
-        //     userId : userId,
-        //     plantId : 0,
-        //     status: "dead"
-
-        // },
         indoorPlants: [],
         userId: userId
         // error: ""
@@ -68,7 +62,13 @@ class IndoorPage extends Component {
     killPlant = plantInfo => {
         API.updatePlant(plantInfo)
             .then(res => {
-                console.log(res)
+                console.log(plantInfo)
+                const plantid= parseInt(plantInfo.split("/")[0])
+                this.setState({indoorPlants: this.state.indoorPlants.filter(function(plant){
+                    if (plant.id !== plantid){
+                        return true
+                    }
+                } )})
                 // this.setState({indoorPlants})
             })
     }
@@ -77,6 +77,15 @@ class IndoorPage extends Component {
         API.updatePlant(plantId)
             .then(res => {
                 console.log(res)
+                console.log(plantId)
+                this.setState({indoorPlants: this.state.indoorPlants.map(plant =>{
+                    if (plant.id !== plantId){
+                        return plant
+                    }
+                    else{
+                        return {...plant, needsToBeWatered_bool : false}
+                    }
+                })})
             })
     }
 
@@ -91,7 +100,6 @@ class IndoorPage extends Component {
                     // userId: userId
                 }
             }
-            // this.setState({abc: {xyz: 'new value'}});
 
         )
         console.log(this.state.search)
