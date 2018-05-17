@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./AddPlantIcon.css";
+import "./AddPlantIcon.css";
 
 
 export const AddPlantIcon = props => (
