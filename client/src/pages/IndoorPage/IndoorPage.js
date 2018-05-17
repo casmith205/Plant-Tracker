@@ -70,6 +70,7 @@ class IndoorPage extends Component {
         API.updatePlant(plantInfo)
             .then(res => {
                 console.log(res)
+                // this.setState(this.state.indoorPlants)
             })
     }
 
@@ -104,7 +105,8 @@ class IndoorPage extends Component {
         API.savePlant(this.state.search)
             .then(res => {
                 console.log("res", res)
-                this.setState({ newPlant: res });
+                this.state.indoorPlants.push(res)
+                this.setState({indoorPlants : this.state.indoorPlants})
                 console.log("new plant data", this.state.newPlant)
                 alert("You added a new plant!  Looks like you have plants this weekend!")
             })
