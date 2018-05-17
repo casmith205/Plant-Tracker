@@ -144,7 +144,11 @@ module.exports = {
     //   else the user plant status is changing
     if (req.params.status === undefined) {
       db.UserPlant
-        .update({ lastWateredDate: (new Date) }, { where: { id: req.params.plantId } })
+        .update({
+          lastWateredDate: (new Date),
+          needsToBeWatered_bool: false
+        },
+          { where: { id: req.params.plantId } })
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     }

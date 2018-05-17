@@ -103,12 +103,13 @@ class OutdoorPage extends Component {
                 //   throw new Error(res.data.message);
                 // }
                 console.log("res", res)
-                this.setState({ newPlant: res });
+                this.state.outdoorPlants.push(res)
+                this.setState({outdoorPlants : this.state.outdoorPlants})
                 alert("You added a new plant!  I'm so excited, I wet my plants!")
             })
             .catch(err => {
                 console.log(err.response)
-                alert(err.response.data.msg + ". Please try again")
+                // alert(err.response.data.msg + ". Please try again")
             })
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
     }
@@ -156,8 +157,14 @@ class OutdoorPage extends Component {
                     ))}
                 </div>
                 </div>
-                
-            </div>
+                {/* <div className="row"> */}
+                    <div className="col s2" id="house">
+                        <img src={require("../../images/house.png")} useMap="#image-map" alt="house" />
+                        <map name="image-map">
+                            <area target="_self" alt="" title="" href="/outdoorPlants" coords="165,221,485,560" shape="rect" />
+                        </map>
+                    </div>
+                </div>
         )
     }
 }

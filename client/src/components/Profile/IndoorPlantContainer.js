@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from "./Containers.css"
 
 class IndoorContainer extends Component {
     render() {
@@ -12,17 +13,17 @@ class IndoorContainer extends Component {
         return (
             <div className="row">
                 <div className="col s12 m10">
-                    <div className="card">
+                    <div className="card plantContainer">
                         <span className="card-title center-align"><h4>Your Indoor Plants</h4></span>
-                    
-                    <div className="card-content">
-                        <ul className="center-align">
-                            {indoorPlantList.length ? (
-                                indoorPlantList
-                            ) : (
-                                    <ul>None</ul>
-                                )}
-                        </ul>
+                        <hr />
+                        <div className="card-content">
+                            <ul className="center-align">
+                                {indoorPlantList.length ? (
+                                    indoorPlantList
+                                ) : (
+                                        <ul>None</ul>
+                                    )}
+                            </ul>
                         </div>
                     </div>
                 </div>
