@@ -2,13 +2,12 @@
   "name": "plant-tracker",
   "version": "1.0.0",
   "description": "A full-stack project utilizing React, MySQL, and JavaScript to effectively track a user's indoor and outdoor plants.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "server": "node server.js",
     "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
-    "seed": "node scripts/seedDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "installDeps": "yarn && cd client && yarn"
   },
@@ -22,11 +21,14 @@
     "url": "https://github.com/casmith205/Plant-Tracker/issues"
   },
   "homepage": "https://github.com/casmith205/Plant-Tracker#readme",
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
-    "concurrently": "^3.5.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "fs": "^0.0.1-security",

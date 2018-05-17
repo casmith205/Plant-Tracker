@@ -26,8 +26,9 @@ class OutdoorPage extends Component {
     };
 
     componentDidMount() {
+        console.log(sessionStorage)
         this.loadOutdoorPlants()
-        if (sessionStorage.getItem("userID") === undefined) {
+        if (sessionStorage.getItem("userID") == undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",
@@ -150,6 +151,7 @@ class OutdoorPage extends Component {
                 <div className="row">
                     <div className="col s5" id="house">
                         <img className ="materialboxed" src={require("../../images/house.png")} useMap="#image-map" alt="house" />
+
                         <map name="image-map">
                             <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
                         </map>

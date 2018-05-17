@@ -3,8 +3,11 @@ const db = require("../models");
 module.exports = {
   userLogin: function (req, res) {
     res.json(req.user);
-    console.log("passport test!: ", res.statusCode);
+    console.log("passport test!: ", res.statusCode)
+
   },
+
+
   userSignUp: function (req, res) {
     console.log("in userSignUp");
     db.User
