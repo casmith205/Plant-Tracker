@@ -45,6 +45,11 @@ class GraveyardPage extends Component {
         this.loadDeadPlants()
     }
 
+    componentDidUpdate() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = window.M.Dropdown.init(elems);
+    }
+
     render() {
         return (
             <main>
