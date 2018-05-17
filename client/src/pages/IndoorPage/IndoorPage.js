@@ -149,7 +149,7 @@ class IndoorPage extends Component {
 
                     <div id="plantCol" className="row">
                         <div className="col s4 offset-s8">
-                            <img id="door" src={require("../../images/door.png")} useMap="#image-map2" alt="door" />
+                            <img id="door" className ="materialboxed" src={require("../../images/door.png")} useMap="#image-map2" alt="door" />
                             <map name="image-map2">
                                 <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />
                             </map>
