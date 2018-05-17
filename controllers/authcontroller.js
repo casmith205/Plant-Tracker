@@ -26,8 +26,22 @@ module.exports = {
           res.json(createResp);
       })
       .catch(err => {
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
         console.log("error handler for create")
-        createRes.status(422).json(err);
+        console.log(err)
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        console.log("************************************")
+        
+        res.status(500).send(err);
       });
   },
   findAllUsers: function (req, res) {

@@ -16,8 +16,8 @@ class RegistrationPage extends Component {
 
     handleInputChange = event => {
         const { name, value } = event.target;
-        console.log("name: ", name, "value: ", value)
-        console.log(event.target)
+        //console.log("name: ", name, "value: ", value)
+        //console.log(event.target)
         this.setState({
             [name]: value
         })
@@ -25,8 +25,8 @@ class RegistrationPage extends Component {
 
     handleRegSubmit = event => {
         event.preventDefault();
-        console.log("Hello I am signing up!");
-        console.log(this.state.userName);
+        //console.log("Hello I am signing up!");
+        //console.log(this.state.userName);
         API.registerUser({
             userName: this.state.userName,
             password: this.state.password,
@@ -36,16 +36,21 @@ class RegistrationPage extends Component {
             zipCode: this.state.zipCode
         })
             .then(res => {
-                console.log("signed up!");
-                console.log(res)
-                console.log("set userid ", res.data.id)
+                //console.log("signed up!");
+                //console.log(res)
+                //console.log("set userid ", res.data.id)
                 sessionStorage.setItem("userID", res.data.id)
                 this.props.history.push({
                     pathname: "/profile",
                 })
-                console.log(this.state);
+                //console.log(this.state);
             })
-            .catch(err => console.log(err));
+            .catch(err => { 
+                let errArray=err.response.data.errors
+                errArray.forEach(function (error) {
+                    alert(error.message)
+                })
+            })
     };
 
     render() {
@@ -64,6 +69,7 @@ class RegistrationPage extends Component {
                                         value={this.state.userName}
                                         onChange={this.handleInputChange}
                                         placeholder="Username"
+                                        
                                     />
                                 </div>
                             </div>
@@ -83,10 +89,13 @@ class RegistrationPage extends Component {
                                 <i className="material-icons prefix col s1">email</i>
                                 <div className="col s10">
                                     <Input
+                                        required
                                         name="email"
+                                        type="email"
                                         value={this.state.email}
                                         onChange={this.handleInputChange}
                                         placeholder="Email"
+                                        
                                     />
                                 </div>
                             </div>
