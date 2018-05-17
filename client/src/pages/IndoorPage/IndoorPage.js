@@ -98,12 +98,9 @@ class IndoorPage extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         console.log("handle submit funtion")
-        console.log(this.state.search)
+        console.log("search obj", this.state.search)
         API.savePlant(this.state.search)
             .then(res => {
-                // if (res.data.status === "error") {
-                //   throw new Error(res.data.message);
-                // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
                 alert("You added a new plant!  Looks like you have plants this weekend!")

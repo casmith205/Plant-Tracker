@@ -2,8 +2,6 @@ import React from "react";
 import { PlantInfo } from "../../components"
 // import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
-
-
 const PottedPlants = props => (
     <div>
         {/* <!-- Dropdown Trigger --> */}

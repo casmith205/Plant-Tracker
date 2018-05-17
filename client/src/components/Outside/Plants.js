@@ -2,18 +2,12 @@ import React from "react";
 import { PlantInfo } from "../../components"
 // import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
-
 export const Plants = props => (
-    // <Draggable>
-
-        <div>
-            
+        <div>          
             <img 
-            className = "dropdown-trigger" 
-            href='#' 
+            className = "dropdown-trigger" href='#' 
             data-target={"plantDropdown" + props.plantId}
-            src={require("../../images/outsideplant.png")} 
-            alt="outside plant" 
+            src={require("../../images/outsidepottedplant.png")}  alt="outside plant" 
             />
 
             <PlantInfo
@@ -23,6 +17,8 @@ export const Plants = props => (
                 type = {props.type}
                 status = {props.status}
                 needsWater = {props.needsWater}
+                killPlant = {props.killplant}
+                waterPlant = {props.waterPlant}
                  />
         </div>
     /* </Draggable> */

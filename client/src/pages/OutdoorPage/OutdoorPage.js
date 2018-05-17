@@ -61,6 +61,20 @@ class OutdoorPage extends Component {
             })
     }
 
+    killPlant = plantInfo => {
+        API.updatePlant(plantInfo)
+            .then(res => {
+                console.log(res)
+            })
+    }
+
+    waterPlant = plantId => {
+        API.updatePlant(plantId)
+            .then(res => {
+                console.log(res)
+            })
+    }
+
     handleInputChange = event => {
 
         this.setState(
@@ -124,6 +138,8 @@ class OutdoorPage extends Component {
                                     type={plant.type}
                                     status={plant.status}
                                     needsWater={plant.needsToBeWatered_bool}
+                                    killplant = {this.killPlant}
+                                    waterPlant = {this.waterPlant}
 
                                 />
                             {/* </Draggable> */}
