@@ -117,36 +117,23 @@ class IndoorPage extends Component {
                 <div id="indoorPage" className="content">
                     {/* <Weather /> */}
                     <div className="outsideweather"></div>
-
-                    <AddPlantIcon
-                        name="addplant"
-                        handleInputChange={this.handleInputChange}
-                        handleFormSubmit={this.handleFormSubmit} />
                     <div className="row">
-                        {this.state.indoorPlants.map(plant => (
-                            <div className="col s2">
-                                <Draggable>
-                                    <div><PottedPlants
-                                        key={plant.id}
-                                        plantId={plant.id}
-                                        plantName={plant.plantName}
-                                        type={plant.type}
-                                        status={plant.status}
-                                        needsWater={plant.needsToBeWatered_bool}
-                                        killplant={this.killPlant}
-                                        waterPlant={this.waterPlant}
-                                    /></div>
-                                </Draggable>
-                            </div>
-                        ))}
-                        {/* <Window /> */}
-                    </div>
-                    <div className="row">
+                        <div className="col s4">
+                            <AddPlantIcon
+                                name="addplant"
+                                handleInputChange={this.handleInputChange}
+                                handleFormSubmit={this.handleFormSubmit} />
+                        </div>
+                        {/* <div className="row">
                         <div className="col lg4">
                         </div>
                         <div className="col lg4">
+                        </div> */}
                         </div>
-                        <div className="col lg4">
+                     
+                    
+                        <div id="plantCol" className="row">
+                        <div className="col s7">
                             <img id="door" src={require("../../images/door.png")} useMap="#image-map2" alt="door" />
 
                             <map name="image-map2">
@@ -154,6 +141,27 @@ class IndoorPage extends Component {
                             </map>
                         </div>
                     </div>
+
+                        <div className="row">
+                            {this.state.indoorPlants.map(plant => (
+                                <div className="col s1">
+                                    <Draggable>
+                                        <PottedPlants
+                                            key={plant.id}
+                                            plantId={plant.id}
+                                            plantName={plant.plantName}
+                                            type={plant.type}
+                                            status={plant.status}
+                                            needsWater={plant.needsToBeWatered_bool}
+                                            killplant={this.killPlant}
+                                            waterPlant={this.waterPlant}
+                                        />
+                                    </Draggable>
+                                </div>
+                            ))}
+                            {/* <Window /> */}
+                        </div>
+                     
                 </div>
             </main >
         )
