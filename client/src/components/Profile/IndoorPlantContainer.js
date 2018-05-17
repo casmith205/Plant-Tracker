@@ -15,7 +15,7 @@ class IndoorContainer extends Component {
                 <div className="col s12 m10">
                     <div className="card plantContainer">
                         <span className="card-title center-align"><h4>Your Indoor Plants</h4></span>
-                        <hr></hr>
+                        <hr />
                         <div className="card-content">
                             <ul className="center-align">
                                 {indoorPlantList.length ? (

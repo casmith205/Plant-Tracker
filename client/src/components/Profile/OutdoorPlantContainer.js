@@ -14,7 +14,7 @@ class OutdoorPlantContainer extends Component {
                 <div class="col s12 m10">
                     <div class="card plantContainer">
                         <span class="card-title center-align"><h4>Your Outdoor Plants</h4></span>
-                        <hr></hr>
+                        <hr />
                         <div class="card-content">
                             <ul className="center-align">
                                 {outdoorPlantList.length ? (
