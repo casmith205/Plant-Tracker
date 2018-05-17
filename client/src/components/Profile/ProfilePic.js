@@ -5,13 +5,13 @@ class ProfilePic extends Component {
 
     render() {
         return (
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card">
-                        <div class="card-image">
+            <div className="row">
+                <div className="col s12 m10">
+                    <div className="card">
+                        <div className="card-image">
                             <img src={require('../../images/profpic.jpg')} alt="profile" />
                         </div>
-                        <div class="card-content center-align">
+                        <div className="card-content center-align">
                             <UploadImage />
                         </div>
                     </div>
