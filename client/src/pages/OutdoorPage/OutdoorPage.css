@@ -1,6 +1,6 @@
 #outdoorPage {
     margin:0;
-    background-image: url("../../images/OutsideBackground.jpg");
+    background-image: url("../../images/OutsideBackground2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
@@ -9,6 +9,10 @@
     padding-bottom: 2em;
     padding-top: 0em;
 }
+
+/* img:hover {
+    background-color: pink; 
+} */
 
 #DraggablePlants {
     display: inline-block;

@@ -15,11 +15,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
-    "database": "plantdb",
-    "host": "127.0.0.1",
-    "port": 8889,
+    "username": "htvn0bgunxv3kjpf",
+    "password": "jw0fpa5gupq8vlds",
+    "database": "gxe7hd3rssbfk7oz",
+    "host": "wm63be5w8m7gs25a.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "port": 3306,
     "dialect": "mysql"
   }
 }

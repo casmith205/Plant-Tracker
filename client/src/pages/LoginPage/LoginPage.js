@@ -39,7 +39,24 @@ class LoginPage extends Component {
                 })
                 console.log(this.state);
             })
-            .catch(err => console.log(err));
+            .catch(err => { 
+                console.log(err.response)
+                if (err.response.data == "Bad Request") {
+
+                }
+                // let errArray=err.response.data.errors
+                
+                // errArray.forEach(function (error) {
+                //     let inputID=document.getElementById(error.path).getAttribute("name")
+                //     console.log("error path", error.path)
+                //     console.log("input name", inputID)
+                //     if (error.path == inputID) {
+                document.getElementById("userName").setAttribute("class", "invalid");
+                document.getElementById("password").setAttribute("class", "invalid");
+                //     }
+                // })
+                window.M.toast({html: 'Please double check your username and password'})
+            })
     }
 
     render() {
@@ -58,6 +75,7 @@ class LoginPage extends Component {
                             <form className="col s12">
                                 <div className="row">
                                     <Input
+                                        id="userName"
                                         name="userName"
                                         value={this.state.userName}
                                         onChange={this.handleInputChange}
@@ -66,6 +84,7 @@ class LoginPage extends Component {
                                 </div>
                                 <div className="row">
                                     <Input
+                                        id="password"
                                         name="password"
                                         type="password"
                                         value={this.state.password}

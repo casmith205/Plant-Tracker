@@ -2,7 +2,7 @@
   "name": "plant-tracker",
   "version": "1.0.0",
   "description": "A full-stack project utilizing React, MySQL, and JavaScript to effectively track a user's indoor and outdoor plants.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "server": "node server.js",
     "client": "node scripts/start-client.js",
@@ -35,6 +35,7 @@
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "nodemailer": "^4.6.4",
+    "nodemon": "^1.17.4",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "react": "^16.3.2",
