@@ -1,5 +1,4 @@
 import React from "react";
-import {Tooltip} from 'react-lightweight-tooltip';
 
 export const OutsidePlants = props => (
     <div>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { ProfilePic, BadgeContainer, IndoorPlantContainer, OutdoorPlantContainer } from "../../components/Profile";
-import { Link, withRouter } from "react-router-dom";
-import styles from "./ProfilePage.css"
+import { withRouter } from "react-router-dom";
+import  "./ProfilePage.css"
 
 class ProfilePage extends Component {
 
@@ -18,7 +18,7 @@ class ProfilePage extends Component {
 
     loadPlants = () => {
        
-        if (sessionStorage.getItem("userID") == undefined) {
+        if (sessionStorage.getItem("userID") === undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",

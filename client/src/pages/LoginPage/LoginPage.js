@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Input from '../../components/Login/Input'
-import styles from './LoginPage.css';
-import RegistrationPage from "../RegistrationPage/RegistrationPage";
+import  './LoginPage.css';
+// import RegistrationPage from "../RegistrationPage/RegistrationPage";
 import videoBG from "../../images/homepage.mp4"
 
 class LoginPage extends Component {
@@ -38,7 +38,6 @@ class LoginPage extends Component {
                     pathname: "/profile",
                 })
                 console.log(this.state);
-                this.props.history.push("/profile")
             })
             .catch(err => console.log(err));
     }

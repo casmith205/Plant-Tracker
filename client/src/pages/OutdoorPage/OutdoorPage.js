@@ -1,12 +1,14 @@
 import { AddPlantIcon } from "../../components";
 import React, { Component } from "react";
 import API from "../../utils/API";
-import styles from './OutdoorPage.css';
-import { House, Plants, OutsidePlants } from '../../components/Outside';
-import IndoorPage from "../IndoorPage/IndoorPage";
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import './OutdoorPage.css';
+import { Plants } from '../../components/Outside';
+// import IndoorPage from "../IndoorPage/IndoorPage";
+import Draggable from 'react-draggable'; //draggable
 
-// let userId = sessionStorage.getItem('userId');
+import { withRouter } from "react-router-dom";
+
+let userId = sessionStorage.getItem('userID');
 
 
 class OutdoorPage extends Component {
@@ -14,25 +16,31 @@ class OutdoorPage extends Component {
     //     return <IndoorPage />
     // }
 
-
     state = {
         search: {
             commonName: "",
             indoorOutdoor: "outdoor",
-            userId: ""
+            userId: userId
         },
         newPlant: [],
         outdoorPlants: [],
-        userId: 1
+        userId: userId
         // error: ""
     };
 
     componentDidMount() {
         this.loadOutdoorPlants()
+        // console.log("id from storage", userId)
     }
 
     loadOutdoorPlants = () => {
-        console.log(this.state.userId)
+        if (sessionStorage.getItem("userID") == undefined) {
+            console.log("inside of no user ID in session");
+            this.props.history.push({
+                pathname: "/",
+            })
+        }
+        // console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
                 let odPlantArr = []
@@ -43,10 +51,11 @@ class OutdoorPage extends Component {
                         odPlantArr.push(res.data[i])
                     }
                 }
-                console.log(odPlantArr)
+                // console.log("array",odPlantArr)
+                this.setState({ outdoorPlants: odPlantArr })
+                console.log("array in state", this.state.outdoorPlants)
                 // this.setState({outdoorPlants: res.data})
             })
-        console.log(this.state)
     }
 
     handleInputChange = event => {
@@ -56,7 +65,7 @@ class OutdoorPage extends Component {
                 search: {
                     commonName: event.target.value,
                     indoorOutdoor: "outdoor",
-                    userId: 1
+                    userId: userId
                     // userId: userId
                 }
             }
@@ -77,9 +86,13 @@ class OutdoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
+                alert ("You added a new plant!  I'm so excited, I wet my plants!")
             })
-            .catch(err => console.log(err))
-        //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
+            .catch(err => {
+                console.log("in .catch of getPlants");
+                console.log(err);
+            })
+                    //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
     }
 
     render() {
@@ -88,26 +101,41 @@ class OutdoorPage extends Component {
 
                 <div className="row">
                     <div className="col lg4">
-                        <div>
-                            <AddPlantIcon
-                                handleInputChange={this.handleInputChange}
-                                handleFormSubmit={this.handleFormSubmit} />
+
+                        <AddPlantIcon
+                            handleInputChange={this.handleInputChange}
+                            handleFormSubmit={this.handleFormSubmit}
+                        />
+                    </div>
+                </div>
+
+                <div className="row">
+                    {this.state.outdoorPlants.map(plant => (
+                        <div className="col s2">
                             <Draggable>
-                                <Plants />
+                                <Plants
+                                    key={plant.id}
+                                    plantId={plant.id}
+                                    plantName={plant.plantName}
+                                    type={plant.type}
+                                    status={plant.status}
+                                    needsWater={plant.needsToBeWatered_bool}
+
+                                />
                             </Draggable>
                         </div>
-                        </div>
-                        <div className="row">
-                        <div id="house">
-                            <img src={require("../../images/house.png")} useMap="#image-map" />
-                            <map name="image-map">
-                                <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
-                            </map>
-                        </div>
-                        </div>
+                    ))}
+                </div>
+                <div className="row">
+                    <div id="house">
+                        <img src={require("../../images/house.png")} useMap="#image-map" alt="house" />
+                        <map name="image-map">
+                            <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
+                        </map>
                     </div>
+                </div>
 
-            </div>
+            </div >
         )
     }
 }

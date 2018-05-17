@@ -1,6 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
     const UserBadge = sequelize.define("UserBadge", {
-        
     });
 
     UserBadge.associate = function(models) {

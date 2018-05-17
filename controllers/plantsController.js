@@ -84,11 +84,12 @@ module.exports = {
     let commonName = req.body.commonName;
     let indoorOutdoor = req.body.indoorOutdoor;
 
-    //if no user what is in the DB return an error
+    //  elseif if no search param is sent inform the user
     if (req.body.commonName == '') {
-      res.status(404).json("No user input.")
+      console.log("No user input.");
+      return res.status(481).send({ msg: "No user input." });
     }
-    
+
     //find common name from USDA table and then write that datat to the UserPLant table
     //  because they told us they own that plant
     db.usda_plant_data_db.findAll({
@@ -108,7 +109,8 @@ module.exports = {
 
         //if no user what is in the DB return an error
         if (findDbModel.length == 0) {
-          res.status(404).json("No plant found")
+          console.log("No plant found.");
+          return res.status(404).send({ msg: "No plant found." });
         }
 
         //if multiple entries, pick the one with a Moisture Level in th DB
@@ -161,6 +163,13 @@ module.exports = {
       .destroy({ where: { id: req.params.plantId } })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
+  },
+  // GET - get all badges
+  findAllBadges: function (req, res) {
+    db.Badge.findAll()
+      .then(res => {
+        console.log("this found all badges!", res)
+      })
   },
   // POST - /api/userBadge by req.body
   //   plantsController.createUserPlant -> Sequelize find .then (create)

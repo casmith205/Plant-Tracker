@@ -1,28 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
 import { PlantInfo } from "../../components"
-import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 
 
-class PottedPlants extends Component {
-    render() {
-        return (
-            <Draggable>
+const PottedPlants = props =>(
+        // return (
+            // <Draggable>
 
                 <div>
                     {/* <!-- Dropdown Trigger --> */}
-                    <img className = "dropdown-trigger" href='#' data-target="plantDropdown"
+                    <img className = "dropdown-trigger" href='#' data-target={"plantDropdown" + props.plantId}
                     src ={require("../../images/indoorflower.png")} alt ="potted plant" />
                     <PlantInfo 
-                    plantName= "the coolest flower"
-                    type = "indoor"
-                    status = "alive"
-                    needsWater = "true" />
+                    key = {props.plantId}
+                    plantId = {props.plantId}
+                    plantName= {props.plantName}
+                    type = {props.type}
+                    status = {props.status}
+                    needsWater = {props.needsWater}
+                    />
                 </div>
-            </Draggable>
+            // </Draggable>
 
-        )
-    }
-}
+        // )
+
+    )
+
 
 export default PottedPlants;
