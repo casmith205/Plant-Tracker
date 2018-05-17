@@ -115,7 +115,7 @@ class IndoorPage extends Component {
                 this.state.indoorPlants.push(res)
                 this.setState({ indoorPlants: this.state.indoorPlants })
                 console.log("new plant data", this.state.newPlant)
-                alert("You added a new plant!  Looks like you have plants this weekend!")
+                window.M.toast({html: "You added a new plant!  Looks like you have plants this weekend!"})
             })
             .catch(err => {
                 console.log(err.response)
