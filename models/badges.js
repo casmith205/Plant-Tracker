@@ -22,7 +22,6 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT
         }
         
-
     });
 
     Badge.associate = function(models) {
