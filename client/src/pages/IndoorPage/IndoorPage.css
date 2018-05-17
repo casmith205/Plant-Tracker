@@ -2,21 +2,22 @@
     background-image: url("../../images/IndoorBackground.png");
     background-repeat: no-repeat;
     background-size: cover;
-    max-height: 100%;
-    max-width: 100%;
+    height: auto;
+    /* max-height: 100%;
+    max-width: 100%; */
     padding-bottom: 1em;
     margin-bottom: 0px;
 }
 
 #door {
-    width: 300%;
-    height: 300%; 
-    margin-top: 80%;
-    padding-top: 200%;
-    margin-left: 500%;
-    position: float;
+    position: relative;
+    background-size: contain;
+    padding-top: 20%;
     padding-bottom: none;
-    margin-bottom: none;
+    margin-bottom: 10%;
+    margin-top: 400%;
+    max-width: 400%;
+    height: 300%;
 }
 
 #plantCol {

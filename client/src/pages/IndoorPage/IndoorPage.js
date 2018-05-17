@@ -106,7 +106,7 @@ class IndoorPage extends Component {
             .then(res => {
                 console.log("res", res)
                 this.state.indoorPlants.push(res)
-                this.setState({indoorPlants : this.state.indoorPlants})
+                this.setState({ indoorPlants: this.state.indoorPlants })
                 console.log("new plant data", this.state.newPlant)
                 alert("You added a new plant!  Looks like you have plants this weekend!")
             })
@@ -137,39 +137,38 @@ class IndoorPage extends Component {
                         </div>
                         <div className="col lg4">
                         </div> */}
-                        </div>
-                     
-                    
-                        <div id="plantCol" className="row">
-                        <div className="col s7">
-                            <img id="door" src={require("../../images/door.png")} useMap="#image-map2" alt="door" />
+                    </div>
 
+
+                    <div id="plantCol" className="row">
+                        <div className="col s4 offset-s8">
+                            <img id="door" src={require("../../images/door.png")} useMap="#image-map2" alt="door" />
                             <map name="image-map2">
                                 <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />
                             </map>
                         </div>
                     </div>
 
-                        <div className="row">
-                            {this.state.indoorPlants.map(plant => (
-                                <div className="col s1">
-                                    <Draggable>
-                                        <PottedPlants
-                                            key={plant.id}
-                                            plantId={plant.id}
-                                            plantName={plant.plantName}
-                                            type={plant.type}
-                                            status={plant.status}
-                                            needsWater={plant.needsToBeWatered_bool}
-                                            killplant={this.killPlant}
-                                            waterPlant={this.waterPlant}
-                                        />
-                                    </Draggable>
-                                </div>
-                            ))}
-                            {/* <Window /> */}
-                        </div>
-                     
+                    <div className="row">
+                        {this.state.indoorPlants.map(plant => (
+                            <div className="col s1">
+                                <Draggable>
+                                    <PottedPlants
+                                        key={plant.id}
+                                        plantId={plant.id}
+                                        plantName={plant.plantName}
+                                        type={plant.type}
+                                        status={plant.status}
+                                        needsWater={plant.needsToBeWatered_bool}
+                                        killplant={this.killPlant}
+                                        waterPlant={this.waterPlant}
+                                    />
+                                </Draggable>
+                            </div>
+                        ))}
+                        {/* <Window /> */}
+                    </div>
+
                 </div>
             </main >
         )
