@@ -11,7 +11,9 @@ class BadgeContainer extends Component {
             badgeList.push(
                 <li key={this.props.badgesArray[i].Badge.id}>
                     {this.props.badgesArray[i].Badge.id}
-                    <img src={currentImage}/>
+                    <img src={currentImage}alt ="badge img"/>
+                    <img src = {require("../../images/badges/firstplantbadge.png")}/>
+                    
                 </li>);
 
 

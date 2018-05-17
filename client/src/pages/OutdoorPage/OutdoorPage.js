@@ -64,7 +64,7 @@ class OutdoorPage extends Component {
         API.updatePlant(plantInfo)
             .then(res => {
                 console.log(plantInfo)
-                const plantid = parseInt(plantInfo.split("/")[0])
+                const plantid = parseInt(plantInfo.split("/")[0],10)
                 this.setState({
                     outdoorPlants: this.state.outdoorPlants.filter(function (plant) {
                         if (plant.id !== plantid) {
