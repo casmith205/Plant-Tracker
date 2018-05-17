@@ -56,6 +56,8 @@ class IndoorPage extends Component {
                 this.setState({ indoorPlants: idPlantArr })
                 console.log("array in state", this.state.indoorPlants)
                 // this.setState({indoorPlants: res.data})
+            }).catch(err => {
+                console.log(err)
             })
     }
 
@@ -106,7 +108,10 @@ class IndoorPage extends Component {
                 console.log("new plant data", this.state.newPlant)
                 alert("You added a new plant!  Looks like you have plants this weekend!")
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err.response)
+                alert(err.response.data.msg + ". Please try again")
+            })
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
     }
 

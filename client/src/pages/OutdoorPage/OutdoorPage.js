@@ -28,6 +28,12 @@ class OutdoorPage extends Component {
 
     componentDidMount() {
         this.loadOutdoorPlants()
+        if (sessionStorage.getItem("userID") === undefined) {
+            console.log("inside of no user ID in session");
+            this.props.history.push({
+                pathname: "/",
+            })
+        }
       
     }
 
@@ -38,12 +44,6 @@ class OutdoorPage extends Component {
 
     loadOutdoorPlants = () => {
         // console.log(this.state.userId)
-        if (sessionStorage.getItem("userID") === undefined) {
-            console.log("inside of no user ID in session");
-            this.props.history.push({
-                pathname: "/",
-            })
-        }
         API.getPlants(this.state.userId)
             .then(res => {
                 let odPlantArr = []
@@ -107,8 +107,8 @@ class OutdoorPage extends Component {
                 alert("You added a new plant!  I'm so excited, I wet my plants!")
             })
             .catch(err => {
-                console.log("in .catch of getPlants");
-                console.log(err);
+                console.log(err.response)
+                alert(err.response.data.msg + ". Please try again")
             })
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
     }
