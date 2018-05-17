@@ -6,29 +6,23 @@ import './IndoorPage.css';
 import Draggable from 'react-draggable'; //draggable
 import API from "../../utils/API";
 import Weather from "../../components/Inside/Weather"
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
 
-
 class IndoorPage extends Component {
-    // handleGoOutside() {
-    //     return <OutdoorPage />
-    // }
-
-
     state = {
         search: {
             commonName: "",
             indoorOutdoor: "indoor",
             userId: userId
         },
-        kill :{
-            userId : userId,
-            plantId : 0,
-            status: "dead"
+        // kill :{
+        //     userId : userId,
+        //     plantId : 0,
+        //     status: "dead"
 
-        },
+        // },
         newPlant: [],
         indoorPlants: [],
         userId: userId
@@ -39,14 +33,14 @@ class IndoorPage extends Component {
 
     componentDidMount() {
         this.loadIndoorPlants()
-    }
-    loadIndoorPlants = () => {
-        if (sessionStorage.getItem("userID") == undefined) {
+        if (sessionStorage.getItem("userID") === undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",
             })
         }
+    }
+    loadIndoorPlants = () => {
         // console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
@@ -54,7 +48,7 @@ class IndoorPage extends Component {
                 console.log(res.data)
                 for (var i = 0; i < res.data.length; i++) {
                     // console.log(res.data[i].type)
-                    if (res.data[i].type === "indoor") {
+                    if (res.data[i].type === "indoor" && res.data[i].status !== "dead") {
                         idPlantArr.push(res.data[i])
                     }
                 }
@@ -64,28 +58,24 @@ class IndoorPage extends Component {
                 // this.setState({indoorPlants: res.data})
             })
     }
-    //need to add route in controller... and api stuff
-    // waterPlant = event => {
-    //     API.updatePlant(this.state.userId)
 
-    // }
-    componentDidUpdate(){
+    componentDidUpdate() {
         var elems = document.querySelectorAll('.dropdown-trigger');
         var instances = window.M.Dropdown.init(elems);
-}
-
-    killPlant = plantInfo=>{
-        API.updatePlant(plantInfo)
-        .then(res =>{
-            console.log(res)
-        })
     }
 
-    waterPlant = plantId =>{
+    killPlant = plantInfo => {
+        API.updatePlant(plantInfo)
+            .then(res => {
+                console.log(res)
+            })
+    }
+
+    waterPlant = plantId => {
         API.updatePlant(plantId)
-        .then(res=>{
-            console.log(res)
-        })
+            .then(res => {
+                console.log(res)
+            })
     }
 
     handleInputChange = event => {
@@ -116,7 +106,7 @@ class IndoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
-                alert ("You added a new plant!  Looks like you have plants this weekend!")
+                alert("You added a new plant!  Looks like you have plants this weekend!")
             })
             .catch(err => console.log(err))
         //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
@@ -146,8 +136,8 @@ class IndoorPage extends Component {
                                         type={plant.type}
                                         status={plant.status}
                                         needsWater={plant.needsToBeWatered_bool}
-                                        killplant = {this.killPlant}
-                                        waterPlant = {this.waterPlant}
+                                        killplant={this.killPlant}
+                                        waterPlant={this.waterPlant}
                                     /></div>
                                 </Draggable>
                             </div>
@@ -160,7 +150,7 @@ class IndoorPage extends Component {
                         <div className="col lg4">
                         </div>
                         <div className="col lg4">
-                            <img id="door" src={require("../../images/door.png")} useMap="#image-map2" alt ="door"/>
+                            <img id="door" src={require("../../images/door.png")} useMap="#image-map2" alt="door" />
 
                             <map name="image-map2">
                                 <area target="_self" alt="" title="" href="/outdoorplants" coords="6,8,196,423" shape="rect" />

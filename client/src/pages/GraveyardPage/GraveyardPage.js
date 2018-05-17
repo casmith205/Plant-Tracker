@@ -3,7 +3,7 @@ import { Tombstone } from "../../components/Graveyard/";
 import API from "../../utils/API";
 import './GraveyardPage.css';
 // import Draggable, { DraggableCore } from 'react-draggable'; //draggable
-import { withRouter } from "react-router-dom";
+// import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
 
@@ -36,7 +36,7 @@ class GraveyardPage extends Component {
     }
 
     componentDidMount() { 
-    if (sessionStorage.getItem("userID") == undefined) {
+    if (sessionStorage.getItem("userID") === undefined) {
         console.log("inside of no user ID in session");
         this.props.history.push({
             pathname: "/",
