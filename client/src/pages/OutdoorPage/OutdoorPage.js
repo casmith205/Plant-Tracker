@@ -20,7 +20,6 @@ class OutdoorPage extends Component {
             indoorOutdoor: "outdoor",
             userId: userId
         },
-        newPlant: [],
         outdoorPlants: [],
         userId: userId
         // error: ""
@@ -34,12 +33,12 @@ class OutdoorPage extends Component {
                 pathname: "/",
             })
         }
-      
+
     }
 
-    componentDidUpdate(){
-            var elems = document.querySelectorAll('.dropdown-trigger');
-            var instances = window.M.Dropdown.init(elems);
+    componentDidUpdate() {
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = window.M.Dropdown.init(elems);
     }
 
     loadOutdoorPlants = () => {
@@ -64,7 +63,15 @@ class OutdoorPage extends Component {
     killPlant = plantInfo => {
         API.updatePlant(plantInfo)
             .then(res => {
-                console.log(res)
+                console.log(plantInfo)
+                const plantid = parseInt(plantInfo.split("/")[0])
+                this.setState({
+                    outdoorPlants: this.state.outdoorPlants.filter(function (plant) {
+                        if (plant.id !== plantid) {
+                            return true
+                        }
+                    })
+                })
             })
     }
 
@@ -73,6 +80,15 @@ class OutdoorPage extends Component {
             .then(res => {
                 alert("way to keep those plants alive... keep it up")
                 console.log(res)
+                console.log(plantId)
+                this.setState({outdoorPlants: this.state.outdoorPlants.map(plant =>{
+                    if (plant.id !== plantId){
+                        return plant
+                    }
+                    else{
+                        return {...plant, needsToBeWatered_bool : false}
+                    }
+                })})
             })
     }
 
@@ -104,7 +120,7 @@ class OutdoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.state.outdoorPlants.push(res)
-                this.setState({outdoorPlants : this.state.outdoorPlants})
+                this.setState({ outdoorPlants: this.state.outdoorPlants })
                 alert("You added a new plant!  I'm so excited, I wet my plants!")
             })
             .catch(err => {
@@ -128,6 +144,7 @@ class OutdoorPage extends Component {
                     </div>
                 </div>
 
+
                  <div className="row">
                     <div className="col s5" id="house">
                         <img src={require("../../images/house.png")} useMap="#image-map" alt="house" />
@@ -147,11 +164,13 @@ class OutdoorPage extends Component {
                                     type={plant.type}
                                     status={plant.status}
                                     needsWater={plant.needsToBeWatered_bool}
-                                    killplant = {this.killPlant}
-                                    waterPlant = {this.waterPlant}
+                                    killplant={this.killPlant}
+                                    waterPlant={this.waterPlant}
 
                                 />
-                            {/* </Draggable> */}
+                                {/* </Draggable> */}
+                            </div>
+                        ))}
                         </div>
                     
                     ))}
