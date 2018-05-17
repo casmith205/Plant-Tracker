@@ -23,7 +23,6 @@ class IndoorPage extends Component {
         //     status: "dead"
 
         // },
-        newPlant: [],
         indoorPlants: [],
         userId: userId
         // error: ""
@@ -70,7 +69,7 @@ class IndoorPage extends Component {
         API.updatePlant(plantInfo)
             .then(res => {
                 console.log(res)
-                // this.setState(this.state.indoorPlants)
+                // this.setState({indoorPlants})
             })
     }
 

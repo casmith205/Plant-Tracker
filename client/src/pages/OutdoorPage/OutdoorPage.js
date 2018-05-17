@@ -20,7 +20,6 @@ class OutdoorPage extends Component {
             indoorOutdoor: "outdoor",
             userId: userId
         },
-        newPlant: [],
         outdoorPlants: [],
         userId: userId
         // error: ""
