@@ -19,6 +19,8 @@ const PottedPlants = props =>(
                     type = {props.type}
                     status = {props.status}
                     needsWater = {props.needsWater}
+                    killPlant = {props.killplant}
+                    waterPlant = {props.waterPlant}
                     />
                 </div>
             // </Draggable>

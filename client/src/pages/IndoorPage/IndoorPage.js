@@ -10,6 +10,7 @@ import { withRouter } from "react-router-dom";
 
 let userId = sessionStorage.getItem('userID');
 
+
 class IndoorPage extends Component {
     // handleGoOutside() {
     //     return <OutdoorPage />
@@ -21,6 +22,12 @@ class IndoorPage extends Component {
             commonName: "",
             indoorOutdoor: "indoor",
             userId: userId
+        },
+        kill :{
+            userId : userId,
+            plantId : 0,
+            status: "dead"
+
         },
         newPlant: [],
         indoorPlants: [],
@@ -57,6 +64,26 @@ class IndoorPage extends Component {
                 // this.setState({indoorPlants: res.data})
             })
     }
+    //need to add route in controller... and api stuff
+    // waterPlant = event => {
+    //     API.updatePlant(this.state.userId)
+
+    // }
+
+    killPlant = plantInfo=>{
+        API.updatePlant(plantInfo)
+        .then(res =>{
+            console.log(res)
+        })
+    }
+
+    waterPlant = plantId =>{
+        API.updatePlant(plantId)
+        .then(res=>{
+            console.log(res)
+        })
+    }
+
     handleInputChange = event => {
 
         this.setState(
@@ -115,6 +142,8 @@ class IndoorPage extends Component {
                                         type={plant.type}
                                         status={plant.status}
                                         needsWater={plant.needsToBeWatered_bool}
+                                        killplant = {this.killPlant}
+                                        waterPlant = {this.waterPlant}
                                     /></div>
                                 </Draggable>
                             </div>
