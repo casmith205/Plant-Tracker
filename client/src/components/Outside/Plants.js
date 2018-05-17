@@ -8,7 +8,8 @@ export const Plants = props => (
 
         <div>
             
-            <img className = "dropdown-trigger" 
+            <img 
+            className = "dropdown-trigger" 
             href='#' 
             data-target={"plantDropdown" + props.plantId}
             src={require("../../images/outsideplant.png")} 

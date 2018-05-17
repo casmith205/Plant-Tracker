@@ -69,6 +69,10 @@ class IndoorPage extends Component {
     //     API.updatePlant(this.state.userId)
 
     // }
+    componentDidUpdate(){
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = window.M.Dropdown.init(elems);
+}
 
     killPlant = plantInfo=>{
         API.updatePlant(plantInfo)
@@ -132,7 +136,7 @@ class IndoorPage extends Component {
                         handleInputChange={this.handleInputChange}
                         handleFormSubmit={this.handleFormSubmit} />
                     <div className="row">
-                        {/* {this.state.indoorPlants.map(plant => (
+                        {this.state.indoorPlants.map(plant => (
                             <div className="col s2">
                                 <Draggable>
                                     <div><PottedPlants
@@ -147,8 +151,7 @@ class IndoorPage extends Component {
                                     /></div>
                                 </Draggable>
                             </div>
-                        ))} */}
-                        <PottedPlants />
+                        ))}
                         {/* <Window /> */}
                     </div>
                     <div className="row">
