@@ -149,7 +149,7 @@ class OutdoorPage extends Component {
 
                 <div className="row">
                     <div className="col s5" id="house">
-                        <img src={require("../../images/house.png")} useMap="#image-map" alt="house" />
+                        <img className ="materialboxed" src={require("../../images/house.png")} useMap="#image-map" alt="house" />
                         <map name="image-map">
                             <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
                         </map>
