@@ -26,8 +26,9 @@ class OutdoorPage extends Component {
     };
 
     componentDidMount() {
+        console.log(sessionStorage)
         this.loadOutdoorPlants()
-        if (sessionStorage.getItem("userID") === undefined) {
+        if (sessionStorage.getItem("userID") == undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",
