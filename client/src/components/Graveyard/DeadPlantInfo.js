@@ -7,7 +7,6 @@ export const DeadPlantInfo = props => (
         className='dropdown-content'
         >
             <li>Plant Name: {props.plantName}  </li>
-            {/* <li className="divider" tabindex="-1"></li> */}
             <li><i className="material-icons">nature</i>Sadly, I am  {props.status}</li>
             {/* maybe a if statment displaying a different message if plant was 
             outdoor or indorr using props.type */}
