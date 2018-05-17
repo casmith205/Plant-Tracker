@@ -123,7 +123,7 @@ class OutdoorPage extends Component {
                 console.log("res", res)
                 this.state.outdoorPlants.push(res)
                 this.setState({ outdoorPlants: this.state.outdoorPlants })
-                alert("You added a new plant!  I'm so excited, I wet my plants!")
+                window.M.toast({html: "You added a new plant!  I'm so excited, I wet my plants!"})
             })
             .catch(err => {
                 console.log(err.response)
