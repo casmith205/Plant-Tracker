@@ -27,9 +27,9 @@ INSERT INTO userbadges (BadgeId, createdAt, updatedAt, UserId) VALUES ('2', now(
 INSERT INTO userbadges (BadgeId, createdAt, updatedAt, UserId) VALUES ('1', now(), now(), '4');
 INSERT INTO userbadges (BadgeId, createdAt, updatedAt, UserId) VALUES ('1', now(), now(), '3');
 
-INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Black Thumb', "You are....well let's just say the gnomes make fun of you.", 10, "dead", now(), now());
-INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('RIP MY FIRST LOVE', "Accidents happen...but this plant will forver be in your memory as your first death in the family", 1, "dead", now(), now());
-INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Welcome!', "You just made your first step to a better, plant-filled life!", 1, "alive", now(), now());
+INSERT INTO badges (badgeName, badgeDescription, badgeImage, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Black Thumb', "You are....well let's just say the gnomes make fun of you.", "../../images/badges/deadplantbadge.png",10, "dead", now(), now());
+INSERT INTO badges (badgeName, badgeDescription, badgeImage, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('RIP MY FIRST LOVE', "Accidents happen...but this plant will forver be in your memory as your first death in the family","../../images/badges/deadplantbadge.png", 1, "dead", now(), now());
+INSERT INTO badges (badgeName, badgeDescription, badgeImage, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Welcome!', "You just made your first step to a better, plant-filled life!", "../../images/badges/firstplantbadge.png",1, "alive", now(), now());
 
 INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Greenish Thumb', 'You are doing well.  That thumb of yours is a bit like a leprechaun', now(), now());
 INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Emerald Thumb', "The irish are considering renaming St. Patrick's day after you.", now(), now());
