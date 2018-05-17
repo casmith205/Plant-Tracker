@@ -103,6 +103,7 @@ class IndoorPage extends Component {
             .then(res => {
                 console.log("res", res)
                 this.setState({ newPlant: res });
+                console.log("new plant data", this.state.newPlant)
                 alert("You added a new plant!  Looks like you have plants this weekend!")
             })
             .catch(err => console.log(err))

@@ -27,7 +27,8 @@ module.exports = {
       })
       .catch(err => {
         console.log("error handler for create")
-        createRes.status(422).json(err);
+        console.log(err)
+        res.status(422).json(err);
       });
   },
   findAllUsers: function (req, res) {

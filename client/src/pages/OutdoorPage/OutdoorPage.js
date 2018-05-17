@@ -28,7 +28,7 @@ class OutdoorPage extends Component {
 
     componentDidMount() {
         this.loadOutdoorPlants()
-        // console.log("id from storage", userId)
+      
     }
 
     componentDidUpdate(){
@@ -37,13 +37,13 @@ class OutdoorPage extends Component {
     }
 
     loadOutdoorPlants = () => {
+        // console.log(this.state.userId)
         if (sessionStorage.getItem("userID") === undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",
             })
         }
-        // console.log(this.state.userId)
         API.getPlants(this.state.userId)
             .then(res => {
                 let odPlantArr = []
@@ -71,6 +71,7 @@ class OutdoorPage extends Component {
     waterPlant = plantId => {
         API.updatePlant(plantId)
             .then(res => {
+                alert("way to keep those plants alive... keep it up")
                 console.log(res)
             })
     }
