@@ -1,20 +1,23 @@
 import React from "react";
-
+import styles from "./AddPlantIcon.css";
 
 
 export const AddPlantIcon = props => (
 
     <div>
         <div>
-            <a className="waves-effect waves-light btn modal-trigger" href="#addPlantModal"><i className="large material-icons">add_circle_outline</i></a>
+            <a id="addplantbuttonbg" className="waves-effect waves-light btn-floating btn-large modal-trigger" href="#addPlantModal"><i id="addplantbutton" className="large material-icons">add</i></a>
         </div>
         <div id="addPlantModal" className="modal">
-            <div className="modal-content">
+        <div className="container" id="addplantcontainer">
+        <div className="row">
+            <div className="col s12 modal-content">
                 <h4>Add a new plant to your family</h4>
+            </div>
             </div>
 
             <div className="row">
-                <div className="input-field col s8">
+                <div className="input-field col s12">
                     <textarea
                         id="plantInput"
                         name="plantName"
@@ -42,6 +45,7 @@ export const AddPlantIcon = props => (
                 <a href="#!" 
                 className="modal-close pulse btn-floating btn-large col s2"
                 onClick = {props.handleFormSubmit}>ADD</a>
+            </div>
             </div>
         </div >
 
