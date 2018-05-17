@@ -4,10 +4,8 @@ import API from "../../utils/API";
 import './OutdoorPage.css';
 import { Plants } from '../../components/Outside';
 // import IndoorPage from "../IndoorPage/IndoorPage";
-import Draggable from 'react-draggable'; //draggable
-
+import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 import { withRouter } from "react-router-dom";
-
 let userId = sessionStorage.getItem('userID');
 
 
@@ -31,6 +29,11 @@ class OutdoorPage extends Component {
     componentDidMount() {
         this.loadOutdoorPlants()
         // console.log("id from storage", userId)
+    }
+
+    componentDidUpdate(){
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = window.M.Dropdown.init(elems);
     }
 
     loadOutdoorPlants = () => {
@@ -86,13 +89,13 @@ class OutdoorPage extends Component {
                 // }
                 console.log("res", res)
                 this.setState({ newPlant: res });
-                alert ("You added a new plant!  I'm so excited, I wet my plants!")
+                alert("You added a new plant!  I'm so excited, I wet my plants!")
             })
             .catch(err => {
                 console.log("in .catch of getPlants");
                 console.log(err);
             })
-                    //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
+        //   .catch(err => this.setState({ error: err.message }));--determite how err is getting returned
     }
 
     render() {

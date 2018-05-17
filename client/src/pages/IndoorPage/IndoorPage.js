@@ -69,6 +69,10 @@ class IndoorPage extends Component {
     //     API.updatePlant(this.state.userId)
 
     // }
+    componentDidUpdate(){
+        var elems = document.querySelectorAll('.dropdown-trigger');
+        var instances = window.M.Dropdown.init(elems);
+}
 
     killPlant = plantInfo=>{
         API.updatePlant(plantInfo)

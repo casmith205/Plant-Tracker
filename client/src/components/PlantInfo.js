@@ -7,7 +7,7 @@ export const PlantInfo = props => (
 
         {/* <!-- Dropdown Structure --> */}
         <ul id={"plantDropdown" + props.plantId}
-            className={'dropdown-content' + props.plantId} >
+            className='dropdown-content' >
             <li>Plant Name: {props.plantName}  </li>
             <li> Indoor/outdoor: {props.type} </li>
             <li className="divider" tabIndex="-1"></li>
@@ -27,5 +27,7 @@ export const PlantInfo = props => (
             </li>
         </ul>
     </div>
+
+
 
 )
