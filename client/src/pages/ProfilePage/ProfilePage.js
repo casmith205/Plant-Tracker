@@ -18,7 +18,7 @@ class ProfilePage extends Component {
 
     loadPlants = () => {
        
-        if (sessionStorage.getItem("userID") === undefined) {
+        if (sessionStorage.getItem("userID") == undefined) {
             console.log("inside of no user ID in session");
             this.props.history.push({
                 pathname: "/",
