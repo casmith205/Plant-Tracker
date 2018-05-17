@@ -132,7 +132,7 @@ class IndoorPage extends Component {
                         handleInputChange={this.handleInputChange}
                         handleFormSubmit={this.handleFormSubmit} />
                     <div className="row">
-                        {this.state.indoorPlants.map(plant => (
+                        {/* {this.state.indoorPlants.map(plant => (
                             <div className="col s2">
                                 <Draggable>
                                     <div><PottedPlants
@@ -147,7 +147,8 @@ class IndoorPage extends Component {
                                     /></div>
                                 </Draggable>
                             </div>
-                        ))}
+                        ))} */}
+                        <PottedPlants />
                         {/* <Window /> */}
                     </div>
                     <div className="row">
