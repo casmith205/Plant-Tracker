@@ -16,8 +16,9 @@
     padding-bottom: none;
     margin-bottom: 10%;
     margin-top: 400%;
-    max-width: 400%;
-    height: 300%;
+    margin-left: 400%;
+    min-height: 300%;
+    opacity: 0;
 }
 
 #plantCol {
