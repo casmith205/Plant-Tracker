@@ -2,9 +2,11 @@
 #addplantbuttonbg {
     opacity: 0.8;
     background-color: #08B27A;
+    margin: 2em;
 }
 
-#addplantcontainer {
+/* #addplantcontainer {
+    margin: 2em;
     margin-right: auto;
-    margin-left: auto;
-}
+    margin-left: auto; 
+} */
