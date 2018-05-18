@@ -4,7 +4,7 @@ import API from "../../utils/API";
 import './OutdoorPage.css';
 import { Plants } from '../../components/Outside';
 // import IndoorPage from "../IndoorPage/IndoorPage";
-// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 // import { withRouter } from "react-router-dom";
 let userId = sessionStorage.getItem('userID');
 
@@ -134,6 +134,28 @@ class OutdoorPage extends Component {
     }
 
     render() {
+        const plants = this.state.outdoorPlants.map(plant => {
+            // <div className="col s1">
+            // return
+            // <Draggable >
+                
+            return <Plants
+                    key={plant.id}
+                    plantId={plant.id}
+                    plantName={plant.plantName}
+                    type={plant.type}
+                    status={plant.status}
+                    needsWater={plant.needsToBeWatered_bool}
+                    killplant={this.killPlant}
+                    waterPlant={this.waterPlant}
+                    {...this.state}
+
+                />
+                // </Draggable>
+            // </div>
+        })
+        console.log(plants)
+
         return (
             <div id="outdoorPage" className="content">
 
@@ -158,23 +180,7 @@ class OutdoorPage extends Component {
                     </div>
 
                     <div id="DraggablePlants">
-                        {this.state.outdoorPlants.map(plant => (
-                            <div className="col s1">
-                                {/* <Draggable> */}
-                                <Plants
-                                    key={plant.id}
-                                    plantId={plant.id}
-                                    plantName={plant.plantName}
-                                    type={plant.type}
-                                    status={plant.status}
-                                    needsWater={plant.needsToBeWatered_bool}
-                                    killplant={this.killPlant}
-                                    waterPlant={this.waterPlant}
-
-                                />
-                                {/* </Draggable> */}
-                            </div>
-                        ))}
+                        {plants}
                     </div>
 
                 </div>

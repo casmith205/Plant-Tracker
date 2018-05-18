@@ -1,8 +1,9 @@
 import React from "react";
 import { PlantInfo } from "../../components"
-// import Draggable, { DraggableCore } from 'react-draggable'; //draggable
+import Draggable, { DraggableCore } from 'react-draggable'; //draggable
 
 const PottedPlants = props => (
+    <Draggable>
     <div>
         {/* <!-- Dropdown Trigger --> */}
         <img className = "dropdown-trigger" href='#' data-target={"plantDropdown" + props.plantId}
@@ -18,7 +19,7 @@ const PottedPlants = props => (
         waterPlant = {props.waterPlant}
         />
     </div>
-
+    </Draggable>
 )
 
 
