@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var instances = M.Materialbox.init(elems);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
+
+
 window.M = M
 //   M.AutoInit();
 
