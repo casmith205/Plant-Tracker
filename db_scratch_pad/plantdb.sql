@@ -13,8 +13,13 @@ use plantdb;
 ### use this command if the import named it something else
 RENAME TABLE usdaplantslesscolumns TO usda_plant_data_db;
 
+CREATE TABLE usda_plant_data_db;
+
 
 use plantdb;
+
+use gxe7hd3rssbfk7oz;
+
 INSERT INTO users (userName, password, email, cellPhone, address, zipCode, createdAt, updatedAt) VALUES ('mickey-mouse', '123456', 'mickey@disney.com', '0123456789', '10 Main Street', 55401, now(), now());
 INSERT INTO users (userName, password, email, cellPhone, address, zipCode, createdAt, updatedAt) VALUES ('superman', '123456', 'sup-man@hall-of-justice.com', '0123456789', '10 Main Street', 55401, now(), now());
 
@@ -34,11 +39,16 @@ INSERT INTO badges (badgeName, badgeDescription, badgeImage, numberCriteria, sta
 INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Greenish Thumb', 'You are doing well.  That thumb of yours is a bit like a leprechaun', now(), now());
 INSERT INTO badges (badgeName, badgeDescription, numberCriteria, statusCriteria, createdAt, updatedAt) VALUES ('Emerald Thumb', "The irish are considering renaming St. Patrick's day after you.", now(), now());
 
+use plantdb;
 ### adding theses to work with sequelize
 ALTER TABLE usda_plant_data_db ADD Column createdAt timestamp NOT NULL DEFAULT now();
 ALTER TABLE usda_plant_data_db ADD Column updatedAt timestamp NOT NULL DEFAULT now();
+ALTER TABLE usda_plant_data_db DROP column createdAt;
+ALTER TABLE usda_plant_data_db DROP column updatedAt;
 
 DELETE FROM `plantdb`.`users` WHERE `id`='6';
+
+TRUNCATE gxe7hd3rssbfk7oz.usda_plant_data_db;
 
 
 
