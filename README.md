@@ -18,7 +18,7 @@ In particular, we chose to design a REACT based web-site that presented a 'Singl
 https://plant-tracker-app.herokuapp.com/
 
 ## Technologies Used
-REACT, Materialize, JavaScript ES6, CSS, JSON, MySQL, Sequelize, Express, Node.js, body-parser, OpenWeatherMap API
+REACT, Materialize, JavaScript ES6, Passport User Authentication, CSS, JSON, MySQL, Sequelize, Express, Node.js, body-parser, OpenWeatherMap API
 
 ** Note **:  The entire USDA Plant DB was not able to be loaded into the MySQL-JawsDB used to deploy the app due to DB size limitations based on cost.
 
