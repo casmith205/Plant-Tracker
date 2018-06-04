@@ -64,8 +64,8 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // // GET - /api/plant/:userId  by req.params.userId
-  // //   plantsController.findUserById -> Sequelize find
+  // GET - /api/plant/:userId  by req.params.userId
+  //   plantsController.findUserById -> Sequelize find
   findPlantsByUser: function (req, res) {
     console.log(req.params)
     db.UserPlant.findAll({
@@ -84,7 +84,7 @@ module.exports = {
     let commonName = req.body.commonName;
     let indoorOutdoor = req.body.indoorOutdoor;
 
-    //  elseif if no search param is sent inform the user
+    // if no search param is sent inform the user
     if (req.body.commonName == '') {
       console.log("No user input.");
       return res.status(481).send({ msg: "No user input." });
@@ -107,7 +107,7 @@ module.exports = {
         let moistureUseVar = 'medium';
         let foundIndex = '0';
 
-        //if no user what is in the DB return an error
+        //if no plant is found, aka length of finadAll == 0, return an error
         if (findDbModel.length == 0) {
           console.log("No plant found.");
           return res.status(404).send({ msg: "No plant found." });
@@ -134,7 +134,7 @@ module.exports = {
       })
   },
   // PUT - /api/plant/:plantId/:status?  by req.params.plantId
-  //   plantsController.updateUser -> Sequelize findOneAndUpdate
+  //   plantsController.updateUser -> Sequelize Update
   updateUserPlantById: function (req, res) {
 
     console.log("plantid", req.params.plantId);

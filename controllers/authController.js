@@ -19,10 +19,6 @@ module.exports = {
         address: req.body.address,
         zipCode: req.body.zipCode
       })
-      // .then(createRes => {
-      //   console.log(".then handler for create")
-      //   createRes.status(200);
-      // });
       .then(createResp => {
           console.log(createResp);
           // res.redirect(307, "/profile");
