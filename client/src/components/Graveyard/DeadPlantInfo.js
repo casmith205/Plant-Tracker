@@ -11,7 +11,7 @@ export const DeadPlantInfo = props => (
             <li><i className="material-icons">nature</i>Sadly, I am  {props.status}</li>
             {/* maybe a if statment displaying a different message if plant was 
             outdoor or indorr using props.type */}
-            <li><b> I lived from</b> {props.bday} to {props.dday}</li>
+            <li><b> I lived from</b> {props.bday} <b>to</b> {props.dday}</li>
         </ul> 
     </div>
     )
