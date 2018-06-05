@@ -1,5 +1,7 @@
-# Plant Tracker Application
+![Plant-Tracker-App-Logo](./readme_images/logo.png "Logo")
 
+# Plant Tracker Application
+---
 ## About
 An elegant, visually appealing way to track plant health, watering schedule, and whether plant is Indoor/ or Outdoor.
 
@@ -20,7 +22,7 @@ https://plant-tracker-app.herokuapp.com/
 ## Technologies Used
 REACT, Materialize, JavaScript ES6, Passport User Authentication, CSS, JSON, MySQL, Sequelize, Express, Node.js, body-parser, OpenWeatherMap API
 
-** Note **:  The entire USDA Plant DB was not able to be loaded into the MySQL-JawsDB used to deploy the app due to DB size limitations based on cost.
+* Note *:  The entire USDA Plant DB was not able to be loaded into the MySQL-JawsDB used to deploy the app due to DB size limitations based on cost.
 
 ## Collaborators 
 Cecelia Clohisy
@@ -34,3 +36,7 @@ Rachel Greaner
 Martin Guldberg
 
 Carolyn Smith
+
+## Screen Shots
+
+### Login Screen

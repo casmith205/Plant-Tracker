@@ -7,7 +7,7 @@ class IndoorContainer extends Component {
         console.log("inside OutdoorPLantCOntainer", this.props.plantsArray);
         for (var i = 0; i < this.props.plantsArray.length; i++) {
             if (this.props.plantsArray[i].type.toLowerCase() === 'indoor') {
-                indoorPlantList.push(<li key={this.props.plantsArray[i].id}>{this.props.plantsArray[i].plantName} {indoorPlantList.length}</li>);
+                indoorPlantList.push(<li key={this.props.plantsArray[i].id}>{this.props.plantsArray[i].plantName} </li>);
             }
         }
         return (
@@ -17,13 +17,13 @@ class IndoorContainer extends Component {
                         <span className="card-title center-align"><h4>Your Indoor Plants</h4></span>
                         <hr />
                         <div className="card-content">
-                            <ul className="center-align">
+                            <ol className="left-align">
                                 {indoorPlantList.length ? (
                                     indoorPlantList
                                 ) : (
                                         <ul>None</ul>
                                     )}
-                            </ul>
+                            </ol>
                         </div>
                     </div>
                 </div>

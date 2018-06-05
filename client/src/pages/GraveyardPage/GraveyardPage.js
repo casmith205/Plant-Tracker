@@ -35,12 +35,12 @@ class GraveyardPage extends Component {
             })
     }
 
-    componentDidMount() { 
-    if (!sessionStorage.getItem("userID")) {
-        console.log("inside of no user ID in session");
-        this.props.history.push({
-            pathname: "/",
-        })
+    componentDidMount() {
+        if (!sessionStorage.getItem("userID")) {
+            console.log("inside of no user ID in session");
+            this.props.history.push({
+                pathname: "/",
+            })
         }
         this.loadDeadPlants()
     }
@@ -57,19 +57,23 @@ class GraveyardPage extends Component {
                 <div id="graveyardpage" className="content">
                     <h2 className="center-align" id="graveyardtitle">Welcome to the spooooooooky graveyard</h2>
                     <h4 className="center-align" id="graveyardtitle">Where plants go to rest... for good...</h4>
-                    {this.state.deadPlants.map(plant => (
-                    <Tombstone
-                        key={plant.id}
-                        plantId={plant.id}
-                        plantName={plant.plantName}
-                        type={plant.type}
-                        status={plant.status}
-                        born={plant.createdAt}
-                        died = {plant.updatedAt}
-                    />
-                ))}
+                    {/* align tombstones on the same line */}
+                    <div className="row">
+                        {this.state.deadPlants.map(plant => (
+                            <div className="col s4">
+                                <Tombstone
+                                    key={plant.id}
+                                    plantId={plant.id}
+                                    plantName={plant.plantName}
+                                    type={plant.type}
+                                    status={plant.status}
+                                    born={plant.createdAt}
+                                    died={plant.updatedAt}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-
             </main>
         )
     }

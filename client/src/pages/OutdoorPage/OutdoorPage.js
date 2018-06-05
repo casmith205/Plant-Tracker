@@ -10,9 +10,6 @@ let userId = sessionStorage.getItem('userID');
 
 
 class OutdoorPage extends Component {
-    // handleGoInside() {
-    //     return <IndoorPage />
-    // }
 
     state = {
         search: {
@@ -44,6 +41,8 @@ class OutdoorPage extends Component {
 
     loadOutdoorPlants = () => {
         // console.log(this.state.userId)
+        //get all plants and then filter for outdoor plants (that also are not dead)
+        // and setState for those plants
         API.getPlants(this.state.userId)
             .then(res => {
                 let odPlantArr = []
@@ -61,11 +60,13 @@ class OutdoorPage extends Component {
             })
     }
 
+    //handle user telling us the plant has died.  Remove that plant from the current displayed plants
+    //  and update the DB with that status
     killPlant = plantInfo => {
         API.updatePlant(plantInfo)
             .then(res => {
                 console.log(plantInfo)
-                const plantid = parseInt(plantInfo.split("/")[0],10)
+                const plantid = parseInt(plantInfo.split("/")[0], 10)
                 this.setState({
                     outdoorPlants: this.state.outdoorPlants.filter(function (plant) {
                         if (plant.id !== plantid) {
@@ -76,6 +77,8 @@ class OutdoorPage extends Component {
             })
     }
 
+    //update plant needs to be watered bool to false 
+    // and let user know of their success
     waterPlant = plantId => {
         API.updatePlant(plantId)
             .then(res => {
@@ -95,6 +98,7 @@ class OutdoorPage extends Component {
             })
     }
 
+    //update user inputted value in state - awaiting a 'Sumbit'
     handleInputChange = event => {
 
         this.setState(
@@ -103,10 +107,8 @@ class OutdoorPage extends Component {
                     commonName: event.target.value,
                     indoorOutdoor: "outdoor",
                     userId: userId
-                    // userId: userId
                 }
             }
-            // this.setState({abc: {xyz: 'new value'}});
 
         )
         console.log(this.state.search)
@@ -118,13 +120,10 @@ class OutdoorPage extends Component {
         console.log(this.state.search)
         API.savePlant(this.state.search)
             .then(res => {
-                // if (res.data.status === "error") {
-                //   throw new Error(res.data.message);
-                // }
                 console.log("res", res)
                 this.state.outdoorPlants.push(res)
                 this.setState({ outdoorPlants: this.state.outdoorPlants })
-                window.M.toast({html: "You added a new plant!  I'm so excited, I wet my plants!"})
+                window.M.toast({ html: "You added a new plant!  I'm so excited, I wet my plants!" })
             })
             .catch(err => {
                 console.log(err.response)
@@ -135,24 +134,22 @@ class OutdoorPage extends Component {
 
     render() {
         const plants = this.state.outdoorPlants.map(plant => {
-            // <div className="col s1">
-            // return
-            // <Draggable >
-                
-            return <Plants
-                    key={plant.id}
-                    plantId={plant.id}
-                    plantName={plant.plantName}
-                    type={plant.type}
-                    status={plant.status}
-                    needsWater={plant.needsToBeWatered_bool}
-                    killplant={this.killPlant}
-                    waterPlant={this.waterPlant}
-                    {...this.state}
 
-                />
-                // </Draggable>
-            // </div>
+            return (
+                <div className="col s4">
+                    <Plants
+                        key={plant.id}
+                        plantId={plant.id}
+                        plantName={plant.plantName}
+                        type={plant.type}
+                        status={plant.status}
+                        needsWater={plant.needsToBeWatered_bool}
+                        killplant={this.killPlant}
+                        waterPlant={this.waterPlant}
+                        {...this.state}
+                    />
+                </div>
+            )
         })
         console.log(plants)
 
@@ -172,7 +169,7 @@ class OutdoorPage extends Component {
 
                 <div className="row">
                     <div className="col s5" id="house">
-                        <img className ="materialboxed" src={require("../../images/house.png")} useMap="#image-map" alt="house" />
+                        <img className="materialboxed" src={require("../../images/house.png")} useMap="#image-map" alt="house" />
 
                         <map name="image-map">
                             <area target="_self" alt="" title="" href="/indoorplants" coords="165,221,485,560" shape="rect" />
