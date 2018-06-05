@@ -5,10 +5,10 @@ An elegant, visually appealing way to track plant health, watering schedule, and
 
 Key other features:
 * Passport encrypted Username and Password for each plant owner
-* Text message sent to owner when plant needed to be watered via Node-mailer
+* Text message sent to owner when plant needs to be watered via Node-mailer
 * Common plant name lookup in USDA Plant data which is stored in a local DB table
 * Users that are not logged which are attempting to access other URLs on the web page are redirected to the login screen for any other URL on the web sites (example `https://plant-tracker-app.herokuapp.com/profile` -> `https://plant-tracker-app.herokuapp.com/`)
-* The image displayed looking out of the window when inside of the house is set based on the current weather using the plant owners zip code.
+* Image displayed looking out of the window when inside of the house is set based on the current weather using the plant owners zip code
 
 ## Motivation
 Create a project that demonstrates a multitude of technologies available for current full stack applications.
