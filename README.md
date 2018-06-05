@@ -3,9 +3,9 @@
 # Plant Tracker Application
 ---
 ## About
-An elegant, visually appealing way to track plant health, watering schedule, and whether plant is Indoor/ or Outdoor.
+An elegant, visually appealing way to track plant health, watering schedule, and whether plant is Indoor :house: or Outdoor :tulip:.  The plant could also hav died and can be found in the Graveyard :skull:.   
 
-Key other features:
+######Key other features:
 * Passport encrypted Username and Password for each plant owner
 * Text message sent to owner when plant needs to be watered via Node-mailer
 * Common plant name lookup in USDA Plant data which is stored in a local DB table
@@ -39,4 +39,18 @@ Carolyn Smith
 
 ## Screen Shots
 
-### Login Screen
+### Login Page
+![Plant-Tracker-App-Home-Page](./readme_images/home-page.GIF "Home-Page")
+
+### Profile Page
+![Plant-Tracker-App-Profile-Page](./readme_images/profile_page.PNG "Profile-Page")
+
+### Indoor Page
+![Plant-Tracker-App-Indoor-Page](./readme_images/indoor_page.PNG "Indoor-Page")
+
+### Outdoor Page
+![Plant-Tracker-App-Outdoor-Page](./readme_images/outdoor_page.PNG "Outdoor-Page")
+
+### Graveyard Page
+![Plant-Tracker-App-Graveyard-Page](./readme_images/graveyard_page.PNG "Graveyard-Page")
+
