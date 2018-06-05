@@ -1,4 +1,4 @@
-![Plant-Tracker-App-Logo](./readme_images/logo.png "Logo")
+![Plant-Tracker-App-Logo](./readme_images/logo.PNG "Logo")
 
 # Plant Tracker Application
 ---
