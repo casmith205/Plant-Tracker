@@ -5,7 +5,7 @@
 ## About
 An elegant, visually appealing way to track plant health, watering schedule, and whether plant is Indoor :house: or Outdoor :tulip:.  The plant could also hav died and can be found in the Graveyard :skull:.   
 
-######Key other features:
+#####Key other features:
 * Passport encrypted Username and Password for each plant owner
 * Text message sent to owner when plant needs to be watered via Node-mailer
 * Common plant name lookup in USDA Plant data which is stored in a local DB table
